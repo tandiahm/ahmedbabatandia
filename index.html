@@ -7,7 +7,7 @@
 <meta name="description" content="Ahmed Baba Tandia is a visual artist and photographer whose work examines race, migration, and identity through the lens of African football.">
 <meta name="keywords" content="Ahmed Baba Tandia, photographer, visual artist, African football, race, migration, social justice, photography">
 <meta property="og:title" content="Ahmed Baba Tandia — Visual Artist & Photographer">
-<meta property="og:description" content="Visual artist and photographer. Offside — a photographic narrative on African footballers, race, and migration.">
+<meta property="og:description" content="Visual artist and photographer. The Long Way In — a photographic narrative on African footballers, race, and migration.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ahmedbabatandia.com">
 <link rel="canonical" href="https://ahmedbabatandia.com">
@@ -43,7 +43,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--bg);padding
 .nav-dropdown-wrap{position:relative}
 .nav-dropdown{display:none;position:absolute;top:calc(100% + 0.5rem);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid rgba(240,237,232,0.08);min-width:200px;padding:0.3rem 0;z-index:300}
 .nav-dropdown-wrap:hover .nav-dropdown{display:block}
-.nav-dropdown::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
 .nav-dropdown a{display:block;padding:0.65rem 1.5rem;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s,background 0.2s}
 .nav-dropdown a:hover{color:var(--white);background:rgba(255,255,255,0.03)}
 
@@ -118,7 +117,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 
 /* ABOUT */
 .about-wrap{max-width:980px;margin:0 auto;padding:2.5rem 2rem 5rem}
-.about-portrait{width:100%;max-width:340px;aspect-ratio:2/3;background:#0d0d0d;display:flex;align-items:center;justify-content:center;margin:0 auto 2.2rem;border:1px solid rgba(240,237,232,0.06)}
+.about-portrait{width:100%;max-width:420px;aspect-ratio:4/3;background:#0d0d0d;overflow:hidden;margin:0 auto 2.2rem;border:1px solid rgba(240,237,232,0.06)}
 .about-portrait img{width:100%;height:100%;object-fit:cover;display:block}
 .about-portrait-placeholder{font-family:var(--serif);font-style:italic;font-size:0.8rem;color:rgba(200,169,110,0.16);text-align:center;padding:2rem;line-height:1.8}
 .about-name-block{text-align:center;margin-bottom:2.8rem}
@@ -127,7 +126,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .about-bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.2rem;align-items:start}
 .about-bio-col h3{font-family:var(--serif);font-size:0.98rem;font-weight:400;color:var(--white);margin-bottom:0.2rem}
 .about-bio-col .lang-label{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:block}
-.about-bio-col p{font-family:var(--serif);font-size:0.94rem;line-height:1.9;color:rgba(240,237,232,0.6);margin-bottom:1rem;text-align:justify}
+.about-bio-col p{font-family:var(--serif);font-size:0.94rem;line-height:1.9;color:rgba(240,237,232,0.6);margin-bottom:1rem}
 
 /* CONTACT */
 .contact-wrap{max-width:620px;margin:0 auto;padding:2.5rem 2rem 5rem}
@@ -148,6 +147,30 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 
 /* IG SVG path shared */
 .ig-path{fill:currentColor}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav{padding:0 1.2rem}
+  .nav-logo a{font-size:0.85rem;letter-spacing:0.12em}
+  .nav-sep{margin:0 1rem}
+  .site-wrap{padding-top:85px}
+  .proj-thumb{height:55vh;min-height:320px}
+  .proj-label-title{font-size:2rem}
+  .project-header{padding:1.5rem 1.2rem 2rem}
+  .chapter-header{padding:2rem 1.2rem 1rem;gap:1rem}
+  .chapter-num{font-size:2rem}
+  .chapter-grid.grid-4{grid-template-columns:repeat(2,1fr)}
+  .chapter-grid.grid-3{grid-template-columns:repeat(2,1fr)}
+  .about-wrap{padding:1.5rem 1.2rem 3rem}
+  .about-bio-grid{grid-template-columns:1fr;gap:2rem}
+  .about-bio-col p{font-size:0.88rem;line-height:1.7}
+  .about-portrait{max-width:100%;aspect-ratio:4/3}
+  .contact-wrap{padding:1.5rem 1.2rem 3rem}
+  footer{padding:1.2rem}
+  .lb-body{grid-template-columns:1fr}
+  .lb-info{display:none}
+  .splash-name{font-size:clamp(2.5rem,15vw,5rem)}
+}
 </style>
 </head>
 <body>
@@ -169,7 +192,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
     <li class="nav-dropdown-wrap">
       <a id="nav-home" class="active">Projects</a>
       <div class="nav-dropdown">
-        <a onclick="showPage('project')">Offside</a>
+        <a onclick="showPage('project')">The Long Way In</a>
       </div>
     </li>
     <li><div class="nav-sep"></div></li>
@@ -184,9 +207,9 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
   <div class="site-wrap">
     <div class="home-title">Projects</div>
     <div class="proj-card" onclick="showPage('project')">
-      <div class="proj-thumb"><img src="images/cover.jpg" alt="Offside"></div>
+      <div class="proj-thumb"><img src="images/cover.jpg" alt="The Long Way In"></div>
       <div class="proj-label-always">
-        <div class="proj-label-title">Offside</div>
+        <div class="proj-label-title">The Long Way In</div>
         <span class="proj-label-year">2026</span>
       </div>
     </div>
@@ -201,7 +224,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 <div id="project" class="page">
   <div class="site-wrap">
     <div class="project-header">
-      <h1><em>Offside</em></h1>
+      <h1><em>The Long Way In</em></h1>
       <p>A 20-image photographic narrative tracing the full trajectory of African footballers — from the hope and sacrifice of departure, through the racial hostility of arrival, to the psychological toll it exacts, and finally to the acts of resistance that refuse to let the story end there.</p>
       <div class="project-header-meta">
         <div><span>20</span> Images</div>
@@ -294,7 +317,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 <div id="about" class="page">
   <div class="site-wrap">
     <div class="about-wrap">
-      <div class="about-portrait"><div class="about-portrait-placeholder">Portrait photograph<br><em>coming soon</em></div></div>
+      <div class="about-portrait"><img src="images/portrait.jpg" alt="Ahmed Baba Tandia" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"></div>
       <div class="about-name-block">
         <div class="about-name">Ahmed Baba Tandia</div>
         <div class="about-role">Visual Artist & Photographer</div>
@@ -303,24 +326,25 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
         <div class="about-bio-col">
           <h3>Ahmed Baba Tandia</h3>
           <span class="lang-label">Biography — English</span>
-          <p>Ahmed Baba Tandia was born in January 2005 in Bamako, Mali, where he was raised until the age of thirteen, when he moved to the United States to join his siblings and continue his education. He arrived speaking no English — learning the language, the culture, and the rhythms of an entirely new world from scratch, a process that required the same discipline and perseverance that would come to define everything he pursued. He is currently a rising senior at Whitman College in Walla Walla, Washington, pursuing a Bachelor's degree in Computer Science, with a graduation date set for May 2027. Alongside his studies, he serves as a Software Engineer Intern at Microsoft — a practice that runs parallel to, and informs, his commitment to using technology and visual art as tools for social change.</p>
+          <p>Ahmed Baba Tandia was born in January 2005 in Bamako, Mali, where he was raised until the age of thirteen, when he moved to the United States to join his siblings and continue his education. He is currently a rising senior at Whitman College in Walla Walla, Washington, pursuing a Bachelor's degree in Computer Science, with a graduation date set for May 2027. Alongside his studies, he serves as a Software Engineer Intern at Microsoft — a practice that runs parallel to, and informs, his commitment to using technology and visual art as tools for social change.</p>
           <p>Football has been a constant throughout his life. He played competitively through his senior year of high school, after which he was offered a full academic scholarship to attend Whitman College to pursue his education. It is through the sport that his relationship to questions of race, belonging, and visibility first formed — long before they became the subject of his photography.</p>
-          <p>Beyond football and software, Tandia practices Brazilian Jiu-Jitsu — a discipline introduced to him by his older brother, with whom he shares an enduring bond over physical practice and competition. He holds a blue belt, competes regularly, and coaches the children's program at his academy. At Whitman, his technical ambition was recognized early: as a freshman, his project received an honorable mention at the college's inaugural Hackathon; the following year, competing as part of a four-person team, he took first place.</p>
-          <p>Tandia's relationship with photography began informally, during Eid celebrations in high school, where he was always the one behind the camera — playfully competing with his older brother over who could find the best light and the strongest frame. What started as a game became a serious practice when, in the spring semester of his junior year, he enrolled in Intermediate Photography at Whitman College under Professor Robin North.</p>
+          <p>Beyond football and software, Tandia practices Brazilian Jiu-Jitsu — a discipline introduced to him by his older brother Bousseye, who is into combat sports and loves watching UFC. He holds a blue belt, competes regularly, and coaches the children's program at his academy. At Whitman, his technical ambition was recognized early: as a freshman, his project received an honorable mention at the college's inaugural Hackathon; the following year, competing as part of a four-person team, he took first place.</p>
+          <p>Tandia's relationship with photography began informally, during Eid celebrations in high school, where he was always the one behind the camera — playfully competing with his older brother Mohamed over who could find the best light and the strongest frame. What started as a game became a serious practice when, in the spring semester of his junior year, he enrolled in Intermediate Photography at Whitman College under Professor Robin North.</p>
           <p>It was during that course — researching notable photographers for a class presentation — that Tandia encountered the work of Omar Victor Diop. Diop's project <em>Diaspora</em>, in which he uses self-portraiture and football references to explore the duality of Black visibility and exclusion, gave Tandia a language for something he had long felt but had not yet known how to express. "I had always wanted to do something," he has said, "but I never knew how."</p>
-          <p>The result was <em>Offside</em> — a 20-image photographic narrative structured in four chapters, tracing the full arc of the African footballer's journey: the hope and sacrifice before departure, the racial hostility of arrival in Western leagues, the psychological and physical toll exacted by that system, and the acts of resistance that refuse to let the story end there. What began as a class project is now the foundation of an ongoing social justice initiative — a new practice Tandia has committed to as a vehicle for fighting racism and cultural injustice through visual storytelling.</p>
+          <p>The result was <em>The Long Way In</em> — a 20-image photographic narrative structured in four chapters, tracing the full arc of the African footballer's journey: the hope and sacrifice before departure, the racial hostility of arrival in Western leagues, the psychological and physical toll exacted by that system, and the acts of resistance that refuse to let the story end there. What began as a class project is now the foundation of an ongoing social justice initiative — a new practice Tandia has committed to as a vehicle for fighting racism and cultural injustice through visual storytelling.</p>
         </div>
         <div class="about-bio-col">
           <h3>Ahmed Baba Tandia</h3>
           <span class="lang-label">Biographie — Français</span>
-          <p>Ahmed Baba Tandia est né en janvier 2005 à Bamako, au Mali, où il a grandi jusqu'à l'âge de treize ans, avant de rejoindre ses frères et sœurs aux États-Unis pour poursuivre ses études. À son arrivée, il ne parlait pas un mot d'anglais — il a dû tout apprendre depuis le début : la langue, la culture, les codes d'un monde entièrement nouveau. Ce parcours, marqué par la persévérance et la volonté de relever chaque défi, est au cœur de qui il est. Il est actuellement étudiant en dernière année à Whitman College, à Walla Walla dans l'État de Washington, où il prépare une licence en informatique, avec une date de diplôme prévue en mai 2027. En parallèle de ses études, il exerce en tant qu'ingénieur logiciel stagiaire chez Microsoft — une pratique qui complète et nourrit son engagement à utiliser la technologie et l'art visuel comme outils de changement social.</p>
+          <p>Ahmed Baba Tandia est né en janvier 2005 à Bamako, au Mali, où il a grandi jusqu'à l'âge de treize ans, avant de rejoindre ses frères et sœurs aux États-Unis pour poursuivre ses études. Il est actuellement étudiant en dernière année à Whitman College, à Walla Walla dans l'État de Washington, où il prépare une licence en informatique, avec une date de diplôme prévue en mai 2027. En parallèle de ses études, il exerce en tant qu'ingénieur logiciel stagiaire chez Microsoft — une pratique qui complète et nourrit son engagement à utiliser la technologie et l'art visuel comme outils de changement social.</p>
           <p>Le football a été une constante tout au long de sa vie. Il a joué de manière compétitive jusqu'en terminale, après quoi il s'est vu offrir une bourse académique complète pour intégrer Whitman College et y poursuivre ses études. C'est à travers ce sport que sa relation aux questions de race, d'appartenance et de visibilité s'est d'abord formée — bien avant qu'elles ne deviennent le sujet de sa photographie.</p>
-          <p>Au-delà du football et de l'informatique, Tandia pratique le Jiu-Jitsu Brésilien — une discipline que lui a fait découvrir son frère aîné, avec qui il partage un lien fort autour de la pratique physique et de la compétition. Ceinture bleue, il participe régulièrement à des compétitions et entraîne également les enfants au sein de son académie. À Whitman, sa rigueur technique a été reconnue très tôt : en première année, son projet a reçu une mention honorable lors du premier Hackathon de l'établissement ; l'année suivante, en équipe de quatre, il a remporté la première place.</p>
-          <p>Sa relation avec la photographie a débuté de façon informelle, lors des célébrations de l'Aïd au lycée, où il était toujours celui derrière l'objectif — rivalisant amicalement avec son frère aîné pour trouver la meilleure lumière et le meilleur cadrage. Ce qui avait commencé comme un jeu est devenu une pratique sérieuse lorsque, au semestre de printemps de sa troisième année, il s'est inscrit au cours de photographie intermédiaire à Whitman College, sous la direction du professeur Robin North.</p>
+          <p>Au-delà du football et de l'informatique, Tandia pratique le Jiu-Jitsu Brésilien — une discipline que lui a fait découvrir son frère aîné Bousseye, passionné de sports de combat et grand amateur d'UFC. Ceinture bleue, il participe régulièrement à des compétitions et entraîne également les enfants au sein de son académie. À Whitman, sa rigueur technique a été reconnue très tôt : en première année, son projet a reçu une mention honorable lors du premier Hackathon de l'établissement ; l'année suivante, en équipe de quatre, il a remporté la première place.</p>
+          <p>Sa relation avec la photographie a débuté de façon informelle, lors des célébrations de l'Aïd au lycée, où il était toujours celui derrière la caméra — rivalisant amicalement avec son frère aîné Mohamed pour trouver la meilleure lumière et le meilleur cadrage. Ce qui avait commencé comme un jeu est devenu une pratique sérieuse lorsque, au semestre de printemps de sa troisième année, il s'est inscrit au cours de photographie intermédiaire à Whitman College, sous la direction du professeur Robin North.</p>
           <p>C'est durant ce cours que Tandia a découvert l'œuvre d'Omar Victor Diop. Le projet <em>Diaspora</em> de Diop, dans lequel il utilise l'autoportrait et des références au football pour explorer la dualité entre visibilité et exclusion des Noirs, a donné à Tandia un langage pour quelque chose qu'il ressentait depuis longtemps sans savoir comment l'exprimer.</p>
           <p><em>Offside</em> — un récit photographique de 20 images structuré en quatre chapitres — retrace l'arc complet du parcours du footballeur africain : l'espoir et le sacrifice avant le départ, l'hostilité raciale à l'arrivée dans les ligues occidentales, le tribut psychologique et physique qu'impose ce système, et les actes de résistance qui refusent de laisser l'histoire s'arrêter là. Ce qui a commencé comme un projet de classe est aujourd'hui le fondement d'une initiative de justice sociale — une nouvelle pratique à laquelle Tandia s'est engagé pour lutter contre le racisme et les injustices sociales et culturelles à travers la narration visuelle.</p>
         </div>
-      </div></div>
+      </div>
+    </div>
     <footer>
       <div class="footer-copy">© Ahmed Baba Tandia</div>
       <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
@@ -342,7 +366,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
       <div class="contact-section">
         <div class="contact-section-label">General Enquiries</div>
         <h3>Get in Touch</h3>
-        <p style="color:rgba(240,237,232,0.38);font-size:0.82rem;margin-bottom:0">For exhibition inquiries, press, collaborations, or to discuss the work.</p>
+        <p style="color:rgba(240,237,232,0.38);font-size:0.82rem;margin-bottom:0">For exhibition inquiries, fellowship conversations, press, collaborations, or to discuss the work.</p>
         <div class="contact-form">
           <div class="form-row"><input type="text" placeholder="Name *"></div>
           <div class="form-row"><input type="email" placeholder="Email *"></div>
