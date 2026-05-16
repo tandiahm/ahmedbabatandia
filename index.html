@@ -43,6 +43,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--bg);padding
 .nav-dropdown-wrap{position:relative}
 .nav-dropdown{display:none;position:absolute;top:calc(100% + 0.5rem);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid rgba(240,237,232,0.08);min-width:200px;padding:0.3rem 0;z-index:300}
 .nav-dropdown-wrap:hover .nav-dropdown{display:block}
+.nav-dropdown::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
 .nav-dropdown a{display:block;padding:0.65rem 1.5rem;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s,background 0.2s}
 .nav-dropdown a:hover{color:var(--white);background:rgba(255,255,255,0.03)}
 
@@ -192,7 +193,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
     <li class="nav-dropdown-wrap">
       <a id="nav-home" class="active">Projects</a>
       <div class="nav-dropdown">
-        <a onclick="showPage('project')">The Long Way In</a>
+        <a onclick="showPage('project')">Offside</a>
       </div>
     </li>
     <li><div class="nav-sep"></div></li>
@@ -366,7 +367,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
       <div class="contact-section">
         <div class="contact-section-label">General Enquiries</div>
         <h3>Get in Touch</h3>
-        <p style="color:rgba(240,237,232,0.38);font-size:0.82rem;margin-bottom:0">For exhibition inquiries, fellowship conversations, press, collaborations, or to discuss the work.</p>
+        <p style="color:rgba(240,237,232,0.38);font-size:0.82rem;margin-bottom:0">For exhibition inquiries, press, collaborations, or to discuss the work.</p>
         <div class="contact-form">
           <div class="form-row"><input type="text" placeholder="Name *"></div>
           <div class="form-row"><input type="email" placeholder="Email *"></div>
