@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Baba Tandia — Visual Artist & Photographer</title>
-<meta name="description" content="Ahmed Baba Tandia is a visual artist and photographer whose work examines race, migration, and identity through the lens of African football and societal injustice. Based in the United States.">
+<meta name="description" content="Ahmed Baba Tandia is a visual artist and photographer whose work examines race, migration, and identity through the lens of African football.">
 <meta name="keywords" content="Ahmed Baba Tandia, photographer, visual artist, African football, race, migration, social justice, photography">
 <meta property="og:title" content="Ahmed Baba Tandia — Visual Artist & Photographer">
 <meta property="og:description" content="Visual artist and photographer. The Long Way In — a photographic narrative on African footballers, race, and migration.">
@@ -14,532 +14,161 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#1a1a1a;
-  --bg2:#111;
-  --white:#f0ede8;
-  --mid:#888;
-  --gold:#c8a96e;
-  --serif:'EB Garamond',Georgia,serif;
-  --sans:'Montserrat',sans-serif;
-}
+:root{--bg:#1a1a1a;--bg2:#111;--white:#f0ede8;--mid:#888;--gold:#c8a96e;--serif:'EB Garamond',Georgia,serif;--sans:'Montserrat',sans-serif;}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--white);font-family:var(--sans);font-weight:300;min-height:100vh;cursor:default}
-
-/* ── PAGE SYSTEM ── */
-.page{display:none;min-height:100vh;padding-top:120px}
+body{background:var(--bg);color:var(--white);font-family:var(--sans);font-weight:300;min-height:100vh}
+.page{display:none;min-height:100vh}
 .page.active{display:block}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  background:var(--bg);
-  padding:0 3rem;
-}
-.nav-logo{
-  text-align:center;
-  padding:1.6rem 0 0.6rem;
-  border-bottom:1px solid rgba(240,237,232,0.1);
-  margin-bottom:0.6rem;
-}
-.nav-logo a{
-  font-family:var(--serif);
-  font-size:1.4rem;
-  font-weight:400;
-  letter-spacing:0.05em;
-  color:var(--white);
-  text-decoration:none;
-  line-height:1.15;
-  display:block;
-}
-.nav-links{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:0;
-  list-style:none;
-  padding-bottom:0.8rem;
-}
-.nav-links>li{
-  display:flex;
-  align-items:center;
-}
-.nav-sep{
-  width:1px;
-  height:12px;
-  background:rgba(240,237,232,0.2);
-  margin:0 1.8rem;
-}
-.nav-links a{
-  font-size:0.68rem;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:var(--mid);
-  text-decoration:none;
-  cursor:pointer;
-  transition:color 0.2s;
-  white-space:nowrap;
-}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+/* SPLASH */
+#splash{display:flex;align-items:center;justify-content:center;min-height:100vh;position:relative;overflow:hidden;cursor:pointer}
+.splash-bg{position:absolute;inset:0;background:#080808}
+.splash-bg img{width:100%;height:100%;object-fit:cover;opacity:0.4;display:block;transition:opacity 0.5s}
+#splash:hover .splash-bg img{opacity:0.3}
+.splash-content{position:relative;z-index:2;text-align:center;padding:2rem}
+.splash-name{font-family:var(--serif);font-size:clamp(3rem,9vw,8rem);font-weight:400;line-height:0.95;letter-spacing:0.03em;color:var(--white);text-transform:uppercase;margin-bottom:2rem}
+.splash-name em{display:block;font-style:italic;color:var(--gold);font-size:0.72em}
+.splash-enter{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(240,237,232,0.3);animation:pulse 2.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
 
-/* Projects dropdown */
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--bg);padding:0 3rem}
+.nav-logo{text-align:center;padding:1.3rem 0 0.45rem;border-bottom:1px solid rgba(240,237,232,0.08);margin-bottom:0.45rem}
+.nav-logo a{font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.35rem);font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);text-decoration:none;cursor:pointer;display:block;line-height:1}
+.nav-links{display:flex;justify-content:center;align-items:center;gap:0;list-style:none;padding-bottom:0.65rem}
+.nav-links>li{display:flex;align-items:center}
+.nav-sep{width:1px;height:10px;background:rgba(240,237,232,0.15);margin:0 1.6rem}
+.nav-links a{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);text-decoration:none;cursor:pointer;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
 .nav-dropdown-wrap{position:relative}
-.nav-dropdown{
-  display:none;
-  position:absolute;
-  top:calc(100% + 0.8rem);
-  left:50%;
-  transform:translateX(-50%);
-  background:var(--bg2);
-  border:1px solid rgba(240,237,232,0.08);
-  min-width:260px;
-  padding:0.4rem 0;
-  z-index:300;
-}
+.nav-dropdown{display:none;position:absolute;top:calc(100% + 0.5rem);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid rgba(240,237,232,0.08);min-width:200px;padding:0.3rem 0;z-index:300}
 .nav-dropdown-wrap:hover .nav-dropdown{display:block}
-.nav-dropdown a{
-  display:block;
-  padding:0.7rem 1.6rem;
-  font-size:0.65rem;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--mid);
-  text-decoration:none;
-  transition:color 0.2s,background 0.2s;
-}
+.nav-dropdown a{display:block;padding:0.65rem 1.5rem;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s,background 0.2s}
 .nav-dropdown a:hover{color:var(--white);background:rgba(255,255,255,0.03)}
 
-/* ── FOOTER ── */
-footer{
-  border-top:1px solid rgba(240,237,232,0.08);
-  padding:1.5rem 3rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top:6rem;
-}
-.footer-copy{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid)}
-.footer-ig a{
-  display:flex;align-items:center;gap:0.5rem;
-  font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;
-  color:var(--mid);text-decoration:none;transition:color 0.2s;
-}
+/* SITE WRAP */
+.site-wrap{padding-top:100px}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:flex;align-items:center;justify-content:space-between;margin-top:5rem}
+.footer-copy{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid)}
+.footer-ig a{display:flex;align-items:center;gap:0.5rem;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s}
 .footer-ig a:hover{color:var(--white)}
-.ig-icon{width:16px;height:16px;fill:currentColor}
+.ig-icon{width:13px;height:13px;fill:currentColor}
 
-/* ── HOME PAGE ── */
-#home{padding-top:120px}
-.home-title{
-  text-align:center;
-  padding:3rem 2rem 4rem;
-  font-family:var(--serif);
-  font-size:0.75rem;
-  letter-spacing:0.3em;
-  text-transform:uppercase;
-  color:var(--mid);
-}
+/* HOME */
+.home-title{text-align:center;padding:2.5rem 2rem 3rem;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid)}
+.proj-card{position:relative;overflow:hidden;cursor:pointer;background:#0d0d0d;margin:0 3px 3px}
+.proj-thumb{width:100%;height:78vh;min-height:480px;position:relative;overflow:hidden}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.7s ease}
+.proj-card:hover .proj-thumb img{transform:scale(1.03)}
+.proj-label-always{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+.proj-label-title{font-family:var(--serif);font-size:clamp(2rem,5vw,4.5rem);font-weight:400;color:var(--white);text-shadow:0 2px 20px rgba(0,0,0,0.7);line-height:1.1;letter-spacing:0.02em}
+.proj-label-year{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,169,110,0.75);text-shadow:0 1px 8px rgba(0,0,0,0.8);margin-top:0.5rem;display:block}
 
-/* Projects masonry grid — OVD style */
-.projects-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  grid-template-rows:auto;
-  gap:3px;
-  padding:0 3px 3px;
-}
-.proj-card{
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-  background:#111;
-}
-.proj-card.large{grid-row:span 2}
-.proj-card.wide{grid-column:span 2}
-
-.proj-thumb{
-  width:100%;
-  height:100%;
-  min-height:280px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#0d0d0d;
-  position:relative;
-  transition:transform 0.6s ease;
-}
-.proj-card:hover .proj-thumb{transform:scale(1.03)}
-.proj-thumb img{
-  width:100%;height:100%;object-fit:cover;
-  display:block;
-  transition:transform 0.6s ease;
-}
-.proj-placeholder-text{
-  font-family:var(--serif);
-  font-style:italic;
-  font-size:0.85rem;
-  color:rgba(200,180,150,0.18);
-  text-align:center;
-  padding:2rem;
-  position:absolute;
-  bottom:1rem;left:1rem;
-}
-
-.proj-label{
-  position:absolute;
-  bottom:0;left:0;right:0;
-  padding:3rem 1.5rem 1.5rem;
-  background:linear-gradient(transparent,rgba(0,0,0,0.75));
-  opacity:0;
-  transition:opacity 0.3s;
-}
-.proj-card:hover .proj-label{opacity:1}
-.proj-label-title{
-  font-family:var(--serif);
-  font-size:1.5rem;
-  font-weight:400;
-  color:var(--white);
-  margin-bottom:0.2rem;
-}
-.proj-label-sub{
-  font-size:0.62rem;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:rgba(200,180,150,0.7);
-}
-
-/* Always-visible label for OVD style */
-.proj-label-always{
-  position:absolute;
-  bottom:1.5rem;left:1.5rem;
-}
-.proj-label-always .proj-label-title{
-  font-family:var(--serif);
-  font-size:1.4rem;
-  color:var(--white);
-  text-shadow:0 2px 12px rgba(0,0,0,0.8);
-}
-.proj-label-always .proj-label-sub{
-  font-size:0.6rem;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(200,180,150,0.8);
-  text-shadow:0 1px 6px rgba(0,0,0,0.8);
-}
-
-/* ── PROJECT PAGE (The Long Way In) ── */
-#project{padding-top:120px}
-.project-header{
-  max-width:760px;
-  margin:0 auto;
-  padding:3rem 2rem 4rem;
-  text-align:center;
-}
-.project-header h1{
-  font-family:var(--serif);
-  font-size:clamp(2.2rem,5vw,3.8rem);
-  font-weight:400;
-  line-height:1.1;
-  color:var(--white);
-  margin-bottom:1.5rem;
-}
+/* PROJECT PAGE */
+.project-header{max-width:720px;margin:0 auto;padding:2.5rem 2rem 3rem;text-align:center}
+.project-header h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:400;line-height:1.1;color:var(--white);margin-bottom:1.1rem}
 .project-header h1 em{font-style:italic}
-.project-header p{
-  font-family:var(--serif);
-  font-size:1.05rem;
-  line-height:1.85;
-  color:rgba(240,237,232,0.65);
-  max-width:640px;
-  margin:0 auto 2rem;
-}
-.project-header-meta{
-  display:flex;
-  justify-content:center;
-  gap:3rem;
-  font-size:0.62rem;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--mid);
-  border-top:1px solid rgba(240,237,232,0.08);
-  border-bottom:1px solid rgba(240,237,232,0.08);
-  padding:1rem 0;
-  margin-top:2rem;
-}
+.project-header p{font-family:var(--serif);font-size:0.98rem;line-height:1.85;color:rgba(240,237,232,0.58);max-width:600px;margin:0 auto 1.4rem}
+.project-header-meta{display:flex;justify-content:center;gap:2.5rem;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);border-top:1px solid rgba(240,237,232,0.08);border-bottom:1px solid rgba(240,237,232,0.08);padding:0.85rem 0;margin-top:1.4rem}
 .project-header-meta span{color:var(--gold)}
-
-/* Chapter sections */
 .chapter{margin-bottom:0}
-.chapter-header{
-  display:flex;
-  align-items:baseline;
-  gap:2rem;
-  padding:3rem 3rem 1.5rem;
-  border-top:1px solid rgba(240,237,232,0.08);
-}
-.chapter-num{
-  font-family:var(--serif);
-  font-size:3rem;
-  font-weight:400;
-  color:rgba(200,169,110,0.2);
-  line-height:1;
-  flex-shrink:0;
-}
-.chapter-info h2{
-  font-family:var(--serif);
-  font-size:1.5rem;
-  font-weight:400;
-  color:var(--white);
-  margin-bottom:0.3rem;
-}
-.chapter-info .chapter-sub{
-  font-size:0.62rem;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:0.6rem;
-}
-.chapter-info p{
-  font-family:var(--serif);
-  font-size:0.95rem;
-  line-height:1.8;
-  color:var(--mid);
-  max-width:620px;
-}
-
-/* Image grid per chapter */
-.chapter-grid{
-  display:grid;
-  gap:3px;
-  padding:1.5rem 3px 0;
-}
+.chapter-header{display:flex;align-items:baseline;gap:1.8rem;padding:2.5rem 3rem 1.1rem;border-top:1px solid rgba(240,237,232,0.08)}
+.chapter-num{font-family:var(--serif);font-size:2.6rem;font-weight:400;color:rgba(200,169,110,0.13);line-height:1;flex-shrink:0}
+.chapter-info h2{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--white);margin-bottom:0.22rem}
+.chapter-info .chapter-sub{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.45rem}
+.chapter-info p{font-family:var(--serif);font-size:0.9rem;line-height:1.8;color:var(--mid);max-width:580px}
+.chapter-grid{display:grid;gap:3px;padding:1.1rem 3px 0}
 .chapter-grid.grid-4{grid-template-columns:repeat(4,1fr)}
-.chapter-grid.grid-2x3{grid-template-columns:repeat(3,1fr)}
-.chapter-grid.grid-6{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr)}
+.chapter-grid.grid-3{grid-template-columns:repeat(3,1fr)}
 
-.img-card{
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-  background:#0d0d0d;
-  aspect-ratio:3/4;
-}
-.img-card.landscape{aspect-ratio:4/3}
-.img-card.square{aspect-ratio:1/1}
-
-.img-card img{
-  width:100%;height:100%;
-  object-fit:cover;display:block;
-  transition:transform 0.5s ease;
-}
-.img-card:hover img,.img-card:hover .img-placeholder{transform:scale(1.04)}
-
-.img-placeholder{
-  width:100%;height:100%;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  background:#0d0d0d;
-  transition:transform 0.5s ease;
-}
-.img-placeholder-num{
-  font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;
-  color:rgba(200,169,110,0.2);margin-bottom:0.5rem;
-}
-.img-placeholder-label{
-  font-family:var(--serif);font-style:italic;
-  font-size:0.8rem;color:rgba(200,169,110,0.15);
-  text-align:center;padding:0 1rem;line-height:1.5;
-}
-
-.img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(transparent 45%,rgba(0,0,0,0.85));
-  opacity:0;transition:opacity 0.3s;
-  display:flex;flex-direction:column;
-  justify-content:flex-end;padding:1.2rem;
-}
+/* IMG CARDS — key fix: no fixed aspect-ratio by default, use padding-top trick */
+.img-card{position:relative;overflow:hidden;cursor:pointer;background:#0d0d0d}
+.img-card{padding-top:133%}/* default portrait 3:4 */
+.img-card.landscape{padding-top:75%}/* 4:3 */
+.img-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease}
+.img-card:hover img{transform:scale(1.04)}
+.img-overlay{position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,0.85));opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.1rem}
 .img-card:hover .img-overlay{opacity:1}
-.img-overlay-title{
-  font-family:var(--serif);font-size:1rem;
-  color:var(--white);margin-bottom:0.15rem;line-height:1.2;
-}
-.img-overlay-concept{
-  font-size:0.68rem;line-height:1.5;
-  color:rgba(240,237,232,0.6);
-}
+.img-overlay-title{font-family:var(--serif);font-size:0.95rem;color:var(--white);margin-bottom:0.12rem;line-height:1.2}
+.img-overlay-concept{font-size:0.65rem;line-height:1.5;color:rgba(240,237,232,0.58)}
 
-/* Lightbox */
-#lb{
-  display:none;position:fixed;inset:0;z-index:500;
-  background:rgba(10,10,10,0.97);
-}
+/* LIGHTBOX — critical fix: img displays at natural ratio */
+#lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(6,6,6,0.97)}
 #lb.open{display:flex;flex-direction:column}
-.lb-top{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1rem 2rem;border-bottom:1px solid rgba(240,237,232,0.08);
-  flex-shrink:0;
-}
-.lb-nav-btns{display:flex;gap:1rem;align-items:center}
-.lb-nav-btn{
-  background:none;border:1px solid rgba(240,237,232,0.15);
-  color:var(--mid);font-size:0.6rem;letter-spacing:0.2em;
-  text-transform:uppercase;padding:0.4rem 1rem;
-  cursor:pointer;font-family:var(--sans);transition:all 0.2s;
-}
-.lb-nav-btn:hover{color:var(--white);border-color:rgba(240,237,232,0.4)}
-.lb-counter{font-size:0.62rem;letter-spacing:0.15em;color:var(--mid)}
-.lb-x{
-  background:none;border:none;color:var(--mid);
-  font-size:1.3rem;cursor:pointer;transition:color 0.2s;padding:0.2rem;
-}
+.lb-top{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 2rem;border-bottom:1px solid rgba(240,237,232,0.07);flex-shrink:0}
+.lb-nav-btns{display:flex;gap:0.8rem;align-items:center}
+.lb-nav-btn{background:none;border:1px solid rgba(240,237,232,0.12);color:var(--mid);font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.35rem 0.85rem;cursor:pointer;font-family:var(--sans);transition:all 0.2s}
+.lb-nav-btn:hover{color:var(--white);border-color:rgba(240,237,232,0.35)}
+.lb-counter{font-size:0.58rem;letter-spacing:0.15em;color:var(--mid)}
+.lb-x{background:none;border:none;color:var(--mid);font-size:1.1rem;cursor:pointer;transition:color 0.2s;padding:0.2rem}
 .lb-x:hover{color:var(--white)}
-.lb-body{
-  flex:1;display:grid;
-  grid-template-columns:1fr 360px;
-  overflow:hidden;
-}
-.lb-img{
-  display:flex;align-items:center;justify-content:center;
-  padding:2rem;background:#080808;overflow:hidden;
-}
-.lb-img-inner{
-  max-width:100%;max-height:100%;
-  aspect-ratio:3/4;
-  display:flex;align-items:center;justify-content:center;
-  border:1px solid rgba(240,237,232,0.06);
-  background:#0d0d0d;
-}
-.lb-img-inner img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-.lb-img-placeholder{
-  font-family:var(--serif);font-style:italic;
-  font-size:0.85rem;color:rgba(200,169,110,0.2);
-  text-align:center;padding:2rem;line-height:1.8;
-}
-.lb-info{
-  padding:2.5rem 2rem;border-left:1px solid rgba(240,237,232,0.08);
-  overflow-y:auto;
-}
-.lb-chapter-tag{
-  font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:0.8rem;
-}
-.lb-title{
-  font-family:var(--serif);font-size:1.7rem;font-weight:400;
-  line-height:1.15;color:var(--white);margin-bottom:1.2rem;
-}
-.lb-rule{width:36px;height:1px;background:rgba(200,169,110,0.3);margin-bottom:1.2rem}
-.lb-label{
-  font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--mid);margin-bottom:0.5rem;
-}
-.lb-text{
-  font-family:var(--serif);font-size:0.95rem;line-height:1.85;
-  color:rgba(240,237,232,0.7);margin-bottom:1.8rem;
-}
+.lb-body{flex:1;display:grid;grid-template-columns:1fr 320px;overflow:hidden;min-height:0}
+.lb-img{display:flex;align-items:center;justify-content:center;padding:1.5rem;background:#060606;overflow:hidden}
+/* THE KEY FIX: img renders at its natural proportions, contained within the area */
+.lb-img img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.lb-info{padding:2rem 1.6rem;border-left:1px solid rgba(240,237,232,0.07);overflow-y:auto}
+.lb-chapter-tag{font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.65rem}
+.lb-title{font-family:var(--serif);font-size:1.5rem;font-weight:400;line-height:1.15;color:var(--white);margin-bottom:0.9rem}
+.lb-rule{width:28px;height:1px;background:rgba(200,169,110,0.28);margin-bottom:0.9rem}
+.lb-label{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:0.4rem}
+.lb-text{font-family:var(--serif);font-size:0.9rem;line-height:1.85;color:rgba(240,237,232,0.65);margin-bottom:1.4rem}
 
-/* ── ABOUT PAGE ── */
-#about{padding-top:120px}
-.about-wrap{
-  max-width:960px;margin:0 auto;padding:3rem 2rem 6rem;
-}
-.about-portrait{
-  width:100%;max-width:380px;
-  aspect-ratio:2/3;
-  background:#0d0d0d;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 3rem;
-  border:1px solid rgba(240,237,232,0.06);
-}
+/* ABOUT */
+.about-wrap{max-width:980px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.about-portrait{width:100%;max-width:340px;aspect-ratio:2/3;background:#0d0d0d;display:flex;align-items:center;justify-content:center;margin:0 auto 2.2rem;border:1px solid rgba(240,237,232,0.06)}
 .about-portrait img{width:100%;height:100%;object-fit:cover;display:block}
-.about-portrait-placeholder{
-  font-family:var(--serif);font-style:italic;
-  font-size:0.85rem;color:rgba(200,169,110,0.2);
-  text-align:center;padding:2rem;line-height:1.8;
-}
-.about-body{
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;
-}
-.about-name{
-  font-family:var(--serif);font-size:1.1rem;font-weight:400;
-  letter-spacing:0.05em;color:var(--white);margin-bottom:0.2rem;
-}
-.about-role{
-  font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:2rem;
-}
-.about-bio-section h2{
-  font-family:var(--serif);font-size:1.1rem;font-weight:400;
-  color:var(--white);margin-bottom:0.2rem;
-}
-.about-bio-section h3{
-  font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.5rem;
-}
-.about-bio-section p{
-  font-family:var(--serif);font-size:1rem;line-height:1.9;
-  color:rgba(240,237,232,0.65);margin-bottom:1.3rem;
-  text-align:justify;
-}
+.about-portrait-placeholder{font-family:var(--serif);font-style:italic;font-size:0.8rem;color:rgba(200,169,110,0.16);text-align:center;padding:2rem;line-height:1.8}
+.about-name-block{text-align:center;margin-bottom:2.8rem}
+.about-name{font-family:var(--serif);font-size:1.4rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);margin-bottom:0.25rem}
+.about-role{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold)}
+.about-bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.2rem;align-items:start}
+.about-bio-col h3{font-family:var(--serif);font-size:0.98rem;font-weight:400;color:var(--white);margin-bottom:0.2rem}
+.about-bio-col .lang-label{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:block}
+.about-bio-col p{font-family:var(--serif);font-size:0.94rem;line-height:1.9;color:rgba(240,237,232,0.6);margin-bottom:1rem;text-align:justify}
 
-/* ── CONTACT PAGE ── */
-#contact{padding-top:120px}
-.contact-wrap{
-  max-width:700px;margin:0 auto;padding:3rem 2rem 6rem;
-}
-.contact-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(240,237,232,0.08)}
+/* CONTACT */
+.contact-wrap{max-width:620px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.contact-section{margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(240,237,232,0.07)}
 .contact-section:last-child{border-bottom:none}
-.contact-section-label{
-  font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.2rem;
-}
-.contact-section h3{
-  font-family:var(--serif);font-size:1.1rem;font-weight:400;
-  color:var(--white);margin-bottom:0.5rem;
-}
-.contact-section p,.contact-section a{
-  font-family:var(--serif);font-size:1rem;line-height:1.85;
-  color:rgba(240,237,232,0.6);text-decoration:none;display:block;
-  transition:color 0.2s;
-}
+.contact-section-label{font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem}
+.contact-section h3{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--white);margin-bottom:0.35rem}
+.contact-section p,.contact-section a{font-family:var(--serif);font-size:0.94rem;line-height:1.85;color:rgba(240,237,232,0.52);text-decoration:none;display:block;transition:color 0.2s}
 .contact-section a:hover{color:var(--gold)}
+.contact-form{margin-top:1.6rem}
+.form-row{margin-bottom:0.85rem}
+.form-row input,.form-row textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(240,237,232,0.12);color:var(--white);font-family:var(--sans);font-size:0.78rem;font-weight:300;padding:0.62rem 0;outline:none;transition:border-color 0.2s;letter-spacing:0.04em}
+.form-row input::placeholder,.form-row textarea::placeholder{color:var(--mid);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase}
+.form-row input:focus,.form-row textarea:focus{border-color:rgba(200,169,110,0.4)}
+.form-row textarea{height:105px;resize:none}
+.form-submit{background:transparent;border:1px solid rgba(240,237,232,0.16);color:var(--white);font-family:var(--sans);font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;padding:0.72rem 2rem;cursor:pointer;transition:all 0.25s;margin-top:0.35rem}
+.form-submit:hover{background:rgba(200,169,110,0.08);border-color:var(--gold);color:var(--gold)}
 
-/* Contact form */
-.contact-form{margin-top:2rem}
-.form-row{margin-bottom:1rem}
-.form-row input,.form-row textarea{
-  width:100%;background:transparent;
-  border:none;border-bottom:1px solid rgba(240,237,232,0.15);
-  color:var(--white);font-family:var(--sans);font-size:0.82rem;
-  font-weight:300;padding:0.7rem 0;outline:none;
-  transition:border-color 0.2s;letter-spacing:0.05em;
-}
-.form-row input::placeholder,.form-row textarea::placeholder{color:var(--mid);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase}
-.form-row input:focus,.form-row textarea:focus{border-color:rgba(200,169,110,0.5)}
-.form-row textarea{height:120px;resize:none}
-.form-submit{
-  background:transparent;border:1px solid rgba(240,237,232,0.2);
-  color:var(--white);font-family:var(--sans);font-size:0.65rem;
-  letter-spacing:0.25em;text-transform:uppercase;
-  padding:0.8rem 2.5rem;cursor:pointer;
-  transition:all 0.25s;margin-top:0.5rem;
-}
-.form-submit:hover{background:rgba(200,169,110,0.1);border-color:var(--gold);color:var(--gold)}
+/* IG SVG path shared */
+.ig-path{fill:currentColor}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <a onclick="showPage('home')">ahmed<br>baba<br>tandia</a>
+<!-- SPLASH -->
+<div id="splash" class="page active" onclick="enterSite()">
+  <div class="splash-bg"><img src="images/cover.jpg" alt="Ahmed Baba Tandia"></div>
+  <div class="splash-content">
+    <div class="splash-name">AHMED<br>BABA<br><em>TANDIA</em></div>
+    <div class="splash-enter">Click to enter</div>
   </div>
+</div>
+
+<!-- MAIN SITE -->
+<div id="mainsite" style="display:none">
+<nav>
+  <div class="nav-logo"><a onclick="showPage('home')">AHMED BABA TANDIA</a></div>
   <ul class="nav-links">
     <li class="nav-dropdown-wrap">
-      <a id="nav-projects" onclick="showPage('project')" class="active">Projects</a>
+      <a id="nav-home" class="active">Projects</a>
       <div class="nav-dropdown">
-        <a onclick="showPage('project');scrollToChapter(0)">The Long Way In</a>
-        <a onclick="showPage('project');scrollToChapter(0)" style="padding-left:2.4rem;color:rgba(136,136,136,0.6)">↳ Between Dreams and Borders</a>
-        <a onclick="showPage('project');scrollToChapter(1)" style="padding-left:2.4rem;color:rgba(136,136,136,0.6)">↳ Upon Arrival</a>
-        <a onclick="showPage('project');scrollToChapter(2)" style="padding-left:2.4rem;color:rgba(136,136,136,0.6)">↳ Impact</a>
-        <a onclick="showPage('project');scrollToChapter(3)" style="padding-left:2.4rem;color:rgba(136,136,136,0.6)">↳ Resistance & Change</a>
+        <a onclick="showPage('project')">The Long Way In</a>
       </div>
     </li>
     <li><div class="nav-sep"></div></li>
@@ -549,343 +178,189 @@ footer{
   </ul>
 </nav>
 
-<!-- ══════════════ HOME PAGE ══════════════ -->
+<!-- HOME -->
 <div id="home" class="page active">
-  <div class="home-title">Projects</div>
-  <div class="projects-grid">
-    <!-- Main large card — The Long Way In -->
-    <div class="proj-card large" onclick="showPage('project')">
-      <div class="proj-thumb" style="min-height:580px;background:linear-gradient(160deg,#0a0a0c,#141210)">
-        <img src="images/cover.jpg" alt="The Long Way In — Ahmed Baba Tandia" style="width:100%;height:100%;object-fit:cover;display:block">
-      </div>
+  <div class="site-wrap">
+    <div class="home-title">Projects</div>
+    <div class="proj-card" onclick="showPage('project')">
+      <div class="proj-thumb"><img src="images/cover.jpg" alt="The Long Way In"></div>
       <div class="proj-label-always">
         <div class="proj-label-title">The Long Way In</div>
-        <div class="proj-label-sub">20 images — 2024–2026</div>
+        <span class="proj-label-year">2026</span>
       </div>
     </div>
-    <!-- Placeholder future project 2 -->
-    <div class="proj-card" style="opacity:0.3;cursor:default">
-      <div class="proj-thumb" style="min-height:280px;background:#0d0d0d"></div>
-    </div>
-    <!-- Placeholder future project 3 -->
-    <div class="proj-card" style="opacity:0.3;cursor:default">
-      <div class="proj-thumb" style="min-height:280px;background:#0d0d0d"></div>
-    </div>
-    <!-- Placeholder future project 4 -->
-    <div class="proj-card" style="opacity:0.3;cursor:default">
-      <div class="proj-thumb" style="min-height:280px;background:#0d0d0d"></div>
-    </div>
-    <!-- Placeholder future project 5 -->
-    <div class="proj-card" style="opacity:0.3;cursor:default">
-      <div class="proj-thumb" style="min-height:280px;background:#0d0d0d"></div>
-    </div>
+    <footer>
+      <div class="footer-copy">© Ahmed Baba Tandia</div>
+      <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
+    </footer>
   </div>
-  <footer>
-    <div class="footer-copy">© Ahmed Baba Tandia</div>
-    <div class="footer-ig">
-      <a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener">
-        <svg class="ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @ahmedddd_05
-      </a>
-    </div>
-  </footer>
 </div>
 
-<!-- ══════════════ PROJECT PAGE ══════════════ -->
+<!-- PROJECT -->
 <div id="project" class="page">
-  <div class="project-header">
-    <h1><em>The Long Way In</em></h1>
-    <p>A 20-image photographic narrative tracing the full trajectory of African footballers — from the hope and sacrifice of departure, through the racial hostility of arrival, to the psychological toll it exacts, and finally to the acts of resistance and refusal that refuse to let the story end there.</p>
-    <div class="project-header-meta">
-      <div><span>20</span> Images</div>
-      <div><span>4</span> Chapters</div>
-      <div><span>2024–2026</span></div>
-      <div><span>Ahmed Baba Tandia</span></div>
+  <div class="site-wrap">
+    <div class="project-header">
+      <h1><em>The Long Way In</em></h1>
+      <p>A 20-image photographic narrative tracing the full trajectory of African footballers — from the hope and sacrifice of departure, through the racial hostility of arrival, to the psychological toll it exacts, and finally to the acts of resistance that refuse to let the story end there.</p>
+      <div class="project-header-meta">
+        <div><span>20</span> Images</div>
+        <div><span>4</span> Chapters</div>
+        <div><span>2026</span></div>
+        <div><span>Ahmed Baba Tandia</span></div>
+      </div>
     </div>
-  </div>
 
-  <!-- CHAPTER I -->
-  <div class="chapter" id="chapter-0">
-    <div class="chapter-header">
-      <div class="chapter-num">I</div>
-      <div class="chapter-info">
-        <div class="chapter-sub">Chapter One — Images 1–4</div>
-        <h2>Between Dreams and Borders</h2>
-        <p>The world before departure. Through still life compositions of everyday objects — boots, passports, clocks, family photographs — this chapter argues that for many young African players, football is not sport. It is a strategy of survival, a collective wager placed by entire families on the body and talent of one person.</p>
+    <div class="chapter" id="chapter-0">
+      <div class="chapter-header">
+        <div class="chapter-num">I</div>
+        <div class="chapter-info">
+          <div class="chapter-sub">Chapter One — Images 1–4</div>
+          <h2>Between Dreams and Borders</h2>
+          <p>The world before departure. Through still life compositions of everyday objects — boots, passports, clocks, family photographs — this chapter argues that for many young African players, football is not sport. It is a strategy of survival, a collective wager placed by entire families on the body and talent of one person.</p>
+        </div>
+      </div>
+      <div class="chapter-grid grid-4">
+        <div class="img-card" onclick="openLb(0)"><img src="images/01-journey-ball.jpg" alt="The Journey Ball"><div class="img-overlay"><div class="img-overlay-title">The Journey Ball</div><div class="img-overlay-concept">A soccer ball, suitcase, and atlas map — the dream carried across borders.</div></div></div>
+        <div class="img-card" onclick="openLb(1)"><img src="images/02-not-just-a-game.jpg" alt="Not Just a Game"><div class="img-overlay"><div class="img-overlay-title">Not Just a Game</div><div class="img-overlay-concept">Play versus survival — the jersey against the controller.</div></div></div>
+        <div class="img-card" onclick="openLb(2)"><img src="images/03-identity-on-pause.jpg" alt="Identity on Pause"><div class="img-overlay"><div class="img-overlay-title">Identity on Pause</div><div class="img-overlay-concept">Passport, fabric, stopped clock — time suspended between worlds.</div></div></div>
+        <div class="img-card" onclick="openLb(3)"><img src="images/04-price-of-dreams.jpg" alt="The Price of Dreams"><div class="img-overlay"><div class="img-overlay-title">The Price of Dreams</div><div class="img-overlay-concept">Boots, money, family photo, schoolbook — who pays the hidden cost?</div></div></div>
       </div>
     </div>
-    <div class="chapter-grid grid-4">
-      <div class="img-card" onclick="openLb(0)">
-        <img src="images/01-journey-ball.jpg" alt="The Journey Ball" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">The Journey Ball</div>
-          <div class="img-overlay-concept">A soccer ball, suitcase, and atlas map — the dream carried across borders.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(1)">
-        <img src="images/02-not-just-a-game.jpg" alt="Not Just a Game" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Not Just a Game</div>
-          <div class="img-overlay-concept">Play versus survival — the jersey against the controller.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(2)">
-        <img src="images/03-identity-on-pause.jpg" alt="Identity on Pause" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Identity on Pause</div>
-          <div class="img-overlay-concept">Passport, fabric, stopped clock — time suspended between worlds.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(3)">
-        <img src="images/04-price-of-dreams.jpg" alt="The Price of Dreams" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">The Price of Dreams</div>
-          <div class="img-overlay-concept">Boots, money, family photo, schoolbook — who pays the hidden cost?</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- CHAPTER II -->
-  <div class="chapter" id="chapter-1">
-    <div class="chapter-header">
-      <div class="chapter-num">II</div>
-      <div class="chapter-info">
-        <div class="chapter-sub">Chapter Two — Images 5–8</div>
-        <h2>Upon Arrival</h2>
-        <p>The dream lands — not in triumph, but in a system already prepared to use it. Drawing from the documented experiences of Vinícius Júnior, Mario Balotelli, Marcus Rashford, and Victor Osimhen, this chapter places the artist's own body inside the visual language of racial abuse, mapping how racism operates across the crowd, the media, the field, and the contract.</p>
+    <div class="chapter" id="chapter-1">
+      <div class="chapter-header">
+        <div class="chapter-num">II</div>
+        <div class="chapter-info">
+          <div class="chapter-sub">Chapter Two — Images 5–8</div>
+          <h2>Upon Arrival</h2>
+          <p>The dream lands — not in triumph, but in a system already prepared to use it. Drawing from the documented experiences of Vinícius Júnior, Mario Balotelli, Marcus Rashford, and Victor Osimhen, this chapter places the artist's own body inside the visual language of racial abuse.</p>
+        </div>
+      </div>
+      <div class="chapter-grid grid-4">
+        <div class="img-card" onclick="openLb(4)"><img src="images/05-ooh-ooh.jpg" alt="OOH OOH"><div class="img-overlay"><div class="img-overlay-title">"OOH OOH" — Monkey Chants</div><div class="img-overlay-concept">Inspired by Vinícius Júnior — the weight of racialized chants made visible.</div></div></div>
+        <div class="img-card" onclick="openLb(5)"><img src="images/06-why-always-me.jpg" alt="Why Always Me"><div class="img-overlay"><div class="img-overlay-title">"Why Always Me?"</div><div class="img-overlay-concept">Inspired by Mario Balotelli — the media wall, one foot raised against the narrative.</div></div></div>
+        <div class="img-card landscape" onclick="openLb(6)"><img src="images/07-performance-pressure.jpg" alt="Performance Pressure"><div class="img-overlay"><div class="img-overlay-title">Performance Pressure — After the Miss</div><div class="img-overlay-concept">Inspired by Rashford, Saka, Sancho — bird's-eye view, England jersey, face covered.</div></div></div>
+        <div class="img-card" onclick="openLb(7)"><img src="images/08-media-mockery.jpg" alt="Media Mockery"><div class="img-overlay"><div class="img-overlay-title">Media Mockery — Commodification</div><div class="img-overlay-concept">Inspired by Victor Osimhen — Nigerian jersey, a price tag held in the hand.</div></div></div>
       </div>
     </div>
-    <div class="chapter-grid grid-4">
-      <div class="img-card" onclick="openLb(4)">
-        <img src="images/05-ooh-ooh.jpg" alt=""OOH OOH"" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">"OOH OOH" — Monkey Chants</div>
-          <div class="img-overlay-concept">Inspired by Vinícius Júnior — the psychological weight of racialized chants made visible.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(5)">
-        <img src="images/06-why-always-me.jpg" alt=""Why Always Me?"" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">"Why Always Me?"</div>
-          <div class="img-overlay-concept">Inspired by Mario Balotelli — the media wall, the television, one foot raised against the narrative.</div>
-        </div>
-      </div>
-      <div class="img-card landscape" onclick="openLb(6)">
-        <img src="images/07-performance-pressure.jpg" alt="Performance Pressure" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Performance Pressure — After the Miss</div>
-          <div class="img-overlay-concept">Inspired by Rashford, Saka, Sancho — bird's-eye view, England jersey, face covered, grass below.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(7)">
-        <img src="images/08-media-mockery.jpg" alt="Media Mockery" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Media Mockery — Commodification</div>
-          <div class="img-overlay-concept">Inspired by Victor Osimhen — Nigerian jersey, a price tag held in the hand.</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- CHAPTER III -->
-  <div class="chapter" id="chapter-2">
-    <div class="chapter-header">
-      <div class="chapter-num">III</div>
-      <div class="chapter-info">
-        <div class="chapter-sub">Chapter Three — Images 9–14</div>
-        <h2>Impact</h2>
-        <p>What the system produces in the body, mind, spirit, and emotions of a person who survives it. This chapter moves inward — from the visible hostility of the crowd and the media to the psychological emptiness, spiritual anchoring, enforced silence, physical objectification, and the blue quiet of aftermath.</p>
+    <div class="chapter" id="chapter-2">
+      <div class="chapter-header">
+        <div class="chapter-num">III</div>
+        <div class="chapter-info">
+          <div class="chapter-sub">Chapter Three — Images 9–14</div>
+          <h2>Impact</h2>
+          <p>What the system produces in the body, mind, spirit, and emotions of a person who survives it. This chapter moves inward — from the visible hostility of the crowd and media to the psychological emptiness, spiritual anchoring, enforced silence, and the quiet of aftermath.</p>
+        </div>
+      </div>
+      <div class="chapter-grid grid-3">
+        <div class="img-card" onclick="openLb(8)"><img src="images/09-empty-chair.jpg" alt="The Empty Chair"><div class="img-overlay"><div class="img-overlay-title">The Empty Chair</div><div class="img-overlay-concept">Mental toll — the absent patient, the care never given.</div></div></div>
+        <div class="img-card" onclick="openLb(9)"><img src="images/10-faith-as-anchor.jpg" alt="Faith as Anchor"><div class="img-overlay"><div class="img-overlay-title">Faith as Anchor</div><div class="img-overlay-concept">Quran, Bible, prayer beads — devotion that crosses borders.</div></div></div>
+        <div class="img-card" onclick="openLb(10)"><img src="images/11-sealed.jpg" alt="Sealed"><div class="img-overlay"><div class="img-overlay-title">Sealed</div><div class="img-overlay-concept">Tape across the mouth — eyes carry everything the mouth cannot say.</div></div></div>
+        <div class="img-card" onclick="openLb(11)"><img src="images/12-the-instrument.jpg" alt="The Instrument"><div class="img-overlay"><div class="img-overlay-title">The Instrument</div><div class="img-overlay-concept">Skeleton — one half machine, one half human. No person. Only parts.</div></div></div>
+        <div class="img-card" onclick="openLb(12)"><img src="images/13-the-body.jpg" alt="The Body"><div class="img-overlay"><div class="img-overlay-title">The Body</div><div class="img-overlay-concept">A person, under a spotlight, fully present.</div></div></div>
+        <div class="img-card landscape" onclick="openLb(13)"><img src="images/14-blue-hour.jpg" alt="Blue Hour"><div class="img-overlay"><div class="img-overlay-title">Blue Hour</div><div class="img-overlay-concept">A path curves out of frame — hope as direction, not destination.</div></div></div>
       </div>
     </div>
-    <div class="chapter-grid grid-2x3">
-      <div class="img-card" onclick="openLb(8)">
-        <img src="images/09-empty-chair.jpg" alt="The Empty Chair" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">The Empty Chair</div>
-          <div class="img-overlay-concept">Mental toll — the absent patient, the care never given.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(9)">
-        <img src="images/10-faith-as-anchor.jpg" alt="Faith as Anchor" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Faith as Anchor</div>
-          <div class="img-overlay-concept">Quran, Bible, prayer beads — devotion that crosses borders.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(10)">
-        <img src="images/11-sealed.jpg" alt="Sealed" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Sealed</div>
-          <div class="img-overlay-concept">Tape across the mouth — eyes carry everything the mouth cannot say.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(11)">
-        <img src="images/12-the-instrument.jpg" alt="The Instrument" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">The Instrument</div>
-          <div class="img-overlay-concept">Skeleton. Barcode. No person. Only parts.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(12)">
-        <img src="images/13-the-body.jpg" alt="The Body" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">The Body</div>
-          <div class="img-overlay-concept">After the barcode — a spotlight, a field, a person. Fully present.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(13)">
-        <img src="images/14-blue-hour.jpg" alt="Blue Hour" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Blue Hour</div>
-          <div class="img-overlay-concept">A path curves out of frame — hope as direction, not destination.</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- CHAPTER IV -->
-  <div class="chapter" id="chapter-3">
-    <div class="chapter-header">
-      <div class="chapter-num">IV</div>
-      <div class="chapter-info">
-        <div class="chapter-sub">Chapter Four — Images 15–20</div>
-        <h2>Resistance & Change</h2>
-        <p>Knowledge, protest, solidarity, collective refusal, institutional accountability, and the final argument — beneath every visible difference, the substance is the same. This chapter does not resolve the story. It demands something of it.</p>
+    <div class="chapter" id="chapter-3">
+      <div class="chapter-header">
+        <div class="chapter-num">IV</div>
+        <div class="chapter-info">
+          <div class="chapter-sub">Chapter Four — Images 15–20</div>
+          <h2>Resistance & Change</h2>
+          <p>Knowledge, protest, solidarity, collective refusal, institutional accountability, and the final argument — beneath every visible difference, the substance is the same.</p>
+        </div>
+      </div>
+      <div class="chapter-grid grid-3">
+        <div class="img-card" onclick="openLb(14)"><img src="images/15-read-the-room.jpg" alt="Read the Room"><div class="img-overlay"><div class="img-overlay-title">Read the Room</div><div class="img-overlay-concept">Books hold the boots. Knowledge holds the game.</div></div></div>
+        <div class="img-card" onclick="openLb(15)"><img src="images/16-the-protest.jpg" alt="The Protest"><div class="img-overlay"><div class="img-overlay-title">The Protest</div><div class="img-overlay-concept">The body kneels. The shadow stands — fist raised.</div></div></div>
+        <div class="img-card landscape" onclick="openLb(16)"><img src="images/17-hear-no-evil.jpg" alt="Hear No Evil"><div class="img-overlay"><div class="img-overlay-title">Hear No Evil, See No Evil, Speak No Evil</div><div class="img-overlay-concept">Three figures — collective refusal to absorb what the world keeps sending.</div></div></div>
+        <div class="img-card landscape" onclick="openLb(17)"><img src="images/18-why-always-us.jpg" alt="Why Always Us"><div class="img-overlay"><div class="img-overlay-title">Why Always Us?</div><div class="img-overlay-concept">"Why always me?" / "Why always us?" / "Why never them?"</div></div></div>
+        <div class="img-card landscape" onclick="openLb(18)"><img src="images/19-press-conference.jpg" alt="The Press Conference"><div class="img-overlay"><div class="img-overlay-title">The Press Conference</div><div class="img-overlay-concept">The microphone. The placard reads "THEM." The chair is empty.</div></div></div>
+        <div class="img-card" onclick="openLb(19)"><img src="images/20-we-are-all-the-same.jpg" alt="We Are All the Same"><div class="img-overlay"><div class="img-overlay-title">We Are All the Same</div><div class="img-overlay-concept">Two eggs. Two hands. One pan. One light. The most undeniable truth.</div></div></div>
       </div>
     </div>
-    <div class="chapter-grid grid-6">
-      <div class="img-card" onclick="openLb(14)">
-        <img src="images/15-read-the-room.jpg" alt="Read the Room" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Read the Room</div>
-          <div class="img-overlay-concept">Books hold the boots. Knowledge holds the game.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(15)">
-        <img src="images/16-the-protest.jpg" alt="The Protest" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">The Protest</div>
-          <div class="img-overlay-concept">The body kneels. The shadow stands — fist raised.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(16)">
-        <img src="images/17-hear-no-evil.jpg" alt="Hear No Evil" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Hear No Evil, See No Evil, Speak No Evil</div>
-          <div class="img-overlay-concept">Three figures — collective refusal to absorb what the world keeps sending.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(17)">
-        <img src="images/18-why-always-us.jpg" alt="Why Always Us?" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">Why Always Us?</div>
-          <div class="img-overlay-concept">"Why always me?" / "Why always us?" / "Why never them?"</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(18)">
-        <img src="images/19-press-conference.jpg" alt="The Press Conference" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">The Press Conference</div>
-          <div class="img-overlay-concept">The microphone. The placard reads "THEM." The chair is empty.</div>
-        </div>
-      </div>
-      <div class="img-card" onclick="openLb(19)">
-        <img src="images/20-we-are-all-the-same.jpg" alt="We Are All the Same" style="width:100%;height:100%;object-fit:cover;display:block">
-        <div class="img-overlay">
-          <div class="img-overlay-title">We Are All the Same</div>
-          <div class="img-overlay-concept">Two eggs. Two hands. One pan. One light. The most undeniable truth.</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <footer>
-    <div class="footer-copy">© Ahmed Baba Tandia</div>
-    <div class="footer-ig">
-      <a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener">
-        <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @ahmedddd_05
-      </a>
-    </div>
-  </footer>
+    <footer>
+      <div class="footer-copy">© Ahmed Baba Tandia</div>
+      <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
+    </footer>
+  </div>
 </div>
 
-<!-- ══════════════ ABOUT PAGE ══════════════ -->
+<!-- ABOUT -->
 <div id="about" class="page">
-  <div class="about-wrap">
-    <div class="about-portrait">
-      <div class="about-portrait-placeholder">Portrait photograph<br><em>coming soon</em></div>
-    </div>
-    <div class="about-body">
-      <div>
+  <div class="site-wrap">
+    <div class="about-wrap">
+      <div class="about-portrait"><div class="about-portrait-placeholder">Portrait photograph<br><em>coming soon</em></div></div>
+      <div class="about-name-block">
         <div class="about-name">Ahmed Baba Tandia</div>
         <div class="about-role">Visual Artist & Photographer</div>
       </div>
-      <div class="about-bio-section">
-        <h2>Ahmed Baba Tandia</h2>
-        <h3>Biography</h3>
-        <p>Ahmed Baba Tandia was born in January 2005 in Bamako, Mali, where he was raised until the age of thirteen, when he moved to the United States to join his siblings and continue his education. He is currently a rising senior at Whitman College in Walla Walla, Washington, pursuing a Bachelor's degree in Computer Science, with a graduation date set for May 2027.</p>
-        <p>Football has been a constant throughout his life — he played competitively through his senior year of high school, where he was offered a full scholarship to Whitman College. It is through the sport that his relationship to questions of race, belonging, and visibility first formed, long before they became the subject of his photography.</p>
-        <p>Tandia's relationship with photography began informally, during Eid celebrations in high school, where he was always the one behind the camera — playfully competing with his older brother over who could find the best light and the strongest frame. What started as a game became a serious practice when, in the spring semester of his junior year, he enrolled in Intermediate Photography at Whitman College under Professor Robin North.</p>
-        <p>It was during that course — researching notable photographers for a class presentation — that Tandia encountered the work of Omar Victor Diop. Diop's project <em>Diaspora</em>, in which he uses self-portraiture and football references to explore the duality of Black visibility and exclusion, gave Tandia a language for something he had long felt but had not yet known how to express. "I had always wanted to do something," he has said, "but I never knew how."</p>
-        <p>The result was <em>The Long Way In</em> — a 20-image photographic narrative structured in four chapters, tracing the full arc of the African footballer's journey: the hope and sacrifice before departure, the racial hostility of arrival in Western leagues, the psychological and physical toll exacted by that system, and the acts of resistance that refuse to let the story end there. What began as a class project is now the foundation of an ongoing social justice initiative, with ambitions to reach international audiences through exhibition, publication, and fellowship.</p>
-        <p>Tandia's practice draws on the traditions of conceptual still life photography and studio self-portraiture. His influences include Omar Victor Diop and the broader lineage of African photographers who use image-making as a form of testimony. He is based between Walla Walla, Washington and Auburn, Washington.</p>
+      <div class="about-bio-grid">
+        <div class="about-bio-col">
+          <h3>Ahmed Baba Tandia</h3>
+          <span class="lang-label">Biography — English</span>
+          <p>Ahmed Baba Tandia was born in January 2005 in Bamako, Mali, where he was raised until the age of thirteen, when he moved to the United States to join his siblings and continue his education. He is currently a rising senior at Whitman College in Walla Walla, Washington, pursuing a Bachelor's degree in Computer Science, with a graduation date set for May 2027. Alongside his studies, he serves as a Software Engineer Intern at Microsoft — a practice that runs parallel to, and informs, his commitment to using technology and visual art as tools for social change.</p>
+          <p>Football has been a constant throughout his life. He played competitively through his senior year of high school, after which he was offered a full academic scholarship to attend Whitman College to pursue his education. It is through the sport that his relationship to questions of race, belonging, and visibility first formed — long before they became the subject of his photography.</p>
+          <p>Tandia's relationship with photography began informally, during Eid celebrations in high school, where he was always the one behind the camera — playfully competing with his older brother over who could find the best light and the strongest frame. What started as a game became a serious practice when, in the spring semester of his junior year, he enrolled in Intermediate Photography at Whitman College under Professor Robin North.</p>
+          <p>It was during that course — researching notable photographers for a class presentation — that Tandia encountered the work of Omar Victor Diop. Diop's project <em>Diaspora</em>, in which he uses self-portraiture and football references to explore the duality of Black visibility and exclusion, gave Tandia a language for something he had long felt but had not yet known how to express. "I had always wanted to do something," he has said, "but I never knew how."</p>
+          <p>The result was <em>The Long Way In</em> — a 20-image photographic narrative structured in four chapters, tracing the full arc of the African footballer's journey: the hope and sacrifice before departure, the racial hostility of arrival in Western leagues, the psychological and physical toll exacted by that system, and the acts of resistance that refuse to let the story end there. What began as a class project is now the foundation of an ongoing social justice initiative — a new practice Tandia has committed to as a vehicle for fighting racism and cultural injustice through visual storytelling.</p>
+        </div>
+        <div class="about-bio-col">
+          <h3>Ahmed Baba Tandia</h3>
+          <span class="lang-label">Biographie — Français</span>
+          <p>Ahmed Baba Tandia est né en janvier 2005 à Bamako, au Mali, où il a grandi jusqu'à l'âge de treize ans, avant de rejoindre ses frères et sœurs aux États-Unis pour poursuivre ses études. Il est actuellement étudiant en dernière année à Whitman College, à Walla Walla dans l'État de Washington, où il prépare une licence en informatique, avec une date de diplôme prévue en mai 2027. En parallèle de ses études, il exerce en tant qu'ingénieur logiciel stagiaire chez Microsoft — une pratique qui complète et nourrit son engagement à utiliser la technologie et l'art visuel comme outils de changement social.</p>
+          <p>Le football a été une constante tout au long de sa vie. Il a joué de manière compétitive jusqu'en terminale, après quoi il s'est vu offrir une bourse académique complète pour intégrer Whitman College et y poursuivre ses études. C'est à travers ce sport que sa relation aux questions de race, d'appartenance et de visibilité s'est d'abord formée — bien avant qu'elles ne deviennent le sujet de sa photographie.</p>
+          <p>Sa relation avec la photographie a débuté de façon informelle, lors des célébrations de l'Aïd au lycée, où il était toujours celui derrière l'objectif — rivalisant amicalement avec son frère aîné pour trouver la meilleure lumière et le meilleur cadrage. Ce qui avait commencé comme un jeu est devenu une pratique sérieuse lorsque, au semestre de printemps de sa troisième année, il s'est inscrit au cours de photographie intermédiaire à Whitman College, sous la direction du professeur Robin North.</p>
+          <p>C'est durant ce cours que Tandia a découvert l'œuvre d'Omar Victor Diop. Le projet <em>Diaspora</em> de Diop, dans lequel il utilise l'autoportrait et des références au football pour explorer la dualité entre visibilité et exclusion des Noirs, a donné à Tandia un langage pour quelque chose qu'il ressentait depuis longtemps sans savoir comment l'exprimer.</p>
+          <p><em>The Long Way In</em> — un récit photographique de 20 images structuré en quatre chapitres — retrace l'arc complet du parcours du footballeur africain : l'espoir et le sacrifice avant le départ, l'hostilité raciale à l'arrivée dans les ligues occidentales, le tribut psychologique et physique qu'impose ce système, et les actes de résistance qui refusent de laisser l'histoire s'arrêter là. Ce qui a commencé comme un projet de classe est aujourd'hui le fondement d'une initiative de justice sociale — une nouvelle pratique à laquelle Tandia s'est engagé pour lutter contre le racisme et les injustices sociales et culturelles à travers la narration visuelle.</p>
+        </div>
       </div>
     </div>
+    <footer>
+      <div class="footer-copy">© Ahmed Baba Tandia</div>
+      <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
+    </footer>
   </div>
-  <footer>
-    <div class="footer-copy">© Ahmed Baba Tandia</div>
-    <div class="footer-ig">
-      <a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener">
-        <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @ahmedddd_05
-      </a>
-    </div>
-  </footer>
 </div>
 
-<!-- ══════════════ CONTACT PAGE ══════════════ -->
+<!-- CONTACT -->
 <div id="contact" class="page">
-  <div class="contact-wrap">
-
-    <div class="contact-section">
-      <div class="contact-section-label">Studio</div>
-      <h3>Ahmed Baba Tandia</h3>
-      <a href="mailto:tandiahm@gmail.com">tandiahm@gmail.com</a>
-      <a href="tel:+12063835344">206-383-5344</a>
-      <p style="margin-top:0.5rem">Auburn, Washington, United States</p>
-    </div>
-
-    <div class="contact-section">
-      <div class="contact-section-label">General Enquiries</div>
-      <h3>Get in Touch</h3>
-      <p style="margin-bottom:0;color:rgba(240,237,232,0.45);font-size:0.85rem">For exhibition inquiries, fellowship conversations, press, collaborations, or to discuss the work.</p>
-      <div class="contact-form">
-        <div class="form-row"><input type="text" placeholder="Name *"></div>
-        <div class="form-row"><input type="email" placeholder="Email *"></div>
-        <div class="form-row"><input type="text" placeholder="Subject"></div>
-        <div class="form-row"><textarea placeholder="Message"></textarea></div>
-        <button class="form-submit" onclick="handleSubmit()">Send</button>
+  <div class="site-wrap">
+    <div class="contact-wrap">
+      <div class="contact-section">
+        <div class="contact-section-label">Studio</div>
+        <h3>Ahmed Baba Tandia</h3>
+        <a href="mailto:tandiahm@gmail.com">tandiahm@gmail.com</a>
+        <a href="tel:+12063835344">206-383-5344</a>
+        <p style="margin-top:0.35rem">Auburn, Washington — United States</p>
+      </div>
+      <div class="contact-section">
+        <div class="contact-section-label">General Enquiries</div>
+        <h3>Get in Touch</h3>
+        <p style="color:rgba(240,237,232,0.38);font-size:0.82rem;margin-bottom:0">For exhibition inquiries, fellowship conversations, press, collaborations, or to discuss the work.</p>
+        <div class="contact-form">
+          <div class="form-row"><input type="text" placeholder="Name *"></div>
+          <div class="form-row"><input type="email" placeholder="Email *"></div>
+          <div class="form-row"><input type="text" placeholder="Subject"></div>
+          <div class="form-row"><textarea placeholder="Message"></textarea></div>
+          <button class="form-submit">Send</button>
+        </div>
+      </div>
+      <div class="contact-section">
+        <div class="contact-section-label">Follow</div>
+        <a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener">Instagram — @ahmedddd_05</a>
       </div>
     </div>
-
-    <div class="contact-section">
-      <div class="contact-section-label">Follow</div>
-      <a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener">Instagram — @ahmedddd_05</a>
-    </div>
-
+    <footer>
+      <div class="footer-copy">© Ahmed Baba Tandia</div>
+      <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
+    </footer>
   </div>
-  <footer>
-    <div class="footer-copy">© Ahmed Baba Tandia</div>
-    <div class="footer-ig">
-      <a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener">
-        <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @ahmedddd_05
-      </a>
-    </div>
-  </footer>
 </div>
+</div><!-- end mainsite -->
 
 <!-- LIGHTBOX -->
 <div id="lb">
@@ -898,11 +373,7 @@ footer{
     <button class="lb-x" onclick="closeLb()">✕</button>
   </div>
   <div class="lb-body">
-    <div class="lb-img">
-      <div class="lb-img-inner" id="lbImgInner">
-        <div class="lb-img-placeholder" id="lbImgPlaceholder"></div>
-      </div>
-    </div>
+    <div class="lb-img" id="lbImgArea"></div>
     <div class="lb-info">
       <div class="lb-chapter-tag" id="lbChapter"></div>
       <div class="lb-title" id="lbTitle"></div>
@@ -916,48 +387,45 @@ footer{
 </div>
 
 <script>
-// ── PAGE NAVIGATION ──
-function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  const navEl=document.getElementById('nav-'+id);
-  if(navEl)navEl.classList.add('active');
-  window.scrollTo(0,0);
-}
-
-function scrollToChapter(i){
-  setTimeout(()=>{
-    const el=document.getElementById('chapter-'+i);
-    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
-  },100);
-}
-
-// ── IMAGE DATA ──
 const imgs=[
-  {ch:'Chapter I — Between Dreams and Borders',title:'The Journey Ball',concept:'The soccer ball becomes a symbol of hope and escape. Paired with a suitcase and an atlas map showing the African and European continents, it represents how dreams are carried across borders. Football here is not pastime — it is pathway.',visual:'Soccer ball, suitcase, atlas map. Wide still life. The ball positioned as the central object, everything else in relation to it.',src:'images/01-journey-ball.jpg'},
-  {ch:'Chapter I — Between Dreams and Borders',title:'Not Just a Game',concept:'The contrast between entertainment and responsibility. For many players, the sport is tied to family survival and economic necessity — not enjoyment or play.',visual:'Video game controllers, FIFA discs, and a national jersey arranged in deliberate contrast.',src:'images/02-not-just-a-game.jpg'},
-  {ch:'Chapter I — Between Dreams and Borders',title:'Identity on Pause',concept:'The first moment of stillness — the suspended time of waiting for visas, approval, and opportunity. Time freezes while systems decide the fate of people.',visual:'A passport, traditional fabric, and a stopped clock. Close-detail still life.',src:'images/03-identity-on-pause.jpg'},
-  {ch:'Chapter I — Between Dreams and Borders',title:'The Price of Dreams',concept:'Families invest their savings. Education is abandoned. Injuries are ignored. This image asks who truly benefits from these dreams — and who pays the hidden costs.',visual:'Worn boots, money, a family photograph, a school notebook, and a first aid kit.',src:'images/04-price-of-dreams.jpg'},
-  {ch:'Chapter II — Upon Arrival',title:'"OOH OOH" — Monkey Chants / Dehumanization',concept:'To visualize the psychological weight of racialized chants through symbolic objects and spatial tension. Inspired by the documented experiences of Vinícius Júnior.',visual:'Seated on the floor in a closed, vulnerable posture. A stuffed monkey placed beside the figure. Three bananas subtly arranged on the floor. Text on the wall: "OOH OOH," "noise," "not human."',src:'images/05-ooh-ooh.jpg'},
-  {ch:'Chapter II — Upon Arrival',title:'"Why Always Me?" — Public Misunderstanding',concept:'How media constructs and reinforces a singular, often negative identity around Black players. Inspired by Mario Balotelli.',visual:'White shirt printed with "Why always me?". Standing upright, direct gaze. Background filled with printed headlines. Television in frame. One foot resting on the television.',src:'images/06-why-always-me.jpg'},
-  {ch:'Chapter II — Upon Arrival',title:'Performance Pressure — After the Miss',concept:'The moment after failure — where the individual collapses under collective expectation and public scrutiny. Inspired by Rashford, Saka, and Sancho.',visual:'England jersey. Lying on grass, face covered with both hands. Captured from directly above — bird\'s-eye view.',src:''},
-  {ch:'Chapter II — Upon Arrival',title:'Media Mockery — Commodification',concept:'The reduction of athletes to market value — particularly in moments of public ridicule and media distortion. Inspired by Victor Osimhen.',visual:'Nigerian jersey. A visible price tag held in the hand. Direct or slightly detached gaze. Minimal, controlled composition.',src:'images/08-media-mockery.jpg'},
-  {ch:'Chapter III — Impact',title:'The Empty Chair',concept:'The psychological toll of racial abuse is rarely treated or acknowledged. This image visualizes that absence of care — the person who should be receiving help is absent. That absence is the statement.',visual:'A plain chair facing a bare wall. On the wall: a printed illustration of a brain with a needle piercing it, surrounded by social media icons and hate comments. The chair is empty.',src:'images/09-empty-chair.jpg'},
-  {ch:'Chapter III — Impact',title:'Faith as Anchor',concept:'For many African players, faith is not background noise — it is the primary framework through which suffering, displacement, and perseverance are processed.',visual:'A Quran, a Bible, and prayer beads arranged as a still life composition. Objects of devotion that cross borders when everything else is left behind.',src:'images/10-faith-as-anchor.jpg'},
-  {ch:'Chapter III — Impact',title:'Sealed',concept:'The expectation that Black players perform composure — absorbing abuse without visible reaction — is itself a form of violence imposed from outside.',visual:'A close-up portrait, tightly framed on the face. Expression caught between anger and grief. Tape pressed firmly across the mouth. The eyes carry everything.',src:'images/11-sealed.jpg'},
-  {ch:'Chapter III — Impact',title:'The Instrument',concept:'Within the machinery of professional football, the Black player\'s body is assessed, bought, sold, and discarded as a tool of performance. No person. Only parts.',visual:'An anatomical skeleton arranged as a still life on a flat surface. A barcode sticker placed directly onto the skeleton\'s body.',src:''},
-  {ch:'Chapter III — Impact',title:'The Body',concept:'After the barcode — after the clinical reduction — this image answers back. This is what the body actually is: a person, under a spotlight, fully present.',visual:'A standing portrait, the subject centered in the middle of a field. A spotlight isolating the figure. Fans and surroundings blurred into the background.',src:'images/13-the-body.jpg'},
-  {ch:'Chapter III — Impact',title:'Blue Hour',concept:'After documenting what this journey does to a person, this image offers no resolution — but something quieter: the possibility of one. Hope as direction, not destination.',visual:'A blue hour moment just after sunset. Blue-toned sky meeting warm, golden residual light. A path that curves and disappears out of the frame.',src:'images/14-blue-hour.jpg'},
-  {ch:'Chapter IV — Resistance & Change',title:'Read the Room',concept:'True power in this fight does not come from the pitch — it comes from understanding the history, systems, and structures that produced these conditions. Knowledge is the foundation.',visual:'A stack of books — Why I\'m No Longer Talking to White People About Race, How Europe Underdeveloped Africa, The Wretched of the Earth. Worn football boots resting on top.',src:''},
-  {ch:'Chapter IV — Resistance & Change',title:'The Protest',concept:'The act of taking a knee is reclaimed as what it always was: an act of power, not submission.',visual:'A single figure kneeling in studio. Posture strong and deliberate. Directional side lighting casts a sharp shadow on the wall. The shadow stands fully upright, fist raised.',src:'images/16-the-protest.jpg'},
-  {ch:'Chapter IV — Resistance & Change',title:'Hear No Evil, See No Evil, Speak No Evil',concept:'The familiar gesture reframed as collective mental resistance — a refusal to absorb what the world keeps sending.',visual:'Three figures in matching plain white shirts. First covers eyes; second covers ears; third covers mouth. Arranged in a single horizontal line.',src:'images/17-hear-no-evil.jpg'},
-  {ch:'Chapter IV — Resistance & Change',title:'Why Always Us?',concept:'Mario Balotelli\'s question was personal. This image expands it into something systemic — from individual grievance to collective critique.',visual:'Three figures, backs to the camera. Each jersey reads a different phrase: "Why always me?" / "Why always us?" / "Why never them?"',src:''},
-  {ch:'Chapter IV — Resistance & Change',title:'The Press Conference',concept:'Institutions respond to racism with carefully worded, endlessly repeated, and ultimately empty language. This image holds that language accountable.',visual:'A press conference table: microphone, glass of water, sponsored drinks. The placard reads "THE CLUB." The chair behind the table is empty.',src:'images/19-press-conference.jpg'},
-  {ch:'Chapter IV — Resistance & Change',title:'We Are All the Same',concept:'Racism is not natural — it is constructed. Beneath every visible difference, the substance is identical. The project\'s final and simplest truth.',visual:'Two eggs with different colored shells, cracked open into the same pan. Contents indistinguishable. One Black hand and one white hand on either side. Shot from directly above.',src:''},
+  {ch:'Chapter I — Between Dreams and Borders',title:'The Journey Ball',src:'images/01-journey-ball.jpg',concept:'The soccer ball becomes a symbol of hope and escape. Paired with a suitcase and an atlas map showing the African and European continents, it represents how dreams are carried across borders. Football here is not pastime — it is pathway.',visual:'Soccer ball, suitcase, atlas map. Wide still life. The ball positioned as the central object, everything else in relation to it.'},
+  {ch:'Chapter I — Between Dreams and Borders',title:'Not Just a Game',src:'images/02-not-just-a-game.jpg',concept:'The contrast between entertainment and responsibility. For many players, the sport is tied to family survival and economic necessity — not enjoyment or play.',visual:'Video game controllers, FIFA discs, and a national jersey arranged in deliberate contrast.'},
+  {ch:'Chapter I — Between Dreams and Borders',title:'Identity on Pause',src:'images/03-identity-on-pause.jpg',concept:'The first moment of stillness — the suspended time of waiting for visas, approval, and opportunity. Time freezes while systems decide the fate of people.',visual:'A passport, traditional fabric, and a stopped clock. Close-detail still life.'},
+  {ch:'Chapter I — Between Dreams and Borders',title:'The Price of Dreams',src:'images/04-price-of-dreams.jpg',concept:'Families invest their savings. Education is abandoned. Injuries are ignored. This image asks who truly benefits from these dreams — and who pays the hidden costs.',visual:'Worn boots, money, a family photograph, a school notebook, and a first aid kit.'},
+  {ch:'Chapter II — Upon Arrival',title:'"OOH OOH" — Monkey Chants / Dehumanization',src:'images/05-ooh-ooh.jpg',concept:'To visualize the psychological weight of racialized chants through symbolic objects and spatial tension. Inspired by the documented experiences of Vinícius Júnior.',visual:'Seated on the floor in a closed, vulnerable posture. A stuffed monkey placed beside the figure. Three bananas subtly arranged on the floor. Text on the wall: "OOH OOH," "noise," "not human."'},
+  {ch:'Chapter II — Upon Arrival',title:'"Why Always Me?" — Public Misunderstanding',src:'images/06-why-always-me.jpg',concept:'How media constructs and reinforces a singular, often negative identity around Black players. Inspired by Mario Balotelli.',visual:'White shirt printed with "Why always me?". Standing upright, direct gaze. Background filled with printed headlines. Television in frame. One foot resting on the television.'},
+  {ch:'Chapter II — Upon Arrival',title:'Performance Pressure — After the Miss',src:'images/07-performance-pressure.jpg',concept:'The moment after failure — where the individual collapses under collective expectation and public scrutiny. Inspired by Rashford, Saka, and Sancho.',visual:'England jersey. Shot from a ladder directly above the grass. Face covered with both hands. Bird\'s-eye view emphasizes vulnerability and isolation.'},
+  {ch:'Chapter II — Upon Arrival',title:'Media Mockery — Commodification',src:'images/08-media-mockery.jpg',concept:'The reduction of athletes to market value — particularly in moments of public ridicule and media distortion. Inspired by Victor Osimhen.',visual:'Nigerian jersey. A visible price tag held in the hand. Direct or slightly detached gaze. Minimal, controlled composition.'},
+  {ch:'Chapter III — Impact',title:'The Empty Chair',src:'images/09-empty-chair.jpg',concept:'The psychological toll of racial abuse is rarely treated or acknowledged. This image visualizes that absence of care — the person who should be receiving help is absent. That absence is the statement.',visual:'A plain chair facing a bare wall. On the wall: a printed illustration of a brain with a needle piercing it, surrounded by social media icons and hate comments. The chair is empty.'},
+  {ch:'Chapter III — Impact',title:'Faith as Anchor',src:'images/10-faith-as-anchor.jpg',concept:'For many African players, faith is not background noise — it is the primary framework through which suffering, displacement, and perseverance are processed.',visual:'A Quran, a Bible, and prayer beads arranged as a still life composition. Objects of devotion that cross borders when everything else is left behind.'},
+  {ch:'Chapter III — Impact',title:'Sealed',src:'images/11-sealed.jpg',concept:'The expectation that Black players perform composure — absorbing abuse without visible reaction — is itself a form of violence imposed from outside.',visual:'A close-up portrait, tightly framed on the face. Expression caught between anger and grief. Tape pressed firmly across the mouth. The eyes carry everything.'},
+  {ch:'Chapter III — Impact',title:'The Instrument',src:'images/12-the-instrument.jpg',concept:'Within the machinery of professional football, the Black player\'s body is assessed, bought, sold, and discarded as a tool of performance. No person. Only parts.',visual:'An anatomical skeleton — one half machine, one half human — arranged as a still life on a flat surface.'},
+  {ch:'Chapter III — Impact',title:'The Body',src:'images/13-the-body.jpg',concept:'This image answers back. A person, under a spotlight, fully present. This is what the body actually is.',visual:'A standing portrait, the subject centered in the frame. A spotlight isolating the figure. Surroundings fall away into darkness.'},
+  {ch:'Chapter III — Impact',title:'Blue Hour',src:'images/14-blue-hour.jpg',concept:'After documenting what this journey does to a person, this image offers no resolution — but something quieter: the possibility of one. Hope as direction, not destination.',visual:'A blue hour moment just after sunset. Blue-toned sky meeting warm, golden residual light. A path that curves and disappears out of the frame.'},
+  {ch:'Chapter IV — Resistance & Change',title:'Read the Room',src:'images/15-read-the-room.jpg',concept:'True power in this fight does not come from the pitch — it comes from understanding the history, systems, and structures that produced these conditions. Knowledge is the foundation.',visual:'A stack of books — Why I\'m No Longer Talking to White People About Race, How Europe Underdeveloped Africa, The Wretched of the Earth. Worn football boots resting on top.'},
+  {ch:'Chapter IV — Resistance & Change',title:'The Protest',src:'images/16-the-protest.jpg',concept:'The act of taking a knee is reclaimed as what it always was: an act of power, not submission.',visual:'A single figure kneeling in studio. Posture strong and deliberate. Directional side lighting casts a sharp shadow on the wall. The shadow stands fully upright, fist raised.'},
+  {ch:'Chapter IV — Resistance & Change',title:'Hear No Evil, See No Evil, Speak No Evil',src:'images/17-hear-no-evil.jpg',concept:'The familiar gesture reframed as collective mental resistance — a refusal to absorb what the world keeps sending.',visual:'Three figures in matching plain white shirts. First covers eyes; second covers ears; third covers mouth. Arranged in a single horizontal line.'},
+  {ch:'Chapter IV — Resistance & Change',title:'Why Always Us?',src:'images/18-why-always-us.jpg',concept:'Mario Balotelli\'s question was personal. This image expands it into something systemic — from individual grievance to collective critique.',visual:'Three figures, backs to the camera. Each jersey reads a different phrase: "Why always me?" / "Why always us?" / "Why never them?"'},
+  {ch:'Chapter IV — Resistance & Change',title:'The Press Conference',src:'images/19-press-conference.jpg',concept:'Institutions respond to racism with carefully worded, endlessly repeated, and ultimately empty language. This image holds that language accountable.',visual:'A press conference table: microphone, glass of water, sponsored drinks. The placard reads "THE CLUB." The chair behind the table is empty.'},
+  {ch:'Chapter IV — Resistance & Change',title:'We Are All the Same',src:'images/20-we-are-all-the-same.jpg',concept:'Racism is not natural — it is constructed. Beneath every visible difference, the substance is identical. The project\'s final and simplest truth.',visual:'Two eggs with different colored shells, cracked open into the same pan. Contents indistinguishable. One Black hand and one white hand on either side. Shot from directly above.'},
 ];
 
 let lbIdx=0;
+
+function enterSite(){
+  document.getElementById('splash').style.display='none';
+  document.getElementById('mainsite').style.display='block';
+}
+
+function showPage(id){
+  document.querySelectorAll('#mainsite .page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const map={home:'nav-home',about:'nav-about',contact:'nav-contact'};
+  if(map[id]){const el=document.getElementById(map[id]);if(el)el.classList.add('active');}
+  window.scrollTo(0,0);
+}
+
 function openLb(i){
   lbIdx=i;updateLb();
   document.getElementById('lb').classList.add('open');
@@ -975,12 +443,7 @@ function updateLb(){
   document.getElementById('lbTitle').textContent=img.title;
   document.getElementById('lbConcept').textContent=img.concept;
   document.getElementById('lbVisual').textContent=img.visual;
-  const inner=document.getElementById('lbImgInner');
-  if(img.src){
-    inner.innerHTML='<img src="'+img.src+'" alt="'+img.title+'">';
-  } else {
-    inner.innerHTML='<div class="lb-img-placeholder">'+img.title+'<br><br><em style="font-size:0.75rem;color:rgba(200,169,110,0.15)">Upload your photograph here</em></div>';
-  }
+  document.getElementById('lbImgArea').innerHTML='<img src="'+img.src+'" alt="'+img.title+'">';
 }
 document.addEventListener('keydown',e=>{
   if(document.getElementById('lb').classList.contains('open')){
@@ -989,12 +452,6 @@ document.addEventListener('keydown',e=>{
     if(e.key==='Escape')closeLb();
   }
 });
-
-function handleSubmit(){
-  alert('Thank you — your message has been sent.');
-}
-
-// Handle nav-logo click to go home
 document.querySelector('.nav-logo a').addEventListener('click',()=>showPage('home'));
 </script>
 </body>
