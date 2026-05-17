@@ -149,6 +149,27 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 /* IG SVG path shared */
 .ig-path{fill:currentColor}
 
+/* ── TRANSLATE ── */
+.nav-translate-wrap{position:relative}
+.nav-translate-btn{display:flex;align-items:center;cursor:pointer}
+/* Hide Google translate top bar */
+.goog-te-banner-frame{display:none!important}
+body{top:0!important}
+.goog-te-gadget{font-size:0!important;color:transparent!important}
+.goog-te-gadget select{
+  background:transparent;
+  border:0.5px solid rgba(240,237,232,0.2);
+  color:var(--white);
+  font-family:var(--sans);
+  font-size:0.65rem;
+  letter-spacing:0.1em;
+  padding:0.4rem 0.6rem;
+  cursor:pointer;
+  outline:none;
+  width:100%;
+}
+.goog-te-gadget select option{background:var(--bg2);color:var(--white)}
+
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   nav{padding:0 1.2rem}
@@ -173,6 +194,17 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
   .splash-name{font-size:clamp(2.5rem,15vw,5rem)}
 }
 </style>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'fr,es,pt,ar,sw,de,it,nl,ru,zh-CN',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 
@@ -187,7 +219,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 
 <!-- MAIN SITE -->
 <div id="mainsite" style="display:none">
-<nav>
+<nav style="display:none">
   <div class="nav-logo"><a onclick="showPage('home')">AHMED BABA TANDIA</a></div>
   <ul class="nav-links">
     <li class="nav-dropdown-wrap">
@@ -200,6 +232,15 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
     <li><a id="nav-about" onclick="showPage('about')">About</a></li>
     <li><div class="nav-sep"></div></li>
     <li><a id="nav-contact" onclick="showPage('contact')">Contact</a></li>
+    <li><div class="nav-sep"></div></li>
+    <li class="nav-translate-wrap">
+      <a class="nav-translate-btn" onclick="toggleTranslate()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;margin-right:0.3rem"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Language
+      </a>
+      <div id="translate-dropdown" style="display:none;position:absolute;top:calc(100% + 0.5rem);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid rgba(240,237,232,0.08);min-width:180px;padding:0.8rem 1.2rem;z-index:300;">
+        <div id="google_translate_element"></div>
+      </div>
+    </li>
   </ul>
 </nav>
 
@@ -441,6 +482,7 @@ let lbIdx=0;
 function enterSite(){
   document.getElementById('splash').style.display='none';
   document.getElementById('mainsite').style.display='block';
+  document.querySelector('nav').style.display='block';
 }
 
 function showPage(id){
@@ -479,6 +521,19 @@ document.addEventListener('keydown',e=>{
   }
 });
 document.querySelector('.nav-logo a').addEventListener('click',()=>showPage('home'));
+
+function toggleTranslate(){
+  const dd = document.getElementById('translate-dropdown');
+  dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+}
+// Close translate dropdown when clicking outside
+document.addEventListener('click', function(e){
+  const wrap = document.querySelector('.nav-translate-wrap');
+  if(wrap && !wrap.contains(e.target)){
+    const dd = document.getElementById('translate-dropdown');
+    if(dd) dd.style.display = 'none';
+  }
+});
 </script>
 </body>
 </html>
