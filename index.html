@@ -149,26 +149,105 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 /* IG SVG path shared */
 .ig-path{fill:currentColor}
 
-/* ── TRANSLATE ── */
-.nav-translate-wrap{position:relative}
-.nav-translate-btn{display:flex;align-items:center;cursor:pointer}
-/* Hide Google translate top bar */
-.goog-te-banner-frame{display:none!important}
-body{top:0!important}
-.goog-te-gadget{font-size:0!important;color:transparent!important}
-.goog-te-gadget select{
-  background:transparent;
-  border:0.5px solid rgba(240,237,232,0.2);
-  color:var(--white);
-  font-family:var(--sans);
-  font-size:0.65rem;
-  letter-spacing:0.1em;
-  padding:0.4rem 0.6rem;
-  cursor:pointer;
-  outline:none;
-  width:100%;
+
+/* ── STATEMENTS / VISION NAV ── */
+.nav-lang-wrap{position:relative}
+.nav-lang-btn{cursor:pointer;display:flex;align-items:center;gap:0.4rem;color:var(--mid);font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:color 0.2s}
+.nav-lang-btn:hover{color:var(--gold)}
+.lang-dropdown{
+  display:none;position:absolute;
+  top:calc(100% + 0.3rem);left:50%;transform:translateX(-50%);
+  background:var(--bg2);border:1px solid rgba(240,237,232,0.08);
+  min-width:140px;padding:0.3rem 0;z-index:300;
 }
-.goog-te-gadget select option{background:var(--bg2);color:var(--white)}
+.lang-dropdown::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
+.nav-lang-wrap:hover .lang-dropdown{display:block}
+.lang-dropdown a{
+  display:block;padding:0.65rem 1.5rem;
+  font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--mid);text-decoration:none;cursor:pointer;
+  transition:color 0.2s,background 0.2s;
+}
+.lang-dropdown a:hover{color:var(--white);background:rgba(255,255,255,0.03)}
+.lang-dropdown a.lang-active{color:var(--gold)}
+
+/* ── IMAGE CAPTIONS ── */
+.img-cell{display:flex;flex-direction:column}
+.img-cell .img-card{flex:1}
+.img-caption{
+  font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(240,237,232,0.3);padding:0.45rem 0.2rem 0.7rem;
+  font-family:var(--sans);font-weight:300;
+}
+
+/* ── PROJECT ONE-LINER ── */
+.proj-oneliner{
+  font-family:var(--serif);font-size:0.92rem;line-height:1.75;
+  color:var(--gold);font-style:italic;
+  max-width:560px;margin:0 auto 1.4rem;
+  padding:0.8rem 0;
+  border-top:0.5px solid rgba(200,169,110,0.2);
+  border-bottom:0.5px solid rgba(200,169,110,0.2);
+}
+
+/* ── STATEMENT PAGE ── */
+#statement .site-wrap{padding-top:105px}
+.statement-wrap{max-width:720px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.statement-wrap h1{
+  font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);
+  font-weight:400;color:var(--white);margin-bottom:0.4rem;line-height:1.2;
+}
+.statement-wrap .st-label{
+  font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2.5rem;display:block;
+}
+.statement-wrap p{
+  font-family:var(--serif);font-size:1.05rem;line-height:1.95;
+  color:rgba(240,237,232,0.72);margin-bottom:1.4rem;
+}
+.statement-wrap p:first-of-type::first-letter{
+  font-size:3.2rem;float:left;line-height:0.75;
+  margin:0.1rem 0.25rem 0 0;color:var(--gold);
+  font-family:var(--serif);font-style:italic;
+}
+
+/* ── VISION PAGE ── */
+#vision .site-wrap{padding-top:105px}
+.vision-wrap{max-width:860px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.vision-hero{margin-bottom:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(240,237,232,0.08)}
+.vision-hero h1{
+  font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:400;color:var(--white);margin-bottom:0.5rem;line-height:1.1;
+}
+.vision-hero .v-label{
+  font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.5rem;display:block;
+}
+.vision-hero p{
+  font-family:var(--serif);font-size:1.05rem;line-height:1.9;
+  color:rgba(240,237,232,0.65);max-width:680px;
+}
+.vision-project{
+  padding:2rem 0;border-bottom:1px solid rgba(240,237,232,0.07);
+  display:grid;grid-template-columns:80px 1fr;gap:2rem;align-items:start;
+}
+.vision-project:last-child{border-bottom:none}
+.vision-num{
+  font-family:var(--serif);font-size:2.8rem;font-weight:400;
+  color:rgba(200,169,110,0.15);line-height:1;
+}
+.vision-project h3{
+  font-family:var(--serif);font-size:1.15rem;font-weight:400;
+  color:var(--white);margin-bottom:0.3rem;
+}
+.vision-project .v-sub{
+  font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.8rem;display:block;
+}
+.vision-project p{
+  font-family:var(--serif);font-size:0.95rem;line-height:1.85;
+  color:rgba(240,237,232,0.6);
+}
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
@@ -194,17 +273,6 @@ body{top:0!important}
   .splash-name{font-size:clamp(2.5rem,15vw,5rem)}
 }
 </style>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'fr,es,pt,ar,sw,de,it,nl,ru,zh-CN',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 
@@ -233,12 +301,24 @@ function googleTranslateElementInit() {
     <li><div class="nav-sep"></div></li>
     <li><a id="nav-contact" onclick="showPage('contact')">Contact</a></li>
     <li><div class="nav-sep"></div></li>
-    <li class="nav-translate-wrap">
-      <a class="nav-translate-btn" onclick="toggleTranslate()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;margin-right:0.3rem"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Language
+    <li class="nav-dropdown-wrap">
+      <a id="nav-statement">Statements</a>
+      <div class="nav-dropdown">
+        <a onclick="showPage('statement')" id="stmt-drop-link">The Long Way In</a>
+      </div>
+    </li>
+    <li><div class="nav-sep"></div></li>
+    <li><a id="nav-vision" onclick="showPage('vision')">Vision</a></li>
+    <li><div class="nav-sep"></div></li>
+    <li class="nav-lang-wrap">
+      <a class="nav-lang-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="current-lang">EN</span>
       </a>
-      <div id="translate-dropdown" style="display:none;position:absolute;top:calc(100% + 0.5rem);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid rgba(240,237,232,0.08);min-width:180px;padding:0.8rem 1.2rem;z-index:300;">
-        <div id="google_translate_element"></div>
+      <div class="lang-dropdown">
+        <a onclick="setLang('en')" id="lang-en" class="lang-active">English</a>
+        <a onclick="setLang('fr')" id="lang-fr">Français</a>
+        <a onclick="setLang('es')" id="lang-es">Español</a>
       </div>
     </li>
   </ul>
@@ -254,7 +334,15 @@ function googleTranslateElementInit() {
         <div class="proj-label-title">Offside</div>
         <span class="proj-label-year">2026</span>
       </div>
-    </div>
+    
+      <div class="recognition-section" style="margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(240,237,232,0.08)">
+        <div class="recog-label" style="font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem">Recognition</div>
+        <div style="margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid rgba(240,237,232,0.06)">
+          <div class="recog-title" style="font-family:var(--serif);font-size:1rem;color:var(--white);margin-bottom:0.25rem">Exhibition — Whitman College, Fouts Center for Visual Arts</div>
+          <div class="recog-date" style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem">Spring 2026 — Walla Walla, Washington</div>
+          <p class="recog-desc" style="font-family:var(--serif);font-size:0.92rem;line-height:1.8;color:rgba(240,237,232,0.55)"><em>Offside</em> was exhibited as a 20-image photographic installation at the Fouts Center for Visual Arts, Whitman College. The work was printed and installed as part of the Intermediate Photography course final exhibition. During the exhibition period, the project received acknowledgment from multiple faculty members and peers who engaged with its social justice intent and visual argument.</p>
+        </div>
+      </div></div>
     <footer>
       <div class="footer-copy">© Ahmed Baba Tandia</div>
       <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
@@ -267,7 +355,8 @@ function googleTranslateElementInit() {
   <div class="site-wrap">
     <div class="project-header">
       <h1><em>Offside</em></h1>
-      <p>A 20-image photographic narrative tracing the full trajectory of African footballers — from the hope and sacrifice of departure, through the racial hostility of arrival, to the psychological toll it exacts, and finally to the acts of resistance that refuse to let the story end there.</p>
+      <p class="proj-oneliner" id="proj-oneliner-el"><em>Offside</em> — in football, the rule that declares a player out of place, ineligible, unwelcome in the space they occupy. Here, a metaphor for what African players are made to feel every time they cross a border.</p>
+      <p id="proj-desc-el">A 20-image photographic narrative tracing the full trajectory of African footballers — from the hope and sacrifice of departure, through the racial hostility of arrival, to the psychological toll it exacts, and finally to the acts of resistance that refuse to let the story end there.</p>
       <div class="project-header-meta">
         <div><span>20</span> Images</div>
         <div><span>4</span> Chapters</div>
@@ -285,10 +374,14 @@ function googleTranslateElementInit() {
         </div>
       </div>
       <div class="chapter-grid grid-4">
-        <div class="img-card" onclick="openLb(0)"><img src="images/01-journey-ball.jpg" alt="The Journey Ball"><div class="img-overlay"><div class="img-overlay-title">The Journey Ball</div><div class="img-overlay-concept">A soccer ball, suitcase, and atlas map — the dream carried across borders.</div></div></div>
-        <div class="img-card" onclick="openLb(1)"><img src="images/02-not-just-a-game.jpg" alt="Not Just a Game"><div class="img-overlay"><div class="img-overlay-title">Not Just a Game</div><div class="img-overlay-concept">Play versus survival — the jersey against the controller.</div></div></div>
-        <div class="img-card" onclick="openLb(2)"><img src="images/03-identity-on-pause.jpg" alt="Identity on Pause"><div class="img-overlay"><div class="img-overlay-title">Identity on Pause</div><div class="img-overlay-concept">Passport, fabric, stopped clock — time suspended between worlds.</div></div></div>
-        <div class="img-card" onclick="openLb(3)"><img src="images/04-price-of-dreams.jpg" alt="The Price of Dreams"><div class="img-overlay"><div class="img-overlay-title">The Price of Dreams</div><div class="img-overlay-concept">Boots, money, family photo, schoolbook — who pays the hidden cost?</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(0)"><img src="images/01-journey-ball.jpg" alt="The Journey Ball"><div class="img-overlay"><div class="img-overlay-title">The Journey Ball</div><div class="img-overlay-concept">A soccer ball, suitcase, and atlas map — the dream carried across borders.</div></div>
+        <div class="img-caption" data-idx="0">The Journey Ball</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(1)"><img src="images/02-not-just-a-game.jpg" alt="Not Just a Game"><div class="img-overlay"><div class="img-overlay-title">Not Just a Game</div><div class="img-overlay-concept">Play versus survival — the jersey against the controller.</div></div>
+        <div class="img-caption" data-idx="1">Not Just a Game</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(2)"><img src="images/03-identity-on-pause.jpg" alt="Identity on Pause"><div class="img-overlay"><div class="img-overlay-title">Identity on Pause</div><div class="img-overlay-concept">Passport, fabric, stopped clock — time suspended between worlds.</div></div>
+        <div class="img-caption" data-idx="2">Identity on Pause</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(3)"><img src="images/04-price-of-dreams.jpg" alt="The Price of Dreams"><div class="img-overlay"><div class="img-overlay-title">The Price of Dreams</div><div class="img-overlay-concept">Boots, money, family photo, schoolbook — who pays the hidden cost?</div></div>
+        <div class="img-caption" data-idx="3">The Price of Dreams</div></div></div>
       </div>
     </div>
 
@@ -302,10 +395,14 @@ function googleTranslateElementInit() {
         </div>
       </div>
       <div class="chapter-grid grid-4">
-        <div class="img-card" onclick="openLb(4)"><img src="images/05-ooh-ooh.jpg" alt="OOH OOH"><div class="img-overlay"><div class="img-overlay-title">"OOH OOH" — Monkey Chants</div><div class="img-overlay-concept">Inspired by Vinícius Júnior — the weight of racialized chants made visible.</div></div></div>
-        <div class="img-card" onclick="openLb(5)"><img src="images/06-why-always-me.jpg" alt="Why Always Me"><div class="img-overlay"><div class="img-overlay-title">"Why Always Me?"</div><div class="img-overlay-concept">Inspired by Mario Balotelli — the media wall, one foot raised against the narrative.</div></div></div>
-        <div class="img-card landscape" onclick="openLb(6)"><img src="images/07-performance-pressure.jpg" alt="Performance Pressure"><div class="img-overlay"><div class="img-overlay-title">Performance Pressure — After the Miss</div><div class="img-overlay-concept">Inspired by Rashford, Saka, Sancho — bird's-eye view, England jersey, face covered.</div></div></div>
-        <div class="img-card" onclick="openLb(7)"><img src="images/08-media-mockery.jpg" alt="Media Mockery"><div class="img-overlay"><div class="img-overlay-title">Media Mockery — Commodification</div><div class="img-overlay-concept">Inspired by Victor Osimhen — Nigerian jersey, a price tag held in the hand.</div></div></div>
+        <div class="img-card" onclick="openLb(4)"><img src="images/05-ooh-ooh.jpg" alt="OOH OOH"><div class="img-overlay"><div class="img-overlay-title">"OOH OOH" — Monkey Chants</div><div class="img-overlay-concept">Inspired by Vinícius Júnior — the weight of racialized chants made visible.</div></div>
+        <div class="img-caption" data-idx="4">"OOH OOH" — Monkey Chants</div></div>
+        <div class="img-card" onclick="openLb(5)"><img src="images/06-why-always-me.jpg" alt="Why Always Me"><div class="img-overlay"><div class="img-overlay-title">"Why Always Me?"</div><div class="img-overlay-concept">Inspired by Mario Balotelli — the media wall, one foot raised against the narrative.</div></div>
+        <div class="img-caption" data-idx="5">"Why Always Me?"</div></div>
+        <div class="img-cell"><div class="img-card landscape" onclick="openLb(6)"><img src="images/07-performance-pressure.jpg" alt="Performance Pressure"><div class="img-overlay"><div class="img-overlay-title">Performance Pressure — After the Miss</div><div class="img-overlay-concept">Inspired by Rashford, Saka, Sancho — bird's-eye view, England jersey, face covered.</div></div>
+        <div class="img-caption" data-idx="6">Performance Pressure</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(7)"><img src="images/08-media-mockery.jpg" alt="Media Mockery"><div class="img-overlay"><div class="img-overlay-title">Media Mockery — Commodification</div><div class="img-overlay-concept">Inspired by Victor Osimhen — Nigerian jersey, a price tag held in the hand.</div></div>
+        <div class="img-caption" data-idx="7">Media Mockery</div></div></div>
       </div>
     </div>
 
@@ -319,12 +416,18 @@ function googleTranslateElementInit() {
         </div>
       </div>
       <div class="chapter-grid grid-3">
-        <div class="img-card" onclick="openLb(8)"><img src="images/09-empty-chair.jpg" alt="The Empty Chair"><div class="img-overlay"><div class="img-overlay-title">The Empty Chair</div><div class="img-overlay-concept">Mental toll — the absent patient, the care never given.</div></div></div>
-        <div class="img-card" onclick="openLb(9)"><img src="images/10-faith-as-anchor.jpg" alt="Faith as Anchor"><div class="img-overlay"><div class="img-overlay-title">Faith as Anchor</div><div class="img-overlay-concept">Quran, Bible, prayer beads — devotion that crosses borders.</div></div></div>
-        <div class="img-card" onclick="openLb(10)"><img src="images/11-sealed.jpg" alt="Sealed"><div class="img-overlay"><div class="img-overlay-title">Sealed</div><div class="img-overlay-concept">Tape across the mouth — eyes carry everything the mouth cannot say.</div></div></div>
-        <div class="img-card" onclick="openLb(11)"><img src="images/12-the-instrument.jpg" alt="The Instrument"><div class="img-overlay"><div class="img-overlay-title">The Instrument</div><div class="img-overlay-concept">Skeleton — one half machine, one half human. No person. Only parts.</div></div></div>
-        <div class="img-card" onclick="openLb(12)"><img src="images/13-the-body.jpg" alt="The Body"><div class="img-overlay"><div class="img-overlay-title">The Body</div><div class="img-overlay-concept">A person, under a spotlight, fully present.</div></div></div>
-        <div class="img-card landscape" onclick="openLb(13)"><img src="images/14-blue-hour.jpg" alt="Blue Hour"><div class="img-overlay"><div class="img-overlay-title">Blue Hour</div><div class="img-overlay-concept">A path curves out of frame — hope as direction, not destination.</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(8)"><img src="images/09-empty-chair.jpg" alt="The Empty Chair"><div class="img-overlay"><div class="img-overlay-title">The Empty Chair</div><div class="img-overlay-concept">Mental toll — the absent patient, the care never given.</div></div>
+        <div class="img-caption" data-idx="8">The Empty Chair</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(9)"><img src="images/10-faith-as-anchor.jpg" alt="Faith as Anchor"><div class="img-overlay"><div class="img-overlay-title">Faith as Anchor</div><div class="img-overlay-concept">Quran, Bible, prayer beads — devotion that crosses borders.</div></div>
+        <div class="img-caption" data-idx="9">Faith as Anchor</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(10)"><img src="images/11-sealed.jpg" alt="Sealed"><div class="img-overlay"><div class="img-overlay-title">Sealed</div><div class="img-overlay-concept">Tape across the mouth — eyes carry everything the mouth cannot say.</div></div>
+        <div class="img-caption" data-idx="10">Sealed</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(11)"><img src="images/12-the-instrument.jpg" alt="The Instrument"><div class="img-overlay"><div class="img-overlay-title">The Instrument</div><div class="img-overlay-concept">Skeleton — one half machine, one half human. No person. Only parts.</div></div>
+        <div class="img-caption" data-idx="11">The Instrument</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(12)"><img src="images/13-the-body.jpg" alt="The Body"><div class="img-overlay"><div class="img-overlay-title">The Body</div><div class="img-overlay-concept">A person, under a spotlight, fully present.</div></div>
+        <div class="img-caption" data-idx="12">The Body</div></div></div>
+        <div class="img-cell"><div class="img-card landscape" onclick="openLb(13)"><img src="images/14-blue-hour.jpg" alt="Blue Hour"><div class="img-overlay"><div class="img-overlay-title">Blue Hour</div><div class="img-overlay-concept">A path curves out of frame — hope as direction, not destination.</div></div>
+        <div class="img-caption" data-idx="13">Blue Hour</div></div></div>
       </div>
     </div>
 
@@ -338,12 +441,18 @@ function googleTranslateElementInit() {
         </div>
       </div>
       <div class="chapter-grid grid-3">
-        <div class="img-card" onclick="openLb(14)"><img src="images/15-read-the-room.jpg" alt="Read the Room"><div class="img-overlay"><div class="img-overlay-title">Read the Room</div><div class="img-overlay-concept">Books hold the boots. Knowledge holds the game.</div></div></div>
-        <div class="img-card" onclick="openLb(15)"><img src="images/16-the-protest.jpg" alt="The Protest"><div class="img-overlay"><div class="img-overlay-title">The Protest</div><div class="img-overlay-concept">The body kneels. The shadow stands — fist raised.</div></div></div>
-        <div class="img-card landscape" onclick="openLb(16)"><img src="images/17-hear-no-evil.jpg" alt="Hear No Evil"><div class="img-overlay"><div class="img-overlay-title">Hear No Evil, See No Evil, Speak No Evil</div><div class="img-overlay-concept">Three figures — collective refusal to absorb what the world keeps sending.</div></div></div>
-        <div class="img-card landscape" onclick="openLb(17)"><img src="images/18-why-always-us.jpg" alt="Why Always Us"><div class="img-overlay"><div class="img-overlay-title">Why Always Us?</div><div class="img-overlay-concept">"Why always me?" / "Why always us?" / "Why never them?"</div></div></div>
-        <div class="img-card landscape" onclick="openLb(18)"><img src="images/19-press-conference.jpg" alt="The Press Conference"><div class="img-overlay"><div class="img-overlay-title">The Press Conference</div><div class="img-overlay-concept">The microphone. The placard reads "THEM." The chair is empty.</div></div></div>
-        <div class="img-card" onclick="openLb(19)"><img src="images/20-we-are-all-the-same.jpg" alt="We Are All the Same"><div class="img-overlay"><div class="img-overlay-title">We Are All the Same</div><div class="img-overlay-concept">Two eggs. Two hands. One pan. One light. The most undeniable truth.</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(14)"><img src="images/15-read-the-room.jpg" alt="Read the Room"><div class="img-overlay"><div class="img-overlay-title">Read the Room</div><div class="img-overlay-concept">Books hold the boots. Knowledge holds the game.</div></div>
+        <div class="img-caption" data-idx="14">Read the Room</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(15)"><img src="images/16-the-protest.jpg" alt="The Protest"><div class="img-overlay"><div class="img-overlay-title">The Protest</div><div class="img-overlay-concept">The body kneels. The shadow stands — fist raised.</div></div>
+        <div class="img-caption" data-idx="15">The Protest</div></div></div>
+        <div class="img-card landscape" onclick="openLb(16)"><img src="images/17-hear-no-evil.jpg" alt="Hear No Evil"><div class="img-overlay"><div class="img-overlay-title">Hear No Evil, See No Evil, Speak No Evil</div><div class="img-overlay-concept">Three figures — collective refusal to absorb what the world keeps sending.</div></div>
+        <div class="img-caption" data-idx="16">Hear No Evil, See No Evil, Speak No Evil</div></div>
+        <div class="img-card landscape" onclick="openLb(17)"><img src="images/18-why-always-us.jpg" alt="Why Always Us"><div class="img-overlay"><div class="img-overlay-title">Why Always Us?</div><div class="img-overlay-concept">"Why always me?" / "Why always us?" / "Why never them?"</div></div>
+        <div class="img-caption" data-idx="17">Why Always Us?</div></div>
+        <div class="img-cell"><div class="img-card landscape" onclick="openLb(18)"><img src="images/19-press-conference.jpg" alt="The Press Conference"><div class="img-overlay"><div class="img-overlay-title">The Press Conference</div><div class="img-overlay-concept">The microphone. The placard reads "THEM." The chair is empty.</div></div>
+        <div class="img-caption" data-idx="18">The Press Conference</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(19)"><img src="images/20-we-are-all-the-same.jpg" alt="We Are All the Same"><div class="img-overlay"><div class="img-overlay-title">We Are All the Same</div><div class="img-overlay-concept">Two eggs. Two hands. One pan. One light. The most undeniable truth.</div></div>
+        <div class="img-caption" data-idx="19">We Are All the Same</div></div></div>
       </div>
     </div>
 
@@ -408,17 +517,85 @@ function googleTranslateElementInit() {
         <div class="contact-section-label">General Enquiries</div>
         <h3>Get in Touch</h3>
         <p style="color:rgba(240,237,232,0.38);font-size:0.82rem;margin-bottom:0">For exhibition inquiries, press, collaborations, or to discuss the work.</p>
-        <div class="contact-form">
-          <div class="form-row"><input type="text" placeholder="Name *"></div>
-          <div class="form-row"><input type="email" placeholder="Email *"></div>
-          <div class="form-row"><input type="text" placeholder="Subject"></div>
-          <div class="form-row"><textarea placeholder="Message"></textarea></div>
-          <button class="form-submit">Send</button>
-        </div>
+        <form class="contact-form" action="https://formspree.io/f/mzdwpyzr" method="POST">
+          <div class="form-row"><input type="text" name="name" placeholder="Name *" required></div>
+          <div class="form-row"><input type="email" name="email" placeholder="Email *" required></div>
+          <div class="form-row"><input type="text" name="subject" placeholder="Subject"></div>
+          <div class="form-row"><textarea name="message" placeholder="Message"></textarea></div>
+          <button type="submit" class="form-submit">Send</button>
+        </form>
       </div>
       <div class="contact-section">
         <div class="contact-section-label">Follow</div>
         <a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener">Instagram — @ahmedddd_05</a>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-copy">© Ahmed Baba Tandia</div>
+      <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
+    </footer>
+  </div>
+</div>
+
+<!-- STATEMENT PAGE -->
+<div id="statement" class="page">
+  <div class="site-wrap">
+    <div class="statement-wrap">
+      <h1 id="st-title">The Long Way In</h1>
+      <span class="st-label" id="st-label">Artist Statement — Ahmed Baba Tandia — 2026</span>
+      <p id="st-p1">There is a moment, somewhere between the departure and the debut, where the dream becomes a debt. A family has sold what it could. A clock has been stopped. A passport waits in someone else's hands. A ball, worn and scuffed, holds more hope than it was ever designed to carry. This is where my project begins: not on the pitch, not under the stadium lights, but in the quiet, pressurized space of before.</p>
+      <p id="st-p2"><em>Between Dreams and Borders</em> began as a visual inquiry into what African footballers leave behind and what they carry with them. Using still life photography inspired by the work of Omar Victor Diop — who has long used objects and staging to restore dignity and complexity to African subjects — I arranged ordinary things: boots, clocks, money, family photographs. These are not props. They are arguments. They say that for many young players crossing from the African continent into European leagues, football is not a sport. It is a strategy of survival, a collective wager placed by entire families on the body and talent of one person.</p>
+      <p id="st-p3"><em>Upon Arrival</em> continues that story. It asks what happens when the dream lands — not in triumph, but in a system already prepared to use it. Wearing the jerseys of Vinícius Júnior, Balotelli, Rashford, and Osimhen, I place my own body inside the visual language of their documented experiences: the monkey chant and the stuffed animal, the media wall and the price tag, the grass and the covered face. These images do not illustrate those cases. They inhabit them.</p>
+      <p id="st-p4">The third and fourth series extend the narrative inward and then outward. The Impact chapter makes visible what systems produce in the body and mind of a person: the empty chair where treatment should be, the tape across the mouth, the part-human, part-machine skeleton, the path curving into uncertain light. The final chapter refuses to end there. Books hold up boots. A protest gesture with its fist raised while the body kneels. Two cracked eggs in the same pan make the argument that no headline ever could. Racism is constructed. The substance is the same.</p>
+      <p id="st-p5">Twenty images. Four chapters. One continuous story about what it costs to carry a dream across a border — and what it takes to refuse the terms of arrival.</p>
+    </div>
+    <footer>
+      <div class="footer-copy">© Ahmed Baba Tandia</div>
+      <div class="footer-ig"><a href="https://instagram.com/ahmedddd_05" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@ahmedddd_05</a></div>
+    </footer>
+  </div>
+</div>
+
+<!-- VISION PAGE -->
+<div id="vision" class="page">
+  <div class="site-wrap">
+    <div class="vision-wrap">
+      <div class="vision-hero">
+        <span class="v-label" id="v-subtitle">Research Vision & Future Projects</span>
+        <h1 id="v-hero-title">Documenting Injustice.<br>One Story at a Time.</h1>
+        <p id="v-hero-p">This work begins with African footballers, but it does not end there. The camera is a tool for testimony — and testimony is needed wherever systems of power produce silence, suffering, and erasure. What follows is a map of where the work is going: the investigations I am committed to pursuing, the communities I intend to engage, and the stories that the world has not yet been asked to sit with.</p>
+      </div>
+      <div class="vision-project">
+        <div class="vision-num">01</div>
+        <div>
+          <span class="v-sub" id="v1-sub">Expanding Offside — In Development</span>
+          <h3 id="v1-title">The Journey, Documented</h3>
+          <p id="v1-p">The next phase of <em>Offside</em> moves from studio and concept to field and testimony. I plan to travel across West African countries — Mali, Senegal, Ghana, Nigeria — to document the conditions that shape a young player's decision to leave: the academies, the families, the agents, the departure rituals. From there, the work continues in Western Europe — France, Spain, Italy — where I intend to interview professional African footballers who have experienced racial abuse directly, building a photographic and oral archive that grounds the project in documented lived experience rather than representation alone.</p>
+        </div>
+      </div>
+      <div class="vision-project">
+        <div class="vision-num">02</div>
+        <div>
+          <span class="v-sub" id="v2-sub">Future Project — Research Phase</span>
+          <h3 id="v2-title">The Underdeveloped Continent</h3>
+          <p id="v2-p">Inspired by Walter Rodney's foundational text <em>How Europe Underdeveloped Africa</em>, this project will examine how colonial extraction and its aftermath continue to shape everyday African life — in education systems that still teach the histories of colonial powers while erasing African figures like Thomas Sankara and Patrice Lumumba, in economies hollowed out by imperial debt structures, in the lived experience of a generation told their poverty is geographical destiny rather than the direct product of centuries of organized theft.</p>
+        </div>
+      </div>
+      <div class="vision-project">
+        <div class="vision-num">03</div>
+        <div>
+          <span class="v-sub" id="v3-sub">Future Project — Research Phase</span>
+          <h3 id="v3-title">The Silence They Demand</h3>
+          <p id="v3-p">This project will address a specific and devastating form of cultural injustice that persists across African households and communities: the enforced silence placed on survivors of sexual abuse within families, where the preservation of a family name is treated as more important than the safety and dignity of the victim. This work will be built through sustained trust relationships with survivors and advocates, using photography and testimony to name what is systematically unnamed, and to insist that justice cannot coexist with silence.</p>
+        </div>
+      </div>
+      <div class="vision-project">
+        <div class="vision-num">04</div>
+        <div>
+          <span class="v-sub" id="v4-sub">Long-Term Vision</span>
+          <h3 id="v4-title">Beyond Africa — A Global Practice</h3>
+          <p id="v4-p">The injustices I document are not uniquely African — they are expressions of global patterns of power, extraction, and erasure that operate across continents and communities. My long-term practice is committed to expanding beyond the African context into the broader landscape of global social and cultural injustice: education systems that fail children of color worldwide, political corruption that steals futures from those who have the least, and economic structures that ensure poverty is inherited. This is not a single project. It is a lifetime of work — and it begins here.</p>
+        </div>
       </div>
     </div>
     <footer>
@@ -489,7 +666,7 @@ function showPage(id){
   document.querySelectorAll('#mainsite .page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  const map={home:'nav-home',about:'nav-about',contact:'nav-contact'};
+  const map={home:'nav-home',about:'nav-about',contact:'nav-contact',statement:'nav-statement',vision:'nav-vision'};
   if(map[id]){const el=document.getElementById(map[id]);if(el)el.classList.add('active');}
   window.scrollTo(0,0);
 }
@@ -505,7 +682,8 @@ function closeLb(){
 }
 function navLb(d){lbIdx=(lbIdx+d+20)%20;updateLb()}
 function updateLb(){
-  const img=imgs[lbIdx];
+  const _li=(typeof imgsTranslated!=="undefined"&&imgsTranslated[currentLang])||imgs;
+  const img=_li[lbIdx];
   document.getElementById('lbCounter').textContent=(lbIdx+1)+' / 20';
   document.getElementById('lbChapter').textContent=img.ch;
   document.getElementById('lbTitle').textContent=img.title;
@@ -520,7 +698,6 @@ document.addEventListener('keydown',e=>{
     if(e.key==='Escape')closeLb();
   }
 });
-document.querySelector('.nav-logo a').addEventListener('click',()=>showPage('home'));
 
 function toggleTranslate(){
   const dd = document.getElementById('translate-dropdown');
@@ -534,6 +711,204 @@ document.addEventListener('click', function(e){
     if(dd) dd.style.display = 'none';
   }
 });
+
+// ── TRANSLATED IMAGE DATA ──
+const _frImgs=[{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Le Ballon du Voyage","concept":"Le ballon de football devient un symbole d'espoir et d'évasion. Associé à une valise et à une carte atlas montrant les continents africain et européen, il représente comment les rêves sont portés à travers les frontières.","visual":"Ballon de football, valise, carte atlas. Nature morte large."},{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Pas Seulement un Jeu","concept":"Le contraste entre le divertissement et la responsabilité. Pour beaucoup de joueurs, le sport est lié à la survie familiale et à la nécessité économique — pas au plaisir ou au jeu.","visual":"Manettes de jeu vidéo, disques FIFA et un maillot national botswanais arrangés en contraste délibéré."},{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Identité en Pause","concept":"Le premier moment de tranquillité — le temps suspendu d'attente pour les visas, l'approbation et l'opportunité. Le temps se fige tandis que les systèmes décident du sort des gens.","visual":"Un passeport, un tissu traditionnel, des perles de prière et une horloge arrêtée. Nature morte en gros plan."},{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Le Prix des Rêves","concept":"Les familles investissent leurs économies. L'éducation est abandonnée. Les blessures sont ignorées. Cette image demande qui bénéficie vraiment de ces rêves — et qui paie les coûts cachés.","visual":"Bottes usées, argent en différentes devises, une photographie d'un membre de la famille, Long Walk to Freedom de Nelson Mandela et une trousse de premiers secours."},{"ch":"Chapitre II — À l'Arrivée","title":"«OOH OOH» — Chants Raciaux","concept":"Visualiser le poids psychologique des chants raciaux à travers des objets symboliques. Inspiré des expériences documentées de Vinícius Júnior.","visual":"Assis sur le sol dans une posture fermée et vulnérable. Un singe en peluche placé à côté. Deux bananes sur le sol. Texte sur le mur: «OOH OOH», «not human» et des insultes racistes en espagnol."},{"ch":"Chapitre II — À l'Arrivée","title":"«Pourquoi Toujours Moi?»","concept":"Comment les médias construisent et renforcent une identité singulière et souvent négative autour des joueurs noirs. Inspiré de Mario Balotelli.","visual":"Chemise blanche imprimée «Why always me?». Debout, regard direct. Fond rempli de gros titres. Une caméra sur le sol à côté de la télévision. Un pied posé sur la télévision."},{"ch":"Chapitre II — À l'Arrivée","title":"Pression de Performance","concept":"Le moment après l'échec — où l'individu s'effondre sous l'attente collective et le regard public. Inspiré de Rashford, Saka et Sancho.","visual":"Maillot d'Angleterre. Pris depuis une échelle directement au-dessus de l'herbe. Visage couvert d'une main. Vue à vol d'oiseau."},{"ch":"Chapitre II — À l'Arrivée","title":"Moquerie Médiatique","concept":"La réduction des athlètes à leur valeur marchande — particulièrement dans les moments de ridicule public. Inspiré de Victor Osimhen.","visual":"Maillot nigérian. Une étiquette de prix visible tenue dans la main. Regard direct ou légèrement détaché."},{"ch":"Chapitre III — Impact","title":"La Chaise Vide","concept":"Le tribut psychologique des abus raciaux est rarement traité. Cette image visualise cette absence de soins — la personne qui devrait recevoir de l'aide est absente.","visual":"Une chaise simple face à un mur nu. Sur le mur: une illustration d'un cerveau percé par une aiguille contenant des icônes de réseaux sociaux. La chaise est vide."},{"ch":"Chapitre III — Impact","title":"La Foi comme Ancre","concept":"Pour beaucoup de joueurs africains, la foi est le cadre principal à travers lequel la souffrance, le déplacement et la persévérance sont traités.","visual":"Un Coran, une Bible et des perles de prière arrangés en composition de nature morte."},{"ch":"Chapitre III — Impact","title":"Scellé","concept":"L'attente que les joueurs noirs fassent preuve de sang-froid — absorbant les abus sans réaction visible — est elle-même une forme de violence imposée de l'extérieur.","visual":"Un portrait en gros plan sur le visage. Expression entre colère et chagrin. Du ruban adhésif sur la bouche. Les yeux portent tout."},{"ch":"Chapitre III — Impact","title":"L'Instrument","concept":"Dans la machinerie du football professionnel, le corps du joueur noir est évalué, acheté, vendu et mis au rebut comme un outil. Pas de personne. Seulement des pièces.","visual":"Un squelette anatomique — moitié machine, moitié humain — arrangé en nature morte sur une surface plate."},{"ch":"Chapitre III — Impact","title":"Le Corps","concept":"Cette image répond. Une personne, sous un projecteur, pleinement présente. C'est ce que le corps est réellement.","visual":"Un portrait debout, le sujet centré dans le cadre. Un projecteur isolant la figure. L'environnement s'efface dans l'obscurité."},{"ch":"Chapitre III — Impact","title":"Heure Bleue","concept":"Après avoir documenté ce que ce voyage fait à une personne, cette image offre quelque chose de plus calme: la possibilité d'une résolution. L'espoir comme direction, pas comme destination.","visual":"Un moment de l'heure bleue après le coucher du soleil. Un chemin qui courbe et disparaît hors cadre."},{"ch":"Chapitre IV — Résistance & Changement","title":"Lisez la Pièce","concept":"Le vrai pouvoir dans ce combat vient de la compréhension de l'histoire, des systèmes et des structures qui ont produit ces conditions. La connaissance est le fondement.","visual":"Une pile de livres incluant Why I'm No Longer Talking to White People About Race, How Europe Underdeveloped Africa, Long Walk to Freedom, Defining Vision et d'autres — avec des bottes de football usées dessus. Un mini ballon de football à côté."},{"ch":"Chapitre IV — Résistance & Changement","title":"La Protestation","concept":"L'acte de se mettre à genoux est récupéré comme ce qu'il a toujours été: un acte de pouvoir, pas de soumission.","visual":"Une figure en studio, cadrée à partir de la taille vers le haut. Posture forte et délibérée. Regard direct et pacifique. Geste du poing levé Black Lives Matter."},{"ch":"Chapitre IV — Résistance & Changement","title":"Ne Pas Entendre le Mal, Ne Pas Voir le Mal, Ne Pas Dire le Mal","concept":"Le geste familier recadré comme résistance mentale collective — un refus d'absorber ce que le monde continue d'envoyer.","visual":"Trois figures dans différents maillots de football. De gauche à droite: la première couvre ses oreilles; la deuxième couvre sa bouche avec un geste chut; la troisième couvre son visage des deux mains."},{"ch":"Chapitre IV — Résistance & Changement","title":"Pourquoi Toujours Nous?","concept":"La question de Mario Balotelli était personnelle. Cette image l'étend à quelque chose de systémique — d'une plainte individuelle à une critique collective.","visual":"Trois figures regardant directement la caméra avec un regard sérieux, portant des t-shirts blancs unis. De gauche à droite: «Why always me?» / «Why always us?» / «Why never them?»"},{"ch":"Chapitre IV — Résistance & Changement","title":"La Conférence de Presse","concept":"Les institutions répondent au racisme avec un langage soigneusement formulé, infiniment répété et finalement vide. Cette image tient ce langage responsable.","visual":"Une table de conférence de presse: microphone, bouteille d'eau, boissons sponsorisées et un mini ballon de la Ligue des Champions. Le panneau lit «THE CLUB / UEFA / FIFA». La chaise est vide."},{"ch":"Chapitre IV — Résistance & Changement","title":"Nous Sommes Tous les Mêmes","concept":"Le racisme n'est pas naturel — il est construit. Sous chaque différence visible, la substance est identique. La vérité finale et la plus simple du projet.","visual":"Deux œufs aux coquilles de couleurs différentes, cassés dans la même poêle. Contenus impossibles à distinguer. Une main noire et une main blanche de chaque côté. Prise de vue directement de dessus."}];
+const _esImgs=[{"ch":"Capítulo I — Entre Sueños y Fronteras","title":"El Balón del Viaje","concept":"El balón de fútbol se convierte en un símbolo de esperanza y escape. Junto a una maleta y un mapa atlas que muestra los continentes africano y europeo, representa cómo los sueños se llevan a través de las fronteras.","visual":"Balón de fútbol, maleta, mapa atlas. Naturaleza muerta amplia."},{"ch":"Capítulo I — Entre Sueños y Fronteras","title":"No Es Solo un Juego","concept":"El contraste entre entretenimiento y responsabilidad. Para muchos jugadores, el deporte está ligado a la supervivencia familiar y la necesidad económica — no al disfrute o al juego.","visual":"Mandos de videojuego, discos de FIFA y un maillot nacional de Botsuana dispuestos en contraste deliberado."},{"ch":"Capítulo I — Entre Sueños y Fronteras","title":"Identidad en Pausa","concept":"El primer momento de quietud — el tiempo suspendido de espera de visados, aprobación y oportunidad. El tiempo se congela mientras los sistemas deciden el destino de las personas.","visual":"Un pasaporte, tela tradicional, cuentas de oración y un reloj detenido. Naturaleza muerta en detalle."},{"ch":"Capítulo I — Entre Sueños y Fronteras","title":"El Precio de los Sueños","concept":"Las familias invierten sus ahorros. La educación se abandona. Las lesiones se ignoran. Esta imagen pregunta quién se beneficia realmente de estos sueños — y quién paga los costes ocultos.","visual":"Botas desgastadas, dinero en diferentes monedas, una fotografía de un familiar, Long Walk to Freedom de Nelson Mandela y un botiquín de primeros auxilios."},{"ch":"Capítulo II — A la Llegada","title":"«OOH OOH» — Cánticos Racistas","concept":"Visualizar el peso psicológico de los cánticos raciales a través de objetos simbólicos. Inspirado en las experiencias documentadas de Vinícius Júnior.","visual":"Sentado en el suelo en una postura cerrada y vulnerable. Un mono de peluche colocado junto a la figura. Dos plátanos en el suelo. Texto en la pared: «OOH OOH», «not human» e insultos racistas en español."},{"ch":"Capítulo II — A la Llegada","title":"«¿Por Qué Siempre Yo?»","concept":"Cómo los medios construyen y refuerzan una identidad singular, a menudo negativa en torno a los jugadores negros. Inspirado en Mario Balotelli.","visual":"Camiseta blanca impresa con «Why always me?». De pie, mirada directa. Fondo lleno de titulares impresos. Una cámara en el suelo junto al televisor. Un pie apoyado en el televisor."},{"ch":"Capítulo II — A la Llegada","title":"Presión de Rendimiento","concept":"El momento después del fallo — donde el individuo colapsa bajo la expectativa colectiva y el escrutinio público. Inspirado en Rashford, Saka y Sancho.","visual":"Camiseta de Inglaterra. Fotografiado desde una escalera directamente sobre el césped. Cara cubierta con una mano. Vista de pájaro."},{"ch":"Capítulo II — A la Llegada","title":"Burla Mediática","concept":"La reducción de los atletas a su valor de mercado — particularmente en momentos de ridículo público. Inspirado en Victor Osimhen.","visual":"Camiseta nigeriana. Una etiqueta de precio visible sostenida en la mano. Mirada directa o ligeramente distante."},{"ch":"Capítulo III — Impacto","title":"La Silla Vacía","concept":"El coste psicológico del abuso racial rara vez se trata. Esta imagen visualiza esa ausencia de cuidado — la persona que debería estar recibiendo ayuda está ausente.","visual":"Una silla sencilla frente a una pared desnuda. En la pared: una ilustración de un cerebro atravesado por una aguja que contiene iconos de redes sociales. La silla está vacía."},{"ch":"Capítulo III — Impacto","title":"La Fe como Ancla","concept":"Para muchos jugadores africanos, la fe es el marco principal a través del cual se procesan el sufrimiento, el desplazamiento y la perseverancia.","visual":"Un Corán, una Biblia y cuentas de oración dispuestas en composición de naturaleza muerta."},{"ch":"Capítulo III — Impacto","title":"Sellado","concept":"La expectativa de que los jugadores negros muestren compostura — absorbiendo abusos sin reacción visible — es en sí misma una forma de violencia impuesta desde fuera.","visual":"Un retrato en primer plano enmarcado en el rostro. Expresión entre ira y tristeza. Cinta adhesiva sobre la boca. Los ojos llevan todo."},{"ch":"Capítulo III — Impacto","title":"El Instrumento","concept":"Dentro de la maquinaria del fútbol profesional, el cuerpo del jugador negro es evaluado, comprado, vendido y desechado como una herramienta. Sin persona. Solo partes.","visual":"Un esqueleto anatómico — mitad máquina, mitad humano — dispuesto como naturaleza muerta sobre una superficie plana."},{"ch":"Capítulo III — Impacto","title":"El Cuerpo","concept":"Esta imagen responde. Una persona, bajo un foco, completamente presente. Esto es lo que el cuerpo realmente es.","visual":"Un retrato de pie, el sujeto centrado en el encuadre. Un foco aislando la figura. El entorno se desvanece en la oscuridad."},{"ch":"Capítulo III — Impacto","title":"Hora Azul","concept":"Después de documentar lo que este viaje le hace a una persona, esta imagen ofrece algo más tranquilo: la posibilidad de una resolución. La esperanza como dirección, no como destino.","visual":"Un momento de hora azul justo después del atardecer. Un camino que se curva y desaparece fuera del encuadre."},{"ch":"Capítulo IV — Resistencia y Cambio","title":"Leer la Sala","concept":"El verdadero poder en esta lucha viene de entender la historia, los sistemas y las estructuras que produjeron estas condiciones. El conocimiento es el fundamento.","visual":"Una pila de libros incluyendo Why I'm No Longer Talking to White People About Race, How Europe Underdeveloped Africa, Long Walk to Freedom, Defining Vision y otros — con botas de fútbol desgastadas encima. Un mini balón de fútbol junto a la pila."},{"ch":"Capítulo IV — Resistencia y Cambio","title":"La Protesta","concept":"El acto de arrodillarse se recupera como lo que siempre fue: un acto de poder, no de sumisión.","visual":"Una figura en estudio, encuadrada desde la cintura hacia arriba. Postura fuerte y deliberada. Mirada directa y pacífica. Gesto del puño en alto de Black Lives Matter."},{"ch":"Capítulo IV — Resistencia y Cambio","title":"No Escuchar el Mal, No Ver el Mal, No Decir el Mal","concept":"El gesto familiar reenmarcado como resistencia mental colectiva — una negativa a absorber lo que el mundo sigue enviando.","visual":"Tres figuras en diferentes camisetas de fútbol. De izquierda a derecha: la primera cubre sus oídos; la segunda cubre su boca con un gesto de silencio; la tercera cubre su cara con ambas manos."},{"ch":"Capítulo IV — Resistencia y Cambio","title":"¿Por Qué Siempre Nosotros?","concept":"La pregunta de Mario Balotelli era personal. Esta imagen la expande a algo sistémico — de queja individual a crítica colectiva.","visual":"Tres figuras mirando directamente a la cámara con una mirada seria, vistiendo camisetas blancas lisas. De izquierda a derecha: «Why always me?» / «Why always us?» / «Why never them?»"},{"ch":"Capítulo IV — Resistencia y Cambio","title":"La Rueda de Prensa","concept":"Las instituciones responden al racismo con un lenguaje cuidadosamente redactado, repetido infinitamente y en última instancia vacío. Esta imagen hace responsable a ese lenguaje.","visual":"Una mesa de rueda de prensa: micrófono, botella de agua, bebidas patrocinadas y un mini balón de la Champions League. El cartel lee «THE CLUB / UEFA / FIFA». La silla está vacía."},{"ch":"Capítulo IV — Resistencia y Cambio","title":"Todos Somos Iguales","concept":"El racismo no es natural — está construido. Bajo cada diferencia visible, la sustancia es idéntica. La verdad final y más simple del proyecto.","visual":"Dos huevos con cáscaras de diferentes colores, rotos en la misma sartén. Contenidos indistinguibles. Una mano negra y una mano blanca a cada lado. Fotografiado directamente desde arriba."}];
+const imgsTranslated={en:imgs,fr:_frImgs,es:_esImgs};
+
+let currentLang='en';
+
+function setLang(lang){
+  currentLang=lang;
+  document.getElementById('current-lang').textContent=lang.toUpperCase();
+  document.querySelectorAll('.lang-dropdown a').forEach(a=>a.classList.remove('lang-active'));
+  const langEl=document.getElementById('lang-'+lang);
+  if(langEl)langEl.classList.add('lang-active');
+
+  const T={
+    en:{
+      nav_projects:'Projects',nav_about:'About',nav_contact:'Contact',nav_statement:'Statements',nav_vision:'Vision',
+      stmt_drop:'The Long Way In',
+      home_title:'Projects',proj_label:'Offside',proj_year:'2026',
+      proj_oneliner:'\u003Cem\u003EOffside\u003C/em\u003E — in football, the rule that declares a player out of place, ineligible, unwelcome in the space they occupy. Here, a metaphor for what African players are made to feel every time they cross a border.',
+      proj_desc:'A 20-image photographic narrative tracing the full trajectory of African footballers — from the hope and sacrifice of departure, through the racial hostility of arrival, to the psychological toll it exacts, and finally to the acts of resistance that refuse to let the story end there.',
+      proj_meta_img:'Images',proj_meta_ch:'Chapters',
+      ch1_sub:'Chapter One — Images 1–4',ch1_title:'Between Dreams and Borders',ch1_desc:'The world before departure. Through still life compositions of everyday objects — boots, passports, clocks, family photographs — this chapter argues that for many young African players, football is not sport. It is a strategy of survival, a collective wager placed by entire families on the body and talent of one person.',
+      ch2_sub:'Chapter Two — Images 5–8',ch2_title:'Upon Arrival',ch2_desc:'The dream lands — not in triumph, but in a system already prepared to use it. Drawing from the documented experiences of Vinícius Júnior, Mario Balotelli, Marcus Rashford, and Victor Osimhen, this chapter places the artist\'s own body inside the visual language of racial abuse.',
+      ch3_sub:'Chapter Three — Images 9–14',ch3_title:'Impact',ch3_desc:'What the system produces in the body, mind, spirit, and emotions of a person who survives it. This chapter moves inward — from the visible hostility of the crowd and media to the psychological emptiness, spiritual anchoring, enforced silence, and the quiet of aftermath.',
+      ch4_sub:'Chapter Four — Images 15–20',ch4_title:'Resistance & Change',ch4_desc:'Knowledge, protest, solidarity, collective refusal, institutional accountability, and the final argument — beneath every visible difference, the substance is the same.',
+      about_role:'Visual Artist & Photographer',about_lang_en:'Biography — English',about_lang_fr:'Biography — French',
+      recog_label:'Recognition',recog_title:'Exhibition — Whitman College, Fouts Center for Visual Arts',recog_date:'Spring 2026 — Walla Walla, Washington',recog_desc:'was exhibited as a 20-image photographic installation at the Fouts Center for Visual Arts, Whitman College. The work was printed and installed as part of the Intermediate Photography course final exhibition. During the exhibition period, the project received acknowledgment from multiple faculty members and peers who engaged with its social justice intent and visual argument.',
+      contact_studio:'Studio',contact_enq:'General Enquiries',contact_enq_title:'Get in Touch',contact_enq_desc:'For exhibition inquiries, press, collaborations, or to discuss the work.',contact_follow:'Follow',
+      form_name:'Name *',form_email:'Email *',form_subject:'Subject',form_msg:'Message',form_send:'Send',
+      splash_enter:'Click to enter',
+      st_title:'The Long Way In',st_label:'Artist Statement — Ahmed Baba Tandia — 2026',
+      st_p1:'There is a moment, somewhere between the departure and the debut, where the dream becomes a debt. A family has sold what it could. A clock has been stopped. A passport waits in someone else\'s hands. A ball, worn and scuffed, holds more hope than it was ever designed to carry. This is where my project begins: not on the pitch, not under the stadium lights, but in the quiet, pressurized space of before.',
+      st_p2:'Between Dreams and Borders began as a visual inquiry into what African footballers leave behind and what they carry with them. Using still life photography inspired by the work of Omar Victor Diop — who has long used objects and staging to restore dignity and complexity to African subjects — I arranged ordinary things: boots, clocks, money, family photographs. These are not props. They are arguments. They say that for many young players crossing from the African continent into European leagues, football is not a sport. It is a strategy of survival, a collective wager placed by entire families on the body and talent of one person.',
+      st_p3:'Upon Arrival continues that story. It asks what happens when the dream lands — not in triumph, but in a system already prepared to use it. Wearing the jerseys of Vinícius Júnior, Balotelli, Rashford, and Osimhen, I place my own body inside the visual language of their documented experiences: the monkey chant and the stuffed animal, the media wall and the price tag, the grass and the covered face. These images do not illustrate those cases. They inhabit them.',
+      st_p4:'The third and fourth series extend the narrative inward and then outward. The Impact chapter makes visible what systems produce in the body and mind of a person: the empty chair where treatment should be, the tape across the mouth, the part-human, part-machine skeleton, the path curving into uncertain light. The final chapter refuses to end there. Books hold up boots. A protest gesture with its fist raised while the body kneels. Two cracked eggs in the same pan make the argument that no headline ever could. Racism is constructed. The substance is the same.',
+      st_p5:'Twenty images. Four chapters. One continuous story about what it costs to carry a dream across a border — and what it takes to refuse the terms of arrival.',
+      v_subtitle:'Research Vision & Future Projects',v_hero_title:'Documenting Injustice.\u003Cbr\u003EOne Story at a Time.',
+      v_hero_p:'This work begins with African footballers, but it does not end there. The camera is a tool for testimony — and testimony is needed wherever systems of power produce silence, suffering, and erasure.',
+      v1_sub:'Expanding Offside — In Development',v1_title:'The Journey, Documented',v1_p:'The next phase of Offside moves from studio and concept to field and testimony. I plan to travel across West African countries — Mali, Senegal, Ghana, Nigeria — to document the conditions that shape a young player\'s decision to leave. From there, the work continues in Western Europe — France, Spain, Italy — where I intend to interview professional African footballers who have experienced racial abuse directly.',
+      v2_sub:'Future Project — Research Phase',v2_title:'The Underdeveloped Continent',v2_p:'Inspired by Walter Rodney\'s foundational text How Europe Underdeveloped Africa, this project will examine how colonial extraction and its aftermath continue to shape everyday African life — in education systems that still teach the histories of colonial powers while erasing African figures like Thomas Sankara and Patrice Lumumba.',
+      v3_sub:'Future Project — Research Phase',v3_title:'The Silence They Demand',v3_p:'This project will address a specific and devastating form of cultural injustice that persists across African households: the enforced silence placed on survivors of sexual abuse within families, where the preservation of a family name is treated as more important than the safety and dignity of the victim.',
+      v4_sub:'Long-Term Vision',v4_title:'Beyond Africa — A Global Practice',v4_p:'The injustices I document are not uniquely African — they are expressions of global patterns of power, extraction, and erasure that operate across continents and communities. My long-term practice is committed to expanding beyond the African context. This is not a single project. It is a lifetime of work — and it begins here.'
+    },
+    fr:{
+      nav_projects:'Projets',nav_about:'À Propos',nav_contact:'Contact',nav_statement:'Déclarations',nav_vision:'Vision',
+      stmt_drop:'Le Long Chemin',
+      home_title:'Projets',proj_label:'Hors-Jeu',proj_year:'2026',
+      proj_oneliner:'\u003Cem\u003EHors-Jeu\u003C/em\u003E — au football, la règle qui déclare un joueur hors position, inéligible, indésirable dans l\'espace qu\'il occupe. Ici, une métaphore de ce que les joueurs africains sont amenés à ressentir chaque fois qu\'ils franchissent une frontière.',
+      proj_desc:'Un récit photographique en 20 images retraçant le parcours complet des footballeurs africains — de l\'espoir et du sacrifice du départ, en passant par l\'hostilité raciale de l\'arrivée, jusqu\'au tribut psychologique qu\'elle impose, et enfin aux actes de résistance qui refusent que l\'histoire s\'arrête là.',
+      proj_meta_img:'Images',proj_meta_ch:'Chapitres',
+      ch1_sub:'Chapitre Un — Images 1–4',ch1_title:'Entre Rêves et Frontières',ch1_desc:'Le monde avant le départ. À travers des compositions de nature morte d\'objets du quotidien — bottes, passeports, horloges, photographies de famille — ce chapitre soutient que pour de nombreux jeunes joueurs africains, le football n\'est pas un sport. C\'est une stratégie de survie, un pari collectif placé par des familles entières sur le corps et le talent d\'une seule personne.',
+      ch2_sub:'Chapitre Deux — Images 5–8',ch2_title:'À l\'Arrivée',ch2_desc:'Le rêve atterrit — non pas dans le triomphe, mais dans un système déjà prêt à l\'utiliser. S\'inspirant des expériences documentées de Vinícius Júnior, Mario Balotelli, Marcus Rashford et Victor Osimhen, ce chapitre place le corps même de l\'artiste dans le langage visuel des violences raciales.',
+      ch3_sub:'Chapitre Trois — Images 9–14',ch3_title:'Impact',ch3_desc:'Ce que le système produit dans le corps, l\'esprit, l\'âme et les émotions d\'une personne qui y survit. Ce chapitre se tourne vers l\'intérieur — de l\'hostilité visible de la foule et des médias vers le vide psychologique, l\'ancrage spirituel, le silence imposé, et le calme de l\'après.',
+      ch4_sub:'Chapitre Quatre — Images 15–20',ch4_title:'Résistance & Changement',ch4_desc:'Connaissance, protestation, solidarité, refus collectif, responsabilité institutionnelle, et l\'argument final — sous chaque différence visible, la substance est identique.',
+      about_role:'Artiste Visuel & Photographe',about_lang_en:'Biographie — Anglais',about_lang_fr:'Biographie — Français',
+      recog_label:'Reconnaissance',recog_title:'Exposition — Whitman College, Fouts Center for Visual Arts',recog_date:'Printemps 2026 — Walla Walla, Washington',recog_desc:'a été exposé en tant qu\'installation photographique de 20 images au Fouts Center for Visual Arts, Whitman College. Le travail a été imprimé et installé dans le cadre de l\'exposition finale du cours de photographie intermédiaire. Le projet a reçu la reconnaissance de plusieurs membres du corps enseignant et pairs qui se sont engagés avec son intention de justice sociale.',
+      contact_studio:'Studio',contact_enq:'Renseignements Généraux',contact_enq_title:'Nous Contacter',contact_enq_desc:'Pour des demandes d\'exposition, de presse, de collaboration, ou pour discuter du travail.',contact_follow:'Suivre',
+      form_name:'Nom *',form_email:'Email *',form_subject:'Sujet',form_msg:'Message',form_send:'Envoyer',
+      splash_enter:'Cliquer pour entrer',
+      st_title:'Le Long Chemin',st_label:'Déclaration d\'artiste — Ahmed Baba Tandia — 2026',
+      st_p1:'Il existe un moment — quelque part entre le départ et le début — où le rêve devient une dette. Une famille a vendu ce qu\'elle pouvait. Une horloge a été arrêtée. Un passeport attend dans les mains de quelqu\'un d\'autre. Un ballon, usé et éraflé, porte plus d\'espoir qu\'il n\'a jamais été conçu pour en porter. C\'est là que commence mon projet : non pas sur le terrain, non pas sous les lumières du stade, mais dans l\'espace calme et sous pression de l\'avant.',
+      st_p2:'Entre Rêves et Frontières a débuté comme une enquête visuelle sur ce que les footballeurs africains laissent derrière eux et ce qu\'ils emportent avec eux. En utilisant la photographie de nature morte inspirée du travail d\'Omar Victor Diop, j\'ai arrangé des choses ordinaires : bottes, horloges, argent, photographies de famille. Ce ne sont pas des accessoires. Ce sont des arguments. Ils disent que pour de nombreux jeunes joueurs traversant du continent africain vers les ligues européennes, le football n\'est pas un sport. C\'est une stratégie de survie.',
+      st_p3:'À l\'Arrivée continue cette histoire. Il demande ce qui se passe quand le rêve atterrit — non pas dans le triomphe, mais dans un système déjà prêt à l\'utiliser. Portant les maillots de Vinícius Júnior, Balotelli, Rashford et Osimhen, je place mon propre corps dans le langage visuel de leurs expériences documentées. Ces images n\'illustrent pas ces cas. Elles les habitent.',
+      st_p4:'Les troisième et quatrième séries étendent le récit vers l\'intérieur puis vers l\'extérieur. Le chapitre Impact rend visible ce que les systèmes produisent dans le corps et l\'esprit d\'une personne. Le dernier chapitre refuse de s\'arrêter là. Les livres soutiennent les bottes. Deux œufs fissurés dans la même poêle font l\'argument qu\'aucun titre n\'a jamais pu. Le racisme est construit. La substance est la même.',
+      st_p5:'Vingt images. Quatre chapitres. Une histoire continue sur ce que ça coûte de porter un rêve à travers une frontière — et ce qu\'il faut pour refuser les termes de l\'arrivée.',
+      v_subtitle:'Vision de Recherche & Projets Futurs',v_hero_title:'Documenter l\'Injustice.\u003Cbr\u003EUne Histoire à la Fois.',
+      v_hero_p:'Ce travail commence avec les footballeurs africains, mais il ne s\'arrête pas là. L\'appareil photo est un outil de témoignage — et le témoignage est nécessaire partout où les systèmes de pouvoir produisent le silence, la souffrance et l\'effacement.',
+      v1_sub:'Extension d\'Offside — En Développement',v1_title:'Le Voyage, Documenté',v1_p:'La prochaine phase d\'Offside passe du studio et du concept au terrain et au témoignage. Je prévois de voyager à travers les pays d\'Afrique de l\'Ouest — Mali, Sénégal, Ghana, Nigeria — pour documenter les conditions qui façonnent la décision d\'un jeune joueur de partir.',
+      v2_sub:'Projet Futur — Phase de Recherche',v2_title:'Le Continent Sous-Développé',v2_p:'Inspiré par le texte fondamental de Walter Rodney Comment l\'Europe a sous-développé l\'Afrique, ce projet examinera comment l\'extraction coloniale et ses séquelles continuent de façonner la vie africaine quotidienne.',
+      v3_sub:'Projet Futur — Phase de Recherche',v3_title:'Le Silence qu\'Ils Exigent',v3_p:'Ce projet abordera une forme spécifique et dévastatrice d\'injustice culturelle qui persiste dans les foyers et communautés africains : le silence imposé aux survivants d\'abus sexuels au sein des familles, où la préservation du nom de famille est considérée comme plus importante que la sécurité et la dignité de la victime.',
+      v4_sub:'Vision à Long Terme',v4_title:'Au-delà de l\'Afrique — Une Pratique Mondiale',v4_p:'Les injustices que je documente ne sont pas uniquement africaines — elles sont des expressions de schémas mondiaux de pouvoir, d\'extraction et d\'effacement. Ma pratique à long terme s\'engage à s\'étendre au-delà du contexte africain. Ce n\'est pas un seul projet. C\'est un travail de toute une vie — et il commence ici.'
+    },
+    es:{
+      nav_projects:'Proyectos',nav_about:'Sobre Mí',nav_contact:'Contacto',nav_statement:'Declaraciones',nav_vision:'Visión',
+      stmt_drop:'El Largo Camino',
+      home_title:'Proyectos',proj_label:'Fuera de Juego',proj_year:'2026',
+      proj_oneliner:'\u003Cem\u003EFuera de Juego\u003C/em\u003E — en fútbol, la regla que declara a un jugador fuera de lugar, inelegible, no bienvenido en el espacio que ocupa. Aquí, una metáfora de lo que los jugadores africanos son llevados a sentir cada vez que cruzan una frontera.',
+      proj_desc:'Una narrativa fotográfica de 20 imágenes que traza la trayectoria completa de los futbolistas africanos — desde la esperanza y el sacrificio de la partida, pasando por la hostilidad racial de la llegada, hasta el coste psicológico que impone el sistema, y finalmente los actos de resistencia que se niegan a dejar que la historia termine ahí.',
+      proj_meta_img:'Imágenes',proj_meta_ch:'Capítulos',
+      ch1_sub:'Capítulo Uno — Imágenes 1–4',ch1_title:'Entre Sueños y Fronteras',ch1_desc:'El mundo antes de la partida. A través de composiciones de naturaleza muerta con objetos cotidianos — botas, pasaportes, relojes, fotografías familiares — este capítulo argumenta que para muchos jóvenes jugadores africanos, el fútbol no es un deporte. Es una estrategia de supervivencia, una apuesta colectiva que familias enteras depositan en el cuerpo y el talento de una sola persona.',
+      ch2_sub:'Capítulo Dos — Imágenes 5–8',ch2_title:'A la Llegada',ch2_desc:'El sueño llega — no en triunfo, sino a un sistema ya preparado para utilizarlo. Inspirándose en las experiencias documentadas de Vinícius Júnior, Mario Balotelli, Marcus Rashford y Victor Osimhen, este capítulo sitúa el propio cuerpo del artista dentro del lenguaje visual del abuso racial.',
+      ch3_sub:'Capítulo Tres — Imágenes 9–14',ch3_title:'Impacto',ch3_desc:'Lo que el sistema produce en el cuerpo, la mente, el espíritu y las emociones de una persona que lo sobrevive. Este capítulo se mueve hacia adentro — desde la hostilidad visible de las gradas y los medios hacia el vacío psicológico, el anclaje espiritual, el silencio impuesto y la quietud del después.',
+      ch4_sub:'Capítulo Cuatro — Imágenes 15–20',ch4_title:'Resistencia y Cambio',ch4_desc:'Conocimiento, protesta, solidaridad, rechazo colectivo, responsabilidad institucional, y el argumento final — bajo cada diferencia visible, la sustancia es idéntica.',
+      about_role:'Artista Visual y Fotógrafo',about_lang_en:'Biografía — Inglés',about_lang_fr:'Biografía — Español',
+      recog_label:'Reconocimiento',recog_title:'Exposición — Whitman College, Fouts Center for Visual Arts',recog_date:'Primavera 2026 — Walla Walla, Washington',recog_desc:'fue exhibido como una instalación fotográfica de 20 imágenes en el Fouts Center for Visual Arts, Whitman College. El trabajo fue impreso e instalado como parte de la exposición final del curso de Fotografía Intermedia. El proyecto recibió reconocimiento de múltiples miembros del profesorado y compañeros que se comprometieron con su intención de justicia social.',
+      contact_studio:'Estudio',contact_enq:'Consultas Generales',contact_enq_title:'Ponerse en Contacto',contact_enq_desc:'Para consultas de exposición, prensa, colaboraciones, o para hablar sobre el trabajo.',contact_follow:'Seguir',
+      form_name:'Nombre *',form_email:'Correo *',form_subject:'Asunto',form_msg:'Mensaje',form_send:'Enviar',
+      splash_enter:'Clic para entrar',
+      st_title:'El Largo Camino',st_label:'Declaración del artista — Ahmed Baba Tandia — 2026',
+      st_p1:'Existe un momento — en algún lugar entre la partida y el debut — en que el sueño se convierte en una deuda. Una familia ha vendido lo que podía. Un reloj ha sido detenido. Un pasaporte espera en manos de otro. Un balón, gastado y arañado, carga más esperanza de la que jamás fue diseñado para llevar. Aquí es donde comienza mi proyecto: no en el campo, no bajo las luces del estadio, sino en el espacio quieto y presurizado del antes.',
+      st_p2:'Entre Sueños y Fronteras comenzó como una investigación visual sobre lo que los futbolistas africanos dejan atrás y lo que llevan consigo. Usando fotografía de naturaleza muerta inspirada en el trabajo de Omar Victor Diop, organicé cosas ordinarias: botas, relojes, dinero, fotografías familiares. No son utilería. Son argumentos. Dicen que para muchos jóvenes jugadores que cruzan del continente africano hacia las ligas europeas, el fútbol no es un deporte. Es una estrategia de supervivencia.',
+      st_p3:'A la Llegada continúa esa historia. Pregunta qué sucede cuando el sueño aterriza — no en triunfo, sino en un sistema ya preparado para utilizarlo. Vistiendo las camisetas de Vinícius Júnior, Balotelli, Rashford y Osimhen, coloco mi propio cuerpo dentro del lenguaje visual de sus experiencias documentadas. Estas imágenes no ilustran esos casos. Los habitan.',
+      st_p4:'La tercera y cuarta serie extienden la narrativa hacia adentro y luego hacia afuera. El capítulo Impacto hace visible lo que los sistemas producen en el cuerpo y la mente de una persona. El capítulo final se niega a terminar ahí. Los libros sostienen las botas. Dos huevos rotos en la misma sartén hacen el argumento que ningún titular jamás pudo. El racismo es construido. La sustancia es la misma.',
+      st_p5:'Veinte imágenes. Cuatro capítulos. Una historia continua sobre lo que cuesta llevar un sueño a través de una frontera — y lo que se necesita para rechazar los términos de la llegada.',
+      v_subtitle:'Visión de Investigación & Proyectos Futuros',v_hero_title:'Documentando la Injusticia.\u003Cbr\u003EUna Historia a la Vez.',
+      v_hero_p:'Este trabajo comienza con los futbolistas africanos, pero no termina ahí. La cámara es una herramienta de testimonio — y el testimonio es necesario dondequiera que los sistemas de poder produzcan silencio, sufrimiento y borrado.',
+      v1_sub:'Expansión de Offside — En Desarrollo',v1_title:'El Viaje, Documentado',v1_p:'La próxima fase de Offside pasa del estudio y el concepto al campo y el testimonio. Planeo viajar por los países de África Occidental — Mali, Senegal, Ghana, Nigeria — para documentar las condiciones que moldean la decisión de un joven jugador de irse.',
+      v2_sub:'Proyecto Futuro — Fase de Investigación',v2_title:'El Continente Subdesarrollado',v2_p:'Inspirado en el texto fundamental de Walter Rodney Cómo Europa Subdesarrolló África, este proyecto examinará cómo la extracción colonial y sus secuelas continúan dando forma a la vida africana cotidiana.',
+      v3_sub:'Proyecto Futuro — Fase de Investigación',v3_title:'El Silencio que Exigen',v3_p:'Este proyecto abordará una forma específica y devastadora de injusticia cultural que persiste en los hogares y comunidades africanas: el silencio impuesto a los sobrevivientes de abuso sexual dentro de las familias, donde la preservación del nombre de la familia se trata como más importante que la seguridad y la dignidad de la víctima.',
+      v4_sub:'Visión a Largo Plazo',v4_title:'Más Allá de África — Una Práctica Global',v4_p:'Las injustices que documento no son únicamente africanas — son expresiones de patrones globales de poder, extracción y borrado. Mi práctica a largo plazo se compromete a expandirse más allá del contexto africano. Este no es un solo proyecto. Es un trabajo de toda una vida — y comienza aquí.'
+    }
+  };
+
+  const t=T[lang]||T.en;
+
+  // Nav
+  const nh=document.getElementById('nav-home');if(nh)nh.textContent=t.nav_projects;
+  const na=document.getElementById('nav-about');if(na)na.textContent=t.nav_about;
+  const nc=document.getElementById('nav-contact');if(nc)nc.textContent=t.nav_contact;
+  const ns=document.getElementById('nav-statement');if(ns)ns.textContent=t.nav_statement;
+  const nv=document.getElementById('nav-vision');if(nv)nv.textContent=t.nav_vision;
+  const sd=document.getElementById('stmt-drop-link');if(sd)sd.textContent=t.stmt_drop;
+  const pd=document.querySelector('.nav-dropdown a');if(pd)pd.textContent=t.proj_label;
+
+  // Splash
+  const se=document.querySelector('.splash-enter');if(se)se.textContent=t.splash_enter;
+
+  // Home
+  const ht=document.querySelector('.home-title');if(ht)ht.textContent=t.home_title;
+  const pt=document.querySelector('.proj-label-title');if(pt)pt.textContent=t.proj_label;
+
+  // Project page
+  const ol=document.getElementById('proj-oneliner-el');if(ol)ol.innerHTML=t.proj_oneliner;
+  const pd2=document.getElementById('proj-desc-el');if(pd2)pd2.textContent=t.proj_desc;
+  const mi=document.querySelectorAll('.project-header-meta div');
+  if(mi[0])mi[0].innerHTML='\u003Cspan\u003E'+mi[0].querySelector('span').textContent+'\u003C/span\u003E '+t.proj_meta_img;
+  if(mi[1])mi[1].innerHTML='\u003Cspan\u003E'+mi[1].querySelector('span').textContent+'\u003C/span\u003E '+t.proj_meta_ch;
+
+  // Chapters
+  const chData=[
+    {sub:'ch1_sub',title:'ch1_title',desc:'ch1_desc'},
+    {sub:'ch2_sub',title:'ch2_title',desc:'ch2_desc'},
+    {sub:'ch3_sub',title:'ch3_title',desc:'ch3_desc'},
+    {sub:'ch4_sub',title:'ch4_title',desc:'ch4_desc'}
+  ];
+  document.querySelectorAll('.chapter').forEach((ch,i)=>{
+    if(!chData[i])return;
+    const s=ch.querySelector('.chapter-sub');const ti=ch.querySelector('.chapter-info h2');const d=ch.querySelector('.chapter-info p');
+    if(s)s.textContent=t[chData[i].sub];
+    if(ti)ti.textContent=t[chData[i].title];
+    if(d)d.textContent=t[chData[i].desc];
+  });
+
+  // Image overlays + captions
+  const li=(imgsTranslated&&imgsTranslated[lang])||imgs;
+  document.querySelectorAll('.img-cell').forEach((cell,i)=>{
+    if(!li[i])return;
+    const ot=cell.querySelector('.img-overlay-title');
+    const oc=cell.querySelector('.img-overlay-concept');
+    const cap=cell.querySelector('.img-caption');
+    if(ot)ot.textContent=li[i].title;
+    if(oc)oc.textContent=li[i].concept;
+    if(cap)cap.textContent=li[i].title;
+  });
+
+  // About
+  const ar=document.querySelector('.about-role');if(ar)ar.textContent=t.about_role;
+  const el=document.querySelector('.about-bio-col:first-child .lang-label');if(el)el.textContent=t.about_lang_en;
+  const fl=document.querySelector('.about-bio-col:last-child .lang-label');if(fl)fl.textContent=t.about_lang_fr;
+
+  // Recognition
+  const rl=document.querySelector('.recog-label');if(rl)rl.textContent=t.recog_label;
+  const rt=document.querySelector('.recog-title');if(rt)rt.textContent=t.recog_title;
+  const rd=document.querySelector('.recog-date');if(rd)rd.textContent=t.recog_date;
+  const rdesc=document.querySelector('.recog-desc');if(rdesc)rdesc.innerHTML='\u003Cem\u003EOffside\u003C/em\u003E '+t.recog_desc;
+
+  // Contact
+  const csl=document.querySelector('.contact-section:nth-child(1) .contact-section-label');if(csl)csl.textContent=t.contact_studio;
+  const cel=document.querySelector('.contact-section:nth-child(2) .contact-section-label');if(cel)cel.textContent=t.contact_enq;
+  const cet=document.querySelector('.contact-section:nth-child(2) h3');if(cet)cet.textContent=t.contact_enq_title;
+  const ced=document.querySelector('.contact-section:nth-child(2) > p');if(ced)ced.textContent=t.contact_enq_desc;
+  const cfl=document.querySelector('.contact-section:nth-child(3) .contact-section-label');if(cfl)cfl.textContent=t.contact_follow;
+  const inputs=document.querySelectorAll('.contact-form input,.contact-form textarea');
+  const phs=[t.form_name,t.form_email,t.form_subject,t.form_msg];
+  inputs.forEach((inp,i)=>{if(phs[i])inp.placeholder=phs[i];});
+  const sb=document.querySelector('.form-submit');if(sb)sb.textContent=t.form_send;
+
+  // Statement page
+  const stit=document.getElementById('st-title');if(stit)stit.textContent=t.st_title;
+  const slab=document.getElementById('st-label');if(slab)slab.textContent=t.st_label;
+  const sps=['st-p1','st-p2','st-p3','st-p4','st-p5'];
+  sps.forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t[id];});
+
+  // Vision page
+  const vs=document.getElementById('v-subtitle');if(vs)vs.textContent=t.v_subtitle;
+  const vht=document.getElementById('v-hero-title');if(vht)vht.innerHTML=t.v_hero_title;
+  const vhp=document.getElementById('v-hero-p');if(vhp)vhp.textContent=t.v_hero_p;
+  [['v1-sub','v1_sub'],['v1-title','v1_title'],['v1-p','v1_p'],
+   ['v2-sub','v2_sub'],['v2-title','v2_title'],['v2-p','v2_p'],
+   ['v3-sub','v3_sub'],['v3-title','v3_title'],['v3-p','v3_p'],
+   ['v4-sub','v4_sub'],['v4-title','v4_title'],['v4-p','v4_p']
+  ].forEach(([id,key])=>{const el=document.getElementById(id);if(el)el.textContent=t[key];});
+}
+
+document.querySelector('.nav-logo a').addEventListener('click',()=>showPage('home'));
+
 </script>
 </body>
 </html>
