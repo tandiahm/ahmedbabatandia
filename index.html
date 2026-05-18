@@ -139,7 +139,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .contact-section a:hover{color:var(--gold)}
 .contact-form{margin-top:1.6rem}
 .form-row{margin-bottom:0.85rem}
-.form-row input,.form-row textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(240,237,232,0.12);color:var(--white);font-family:var(--sans);font-size:0.78rem;font-weight:300;padding:0.62rem 0;outline:none;transition:border-color 0.2s;letter-spacing:0.04em}
+.form-row input,.form-row textarea{margin-top:0.8rem;width:100%;background:transparent;border:none;border-bottom:1px solid rgba(240,237,232,0.12);color:var(--white);font-family:var(--sans);font-size:0.78rem;font-weight:300;padding:0.62rem 0;outline:none;transition:border-color 0.2s;letter-spacing:0.04em}
 .form-row input::placeholder,.form-row textarea::placeholder{color:var(--mid);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase}
 .form-row input:focus,.form-row textarea:focus{border-color:rgba(200,169,110,0.4)}
 .form-row textarea{height:105px;resize:none}
@@ -856,16 +856,18 @@ function setLang(lang){
     if(d)d.textContent=t[chData[i].desc];
   });
 
-  // Image overlays + captions
+  // Image overlays + captions — use data-idx for accurate mapping
   const li=(imgsTranslated&&imgsTranslated[lang])||imgs;
   document.querySelectorAll('.img-cell').forEach((cell,i)=>{
-    if(!li[i])return;
+    const capEl=cell.querySelector('.img-caption');
+    const rawIdx=capEl?parseInt(capEl.getAttribute('data-idx')):i;
+    const idx=isNaN(rawIdx)?i:rawIdx;
+    if(!li[idx])return;
     const ot=cell.querySelector('.img-overlay-title');
     const oc=cell.querySelector('.img-overlay-concept');
-    const cap=cell.querySelector('.img-caption');
-    if(ot)ot.textContent=li[i].title;
-    if(oc)oc.textContent=li[i].concept;
-    if(cap)cap.textContent=li[i].title;
+    if(ot)ot.textContent=li[idx].title;
+    if(oc)oc.textContent=li[idx].concept;
+    if(capEl)capEl.textContent=li[idx].title;
   });
 
   // About
@@ -894,7 +896,7 @@ function setLang(lang){
   const stit=document.getElementById('st-title');if(stit)stit.textContent=t.st_title;
   const slab=document.getElementById('st-label');if(slab)slab.textContent=t.st_label;
   const sps=['st-p1','st-p2','st-p3','st-p4','st-p5'];
-  sps.forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t[id];});
+  sps.forEach(id=>{const el=document.getElementById(id);if(el){const key=id.replace(/-/g,'_');if(t[key])el.textContent=t[key];}});
 
   // Vision page
   const vs=document.getElementById('v-subtitle');if(vs)vs.textContent=t.v_subtitle;
