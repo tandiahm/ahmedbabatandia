@@ -83,6 +83,8 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .chapter-grid{display:grid;gap:3px;padding:1.1rem 3px 0}
 .chapter-grid.grid-4{grid-template-columns:repeat(4,1fr)}
 .chapter-grid.grid-3{grid-template-columns:repeat(3,1fr)}
+.chapter-grid.grid-3 .img-card{padding-top:100%}
+.chapter-grid.grid-3 .img-card.landscape{padding-top:56%}
 
 /* IMG CARDS — key fix: no fixed aspect-ratio by default, use padding-top trick */
 .img-card{position:relative;overflow:hidden;cursor:pointer;background:#0d0d0d}
@@ -374,14 +376,14 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
         </div>
       </div>
       <div class="chapter-grid grid-4">
-        <div class="img-cell"><div class="img-card" onclick="openLb(0)"><img src="images/01-journey-ball.jpg" alt="The Journey Ball"><div class="img-overlay"><div class="img-overlay-title">The Journey Ball</div><div class="img-overlay-concept">A soccer ball, suitcase, and atlas map — the dream carried across borders.</div></div>
-        <div class="img-caption" data-idx="0">The Journey Ball</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(1)"><img src="images/02-not-just-a-game.jpg" alt="Not Just a Game"><div class="img-overlay"><div class="img-overlay-title">Not Just a Game</div><div class="img-overlay-concept">Play versus survival — the jersey against the controller.</div></div>
-        <div class="img-caption" data-idx="1">Not Just a Game</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(2)"><img src="images/03-identity-on-pause.jpg" alt="Identity on Pause"><div class="img-overlay"><div class="img-overlay-title">Identity on Pause</div><div class="img-overlay-concept">Passport, fabric, stopped clock — time suspended between worlds.</div></div>
-        <div class="img-caption" data-idx="2">Identity on Pause</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(3)"><img src="images/04-price-of-dreams.jpg" alt="The Price of Dreams"><div class="img-overlay"><div class="img-overlay-title">The Price of Dreams</div><div class="img-overlay-concept">Boots, money, family photo, schoolbook — who pays the hidden cost?</div></div>
-        <div class="img-caption" data-idx="3">The Price of Dreams</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(0)"><img src="images/01-journey-ball.jpg" alt="The Journey Ball"><div class="img-overlay"><div class="img-overlay-title">The Journey Ball</div><div class="img-overlay-concept">A soccer ball, suitcase, and atlas map — the dream carried across borders.</div></div></div>
+        <div class="img-caption" data-idx="0">The Journey Ball</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(1)"><img src="images/02-not-just-a-game.jpg" alt="Not Just a Game"><div class="img-overlay"><div class="img-overlay-title">Not Just a Game</div><div class="img-overlay-concept">Play versus survival — the jersey against the controller.</div></div></div>
+        <div class="img-caption" data-idx="1">Not Just a Game</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(2)"><img src="images/03-identity-on-pause.jpg" alt="Identity on Pause"><div class="img-overlay"><div class="img-overlay-title">Identity on Pause</div><div class="img-overlay-concept">Passport, fabric, stopped clock — time suspended between worlds.</div></div></div>
+        <div class="img-caption" data-idx="2">Identity on Pause</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(3)"><img src="images/04-price-of-dreams.jpg" alt="The Price of Dreams"><div class="img-overlay"><div class="img-overlay-title">The Price of Dreams</div><div class="img-overlay-concept">Boots, money, family photo, schoolbook — who pays the hidden cost?</div></div></div>
+        <div class="img-caption" data-idx="3">The Price of Dreams</div></div>
       </div>
     </div>
 
@@ -399,10 +401,10 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
         <div class="img-caption" data-idx="4">"OOH OOH" — Monkey Chants</div></div>
         <div class="img-cell"><div class="img-card" onclick="openLb(5)"><img src="images/06-why-always-me.jpg" alt="Why Always Me"><div class="img-overlay"><div class="img-overlay-title">"Why Always Me?"</div><div class="img-overlay-concept">Inspired by Mario Balotelli — the media wall, one foot raised against the narrative.</div></div></div>
         <div class="img-caption" data-idx="5">"Why Always Me?"</div></div>
-        <div class="img-cell"><div class="img-card landscape" onclick="openLb(6)"><img src="images/07-performance-pressure.jpg" alt="Performance Pressure"><div class="img-overlay"><div class="img-overlay-title">Performance Pressure — After the Miss</div><div class="img-overlay-concept">Inspired by Rashford, Saka, Sancho — bird's-eye view, England jersey, face covered.</div></div>
-        <div class="img-caption" data-idx="6">Performance Pressure</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(7)"><img src="images/08-media-mockery.jpg" alt="Media Mockery"><div class="img-overlay"><div class="img-overlay-title">Media Mockery — Commodification</div><div class="img-overlay-concept">Inspired by Victor Osimhen — Nigerian jersey, a price tag held in the hand.</div></div>
-        <div class="img-caption" data-idx="7">Media Mockery</div></div></div>
+        <div class="img-cell"><div class="img-card landscape" onclick="openLb(6)"><img src="images/07-performance-pressure.jpg" alt="Performance Pressure"><div class="img-overlay"><div class="img-overlay-title">Performance Pressure — After the Miss</div><div class="img-overlay-concept">Inspired by Rashford, Saka, Sancho — bird's-eye view, England jersey, face covered.</div></div></div>
+        <div class="img-caption" data-idx="6">Performance Pressure</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(7)"><img src="images/08-media-mockery.jpg" alt="Media Mockery"><div class="img-overlay"><div class="img-overlay-title">Media Mockery — Commodification</div><div class="img-overlay-concept">Inspired by Victor Osimhen — Nigerian jersey, a price tag held in the hand.</div></div></div>
+        <div class="img-caption" data-idx="7">Media Mockery</div></div>
       </div>
     </div>
 
@@ -416,18 +418,18 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
         </div>
       </div>
       <div class="chapter-grid grid-3">
-        <div class="img-cell"><div class="img-card" onclick="openLb(8)"><img src="images/09-empty-chair.jpg" alt="The Empty Chair"><div class="img-overlay"><div class="img-overlay-title">The Empty Chair</div><div class="img-overlay-concept">Mental toll — the absent patient, the care never given.</div></div>
-        <div class="img-caption" data-idx="8">The Empty Chair</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(9)"><img src="images/10-faith-as-anchor.jpg" alt="Faith as Anchor"><div class="img-overlay"><div class="img-overlay-title">Faith as Anchor</div><div class="img-overlay-concept">Quran, Bible, prayer beads — devotion that crosses borders.</div></div>
-        <div class="img-caption" data-idx="9">Faith as Anchor</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(10)"><img src="images/11-sealed.jpg" alt="Sealed"><div class="img-overlay"><div class="img-overlay-title">Sealed</div><div class="img-overlay-concept">Tape across the mouth — eyes carry everything the mouth cannot say.</div></div>
-        <div class="img-caption" data-idx="10">Sealed</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(11)"><img src="images/12-the-instrument.jpg" alt="The Instrument"><div class="img-overlay"><div class="img-overlay-title">The Instrument</div><div class="img-overlay-concept">Skeleton — one half machine, one half human. No person. Only parts.</div></div>
-        <div class="img-caption" data-idx="11">The Instrument</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(12)"><img src="images/13-the-body.jpg" alt="The Body"><div class="img-overlay"><div class="img-overlay-title">The Body</div><div class="img-overlay-concept">A person, under a spotlight, fully present.</div></div>
-        <div class="img-caption" data-idx="12">The Body</div></div></div>
-        <div class="img-cell"><div class="img-card landscape" onclick="openLb(13)"><img src="images/14-blue-hour.jpg" alt="Blue Hour"><div class="img-overlay"><div class="img-overlay-title">Blue Hour</div><div class="img-overlay-concept">A path curves out of frame — hope as direction, not destination.</div></div>
-        <div class="img-caption" data-idx="13">Blue Hour</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(8)"><img src="images/09-empty-chair.jpg" alt="The Empty Chair"><div class="img-overlay"><div class="img-overlay-title">The Empty Chair</div><div class="img-overlay-concept">Mental toll — the absent patient, the care never given.</div></div></div>
+        <div class="img-caption" data-idx="8">The Empty Chair</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(9)"><img src="images/10-faith-as-anchor.jpg" alt="Faith as Anchor"><div class="img-overlay"><div class="img-overlay-title">Faith as Anchor</div><div class="img-overlay-concept">Quran, Bible, prayer beads — devotion that crosses borders.</div></div></div>
+        <div class="img-caption" data-idx="9">Faith as Anchor</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(10)"><img src="images/11-sealed.jpg" alt="Sealed"><div class="img-overlay"><div class="img-overlay-title">Sealed</div><div class="img-overlay-concept">Tape across the mouth — eyes carry everything the mouth cannot say.</div></div></div>
+        <div class="img-caption" data-idx="10">Sealed</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(11)"><img src="images/12-the-instrument.jpg" alt="The Instrument"><div class="img-overlay"><div class="img-overlay-title">The Instrument</div><div class="img-overlay-concept">Skeleton — one half machine, one half human. No person. Only parts.</div></div></div>
+        <div class="img-caption" data-idx="11">The Instrument</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(12)"><img src="images/13-the-body.jpg" alt="The Body"><div class="img-overlay"><div class="img-overlay-title">The Body</div><div class="img-overlay-concept">A person, under a spotlight, fully present.</div></div></div>
+        <div class="img-caption" data-idx="12">The Body</div></div>
+        <div class="img-cell"><div class="img-card landscape" onclick="openLb(13)"><img src="images/14-blue-hour.jpg" alt="Blue Hour"><div class="img-overlay"><div class="img-overlay-title">Blue Hour</div><div class="img-overlay-concept">A path curves out of frame — hope as direction, not destination.</div></div></div>
+        <div class="img-caption" data-idx="13">Blue Hour</div></div>
       </div>
     </div>
 
@@ -441,18 +443,18 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
         </div>
       </div>
       <div class="chapter-grid grid-3">
-        <div class="img-cell"><div class="img-card" onclick="openLb(14)"><img src="images/15-read-the-room.jpg" alt="Read the Room"><div class="img-overlay"><div class="img-overlay-title">Read the Room</div><div class="img-overlay-concept">Books hold the boots. Knowledge holds the game.</div></div>
-        <div class="img-caption" data-idx="14">Read the Room</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(15)"><img src="images/16-the-protest.jpg" alt="The Protest"><div class="img-overlay"><div class="img-overlay-title">The Protest</div><div class="img-overlay-concept">The body kneels. The shadow stands — fist raised.</div></div>
-        <div class="img-caption" data-idx="15">The Protest</div></div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(14)"><img src="images/15-read-the-room.jpg" alt="Read the Room"><div class="img-overlay"><div class="img-overlay-title">Read the Room</div><div class="img-overlay-concept">Books hold the boots. Knowledge holds the game.</div></div></div>
+        <div class="img-caption" data-idx="14">Read the Room</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(15)"><img src="images/16-the-protest.jpg" alt="The Protest"><div class="img-overlay"><div class="img-overlay-title">The Protest</div><div class="img-overlay-concept">The body kneels. The shadow stands — fist raised.</div></div></div>
+        <div class="img-caption" data-idx="15">The Protest</div></div>
         <div class="img-cell"><div class="img-card landscape" onclick="openLb(16)"><img src="images/17-hear-no-evil.jpg" alt="Hear No Evil"><div class="img-overlay"><div class="img-overlay-title">Hear No Evil, See No Evil, Speak No Evil</div><div class="img-overlay-concept">Three figures — collective refusal to absorb what the world keeps sending.</div></div></div>
         <div class="img-caption" data-idx="16">Hear No Evil, See No Evil, Speak No Evil</div></div>
         <div class="img-cell"><div class="img-card landscape" onclick="openLb(17)"><img src="images/18-why-always-us.jpg" alt="Why Always Us"><div class="img-overlay"><div class="img-overlay-title">Why Always Us?</div><div class="img-overlay-concept">"Why always me?" / "Why always us?" / "Why never them?"</div></div></div>
         <div class="img-caption" data-idx="17">Why Always Us?</div></div>
-        <div class="img-cell"><div class="img-card landscape" onclick="openLb(18)"><img src="images/19-press-conference.jpg" alt="The Press Conference"><div class="img-overlay"><div class="img-overlay-title">The Press Conference</div><div class="img-overlay-concept">The microphone. The placard reads "THEM." The chair is empty.</div></div>
-        <div class="img-caption" data-idx="18">The Press Conference</div></div></div>
-        <div class="img-cell"><div class="img-card" onclick="openLb(19)"><img src="images/20-we-are-all-the-same.jpg" alt="We Are All the Same"><div class="img-overlay"><div class="img-overlay-title">We Are All the Same</div><div class="img-overlay-concept">Two eggs. Two hands. One pan. One light. The most undeniable truth.</div></div>
-        <div class="img-caption" data-idx="19">We Are All the Same</div></div></div>
+        <div class="img-cell"><div class="img-card landscape" onclick="openLb(18)"><img src="images/19-press-conference.jpg" alt="The Press Conference"><div class="img-overlay"><div class="img-overlay-title">The Press Conference</div><div class="img-overlay-concept">The microphone. The placard reads "THEM." The chair is empty.</div></div></div>
+        <div class="img-caption" data-idx="18">The Press Conference</div></div>
+        <div class="img-cell"><div class="img-card" onclick="openLb(19)"><img src="images/20-we-are-all-the-same.jpg" alt="We Are All the Same"><div class="img-overlay"><div class="img-overlay-title">We Are All the Same</div><div class="img-overlay-concept">Two eggs. Two hands. One pan. One light. The most undeniable truth.</div></div></div>
+        <div class="img-caption" data-idx="19">We Are All the Same</div></div>
       </div>
     </div>
 
@@ -517,12 +519,13 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
         <div class="contact-section-label">General Enquiries</div>
         <h3>Get in Touch</h3>
         <p style="color:rgba(240,237,232,0.38);font-size:0.82rem;margin-bottom:0">For exhibition inquiries, press, collaborations, or to discuss the work.</p>
-        <form class="contact-form" action="https://formspree.io/f/mzdwpyzr" method="POST">
+        <form class="contact-form" id="contact-form">
           <div class="form-row"><input type="text" name="name" placeholder="Name *" required></div>
           <div class="form-row"><input type="email" name="email" placeholder="Email *" required></div>
           <div class="form-row"><input type="text" name="subject" placeholder="Subject"></div>
           <div class="form-row"><textarea name="message" placeholder="Message"></textarea></div>
-          <button type="submit" class="form-submit">Send</button>
+          <button type="submit" class="form-submit" id="form-btn">Send</button>
+          <div id="form-status" style="margin-top:1rem;font-family:var(--serif);font-size:0.88rem;display:none"></div>
         </form>
       </div>
       <div class="contact-section">
@@ -689,7 +692,8 @@ function updateLb(){
   document.getElementById('lbTitle').textContent=img.title;
   document.getElementById('lbConcept').textContent=img.concept;
   document.getElementById('lbVisual').textContent=img.visual;
-  document.getElementById('lbImgArea').innerHTML='<img src="'+img.src+'" alt="'+img.title+'">';
+  const src=img.src||imgs[lbIdx].src;
+  document.getElementById('lbImgArea').innerHTML='<img src="'+src+'" alt="'+img.title+'">';
 }
 document.addEventListener('keydown',e=>{
   if(document.getElementById('lb').classList.contains('open')){
@@ -897,7 +901,28 @@ function setLang(lang){
   ].forEach(([id,key])=>{const el=document.getElementById(id);if(el)el.textContent=t[key];});
 }
 
-document.querySelector('.nav-logo a').addEventListener('click',()=>showPage('home'));
+document.getElementById('contact-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('form-btn');
+  const status=document.getElementById('form-status');
+  btn.textContent='Sending...';btn.disabled=true;
+  try{
+    const res=await fetch('https://formspree.io/f/mzdwpyzr',{method:'POST',body:new FormData(this),headers:{Accept:'application/json'}});
+    if(res.ok){
+      status.textContent='Message sent. Thank you for reaching out.';
+      status.style.color='var(--gold)';
+      this.reset();
+    }else{
+      status.textContent='Something went wrong. Please email directly at tandiahm@gmail.com.';
+      status.style.color='rgba(240,237,232,0.5)';
+    }
+  }catch{
+    status.textContent='Could not send. Please email directly at tandiahm@gmail.com.';
+    status.style.color='rgba(240,237,232,0.5)';
+  }
+  status.style.display='block';
+  btn.textContent='Send';btn.disabled=false;
+});
 
 </script>
 </body>
