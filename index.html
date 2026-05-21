@@ -67,6 +67,8 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .proj-label-always{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
 .proj-label-title{font-family:var(--serif);font-size:clamp(2rem,5vw,4.5rem);font-weight:400;color:var(--white);text-shadow:0 2px 20px rgba(0,0,0,0.7);line-height:1.1;letter-spacing:0.02em}
 .proj-label-year{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,169,110,0.75);text-shadow:0 1px 8px rgba(0,0,0,0.8);margin-top:0.5rem;display:block}
+.proj-enter{font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,237,232,0.7);border:1px solid rgba(240,237,232,0.3);padding:0.65rem 1.8rem;display:inline-block;margin-top:1.4rem;transition:border-color 0.3s,color 0.3s;text-shadow:0 1px 8px rgba(0,0,0,0.8)}
+.proj-card:hover .proj-enter{color:rgba(240,237,232,0.95);border-color:rgba(200,169,110,0.5)}
 
 /* PROJECT PAGE */
 .project-header{max-width:720px;margin:0 auto;padding:2.5rem 2rem 3rem;text-align:center}
@@ -335,6 +337,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
       <div class="proj-label-always">
         <div class="proj-label-title">Offside</div>
         <span class="proj-label-year">2026</span>
+        <div class="proj-enter" id="proj-enter-el">View Project</div>
       </div>
     </div>
     <div class="recognition-section" style="margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(240,237,232,0.08)">
@@ -740,7 +743,7 @@ function setLang(lang){
       recog_label:'Recognition',recog_title:'Exhibition — Whitman College, Fouts Center for Visual Arts',recog_date:'Spring 2026 — Walla Walla, Washington',recog_desc:'was exhibited as a 20-image photographic installation at the Fouts Center for Visual Arts, Whitman College. The work was printed and installed as part of the Intermediate Photography course final exhibition. During the exhibition period, the project received acknowledgment from multiple faculty members and peers who engaged with its social justice intent and visual argument.',
       contact_studio:'Studio',contact_enq:'General Enquiries',contact_enq_title:'Get in Touch',contact_enq_desc:'For exhibition inquiries, press, collaborations, or to discuss the work.',contact_follow:'Follow',
       form_name:'Name *',form_email:'Email *',form_subject:'Subject',form_msg:'Message',form_send:'Send',
-      splash_enter:'Click to enter',
+      splash_enter:'Click to enter',proj_enter:'View Project',
       st_title:'OFFSIDE',st_label:'Artist Statement — Ahmed Baba Tandia — 2026',
       st_p1:'There is a moment, somewhere between the departure and the debut, where the dream becomes a debt. A family has sold what it could. A clock has been stopped. A passport waits in someone else\'s hands. A ball, worn and scuffed, holds more hope than it was ever designed to carry. This is where my project begins: not on the pitch, not under the stadium lights, but in the quiet, pressurized space of before.',
       st_p2:'Between Dreams and Borders began as a visual inquiry into what African footballers leave behind and what they carry with them. Using still life photography inspired by the work of Omar Victor Diop — who has long used objects and staging to restore dignity and complexity to African subjects — I arranged ordinary things: boots, clocks, money, family photographs. These are not props. They are arguments. They say that for many young players crossing from the African continent into European leagues, football is not a sport. It is a strategy of survival, a collective wager placed by entire families on the body and talent of one person.',
@@ -769,7 +772,7 @@ function setLang(lang){
       recog_label:'Reconnaissance',recog_title:'Exposition — Whitman College, Fouts Center for Visual Arts',recog_date:'Printemps 2026 — Walla Walla, Washington',recog_desc:'a été exposé en tant qu\'installation photographique de 20 images au Fouts Center for Visual Arts, Whitman College. Le travail a été imprimé et installé dans le cadre de l\'exposition finale du cours de photographie intermédiaire. Le projet a reçu la reconnaissance de plusieurs membres du corps enseignant et pairs qui se sont engagés avec son intention de justice sociale.',
       contact_studio:'Studio',contact_enq:'Renseignements Généraux',contact_enq_title:'Nous Contacter',contact_enq_desc:'Pour des demandes d\'exposition, de presse, de collaboration, ou pour discuter du travail.',contact_follow:'Suivre',
       form_name:'Nom *',form_email:'Email *',form_subject:'Sujet',form_msg:'Message',form_send:'Envoyer',
-      splash_enter:'Cliquer pour entrer',
+      splash_enter:'Cliquer pour entrer',proj_enter:'Voir le Projet',
       st_title:'Hors-Jeu',st_label:'Déclaration d\'artiste — Ahmed Baba Tandia — 2026',
       st_p1:'Il existe un moment — quelque part entre le départ et le début — où le rêve devient une dette. Une famille a vendu ce qu\'elle pouvait. Une horloge a été arrêtée. Un passeport attend dans les mains de quelqu\'un d\'autre. Un ballon, usé et éraflé, porte plus d\'espoir qu\'il n\'a jamais été conçu pour en porter. C\'est là que commence mon projet : non pas sur le terrain, non pas sous les lumières du stade, mais dans l\'espace calme et sous pression de l\'avant.',
       st_p2:'Entre Rêves et Frontières a débuté comme une enquête visuelle sur ce que les footballeurs africains laissent derrière eux et ce qu\'ils emportent avec eux. En utilisant la photographie de nature morte inspirée du travail d\'Omar Victor Diop, j\'ai arrangé des choses ordinaires : bottes, horloges, argent, photographies de famille. Ce ne sont pas des accessoires. Ce sont des arguments. Ils disent que pour de nombreux jeunes joueurs traversant du continent africain vers les ligues européennes, le football n\'est pas un sport. C\'est une stratégie de survie.',
@@ -798,7 +801,7 @@ function setLang(lang){
       recog_label:'Reconocimiento',recog_title:'Exposición — Whitman College, Fouts Center for Visual Arts',recog_date:'Primavera 2026 — Walla Walla, Washington',recog_desc:'fue exhibido como una instalación fotográfica de 20 imágenes en el Fouts Center for Visual Arts, Whitman College. El trabajo fue impreso e instalado como parte de la exposición final del curso de Fotografía Intermedia. El proyecto recibió reconocimiento de múltiples miembros del profesorado y compañeros que se comprometieron con su intención de justicia social.',
       contact_studio:'Estudio',contact_enq:'Consultas Generales',contact_enq_title:'Ponerse en Contacto',contact_enq_desc:'Para consultas de exposición, prensa, colaboraciones, o para hablar sobre el trabajo.',contact_follow:'Seguir',
       form_name:'Nombre *',form_email:'Correo *',form_subject:'Asunto',form_msg:'Mensaje',form_send:'Enviar',
-      splash_enter:'Clic para entrar',
+      splash_enter:'Clic para entrar',proj_enter:'Ver Proyecto',
       st_title:'Fuera de Juego',st_label:'Declaración del artista — Ahmed Baba Tandia — 2026',
       st_p1:'Existe un momento — en algún lugar entre la partida y el debut — en que el sueño se convierte en una deuda. Una familia ha vendido lo que podía. Un reloj ha sido detenido. Un pasaporte espera en manos de otro. Un balón, gastado y arañado, carga más esperanza de la que jamás fue diseñado para llevar. Aquí es donde comienza mi proyecto: no en el campo, no bajo las luces del estadio, sino en el espacio quieto y presurizado del antes.',
       st_p2:'Entre Sueños y Fronteras comenzó como una investigación visual sobre lo que los futbolistas africanos dejan atrás y lo que llevan consigo. Usando fotografía de naturaleza muerta inspirada en el trabajo de Omar Victor Diop, organicé cosas ordinarias: botas, relojes, dinero, fotografías familiares. No son utilería. Son argumentos. Dicen que para muchos jóvenes jugadores que cruzan del continente africano hacia las ligas europeas, el fútbol no es un deporte. Es una estrategia de supervivencia.',
@@ -827,6 +830,7 @@ function setLang(lang){
 
   // Splash
   const se=document.querySelector('.splash-enter');if(se)se.textContent=t.splash_enter;
+  const pe=document.getElementById('proj-enter-el');if(pe)pe.textContent=t.proj_enter;
 
   // Home
   const ht=document.querySelector('.home-title');if(ht)ht.textContent=t.home_title;
