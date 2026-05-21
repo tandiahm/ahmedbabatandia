@@ -275,8 +275,8 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .mobile-lang-row a.lang-active{color:var(--gold)}
 
 /* ── LIGHTBOX INFO TOGGLE (mobile only) ── */
-.lb-info-toggle{display:none;font-family:var(--sans);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,232,0.5);background:rgba(240,237,232,0.04);border:none;border-top:1px solid rgba(240,237,232,0.06);cursor:pointer;padding:0.7rem 1rem;width:100%;text-align:center;flex-shrink:0;transition:color 0.2s}
-.lb-info-toggle:hover{color:rgba(240,237,232,0.85)}
+.lb-info-toggle{display:none;font-family:var(--sans);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);background:rgba(200,169,110,0.07);border:none;border-top:1px solid rgba(200,169,110,0.28);cursor:pointer;padding:0.75rem 1rem;width:100%;text-align:center;flex-shrink:0;transition:background 0.2s,color 0.2s}
+.lb-info-toggle:hover{background:rgba(200,169,110,0.13)}
 
 /* ── MOBILE ── */
 @media (max-width:768px){
@@ -321,6 +321,10 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
   .vision-project{grid-template-columns:50px 1fr;gap:1rem}
   .vision-num{font-size:2rem}
 
+  /* Image overlay — always visible on mobile (title only, no concept) */
+  .img-overlay{opacity:1;background:linear-gradient(transparent 55%,rgba(0,0,0,0.82))}
+  .img-overlay-concept{display:none}
+
   /* Lightbox — stacked layout */
   .lb-top{padding:0.65rem 1rem}
   .lb-body{display:flex;flex-direction:column}
@@ -333,7 +337,6 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 
 @media (max-width:480px){
   .splash-name{font-size:clamp(1.8rem,11vw,3rem)}
-  .chapter-grid.grid-4,.chapter-grid.grid-3{grid-template-columns:1fr}
   .proj-label-title{font-size:clamp(1.4rem,9vw,2.2rem)}
 }
 </style>
@@ -1010,7 +1013,7 @@ function setLang(lang){
   const rl=document.querySelector('.recog-label');if(rl)rl.textContent=t.recog_label;
   const rt=document.querySelector('.recog-title');if(rt)rt.textContent=t.recog_title;
   const rd=document.querySelector('.recog-date');if(rd)rd.textContent=t.recog_date;
-  const rdesc=document.querySelector('.recog-desc');if(rdesc)rdesc.innerHTML='\u003Cem\u003EOffside\u003C/em\u003E '+t.recog_desc;
+  const rdesc=document.querySelector('.recog-desc');if(rdesc)rdesc.innerHTML='\u003Cem\u003E'+t.proj_label+'\u003C/em\u003E '+t.recog_desc;
 
   // Contact
   const csl=document.querySelector('.contact-section:nth-child(1) .contact-section-label');if(csl)csl.textContent=t.contact_studio;
