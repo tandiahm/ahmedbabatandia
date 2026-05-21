@@ -253,28 +253,88 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
   color:rgba(240,237,232,0.6);
 }
 
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;justify-content:space-between;width:22px;height:15px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;z-index:210;position:relative}
+.hamburger span{display:block;width:100%;height:1.5px;background:var(--white);transition:transform 0.28s ease,opacity 0.28s ease}
+.hamburger.open span:nth-child(1){transform:translateY(6.75px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.75px) rotate(-45deg)}
+
+/* ── MOBILE NAV OVERLAY ── */
+.mobile-nav{display:none;position:fixed;inset:0;z-index:150;background:var(--bg2);flex-direction:column;padding:0 2rem 3rem;overflow-y:auto}
+.mobile-nav.open{display:flex}
+.mobile-nav-inner{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:1rem}
+.mobile-nav-links{display:flex;flex-direction:column}
+.mobile-nav-links>a{font-family:var(--sans);font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,237,232,0.6);padding:1.1rem 0;border-bottom:1px solid rgba(240,237,232,0.06);transition:color 0.2s;display:block;cursor:pointer}
+.mobile-nav-links>a:hover,.mobile-nav-links>a.active{color:var(--gold)}
+.mobile-nav-sub{padding:0.6rem 0 0.6rem 1.2rem;border-bottom:1px solid rgba(240,237,232,0.06)}
+.mobile-nav-sub a{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,232,0.38);cursor:pointer;transition:color 0.2s}
+.mobile-nav-sub a:hover{color:var(--gold)}
+.mobile-lang-row{display:flex;gap:2.5rem;padding-top:2.5rem}
+.mobile-lang-row a{font-family:var(--sans);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,232,0.38);cursor:pointer;transition:color 0.2s}
+.mobile-lang-row a.lang-active{color:var(--gold)}
+
+/* ── LIGHTBOX INFO TOGGLE (mobile only) ── */
+.lb-info-toggle{display:none;font-family:var(--sans);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,232,0.5);background:rgba(240,237,232,0.04);border:none;border-top:1px solid rgba(240,237,232,0.06);cursor:pointer;padding:0.7rem 1rem;width:100%;text-align:center;flex-shrink:0;transition:color 0.2s}
+.lb-info-toggle:hover{color:rgba(240,237,232,0.85)}
+
 /* ── MOBILE ── */
-@media (max-width: 768px) {
-  nav{padding:0 1.2rem}
-  .nav-logo a{font-size:0.85rem;letter-spacing:0.12em}
-  .nav-sep{margin:0 1rem}
-  .site-wrap{padding-top:85px}
-  .proj-thumb{height:55vh;min-height:320px}
-  .proj-label-title{font-size:2rem}
+@media (max-width:768px){
+  /* Nav — single row with hamburger */
+  nav{padding:0 1.2rem;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{padding:0.95rem 0;border-bottom:none;margin-bottom:0;flex:1;text-align:center}
+  .nav-logo a{font-size:0.82rem;letter-spacing:0.14em}
+  .nav-links{display:none!important}
+  .hamburger{display:flex}
+
+  /* Site */
+  .site-wrap{padding-top:62px}
+  #statement .site-wrap,#vision .site-wrap{padding-top:72px}
+
+  /* Splash */
+  .splash-name{font-size:clamp(2.2rem,13vw,5rem)}
+
+  /* Home */
+  .proj-thumb{height:62vh;min-height:280px}
+  .proj-label-title{font-size:clamp(1.6rem,7vw,2.8rem)}
+
+  /* Project page */
   .project-header{padding:1.5rem 1.2rem 2rem}
-  .chapter-header{padding:2rem 1.2rem 1rem;gap:1rem}
+  .chapter-header{padding:1.8rem 1.2rem 1rem;gap:1rem}
   .chapter-num{font-size:2rem}
   .chapter-grid.grid-4{grid-template-columns:repeat(2,1fr)}
   .chapter-grid.grid-3{grid-template-columns:repeat(2,1fr)}
+
+  /* About */
   .about-wrap{padding:1.5rem 1.2rem 3rem}
   .about-bio-grid{grid-template-columns:1fr;gap:2rem}
   .about-bio-col p{font-size:0.88rem;line-height:1.7}
   .about-portrait{max-width:100%;aspect-ratio:4/3}
+
+  /* Contact */
   .contact-wrap{padding:1.5rem 1.2rem 3rem}
+
+  /* Footer */
   footer{padding:1.2rem}
-  .lb-body{grid-template-columns:1fr}
-  .lb-info{display:none}
-  .splash-name{font-size:clamp(2.5rem,15vw,5rem)}
+
+  /* Vision */
+  .vision-project{grid-template-columns:50px 1fr;gap:1rem}
+  .vision-num{font-size:2rem}
+
+  /* Lightbox — stacked layout */
+  .lb-top{padding:0.65rem 1rem}
+  .lb-body{display:flex;flex-direction:column}
+  .lb-img{flex:1;min-height:0;padding:0.8rem}
+  .lb-info{display:none;border-left:none;border-top:1px solid rgba(240,237,232,0.07);padding:1.2rem 1rem;max-height:42vh;overflow-y:auto}
+  .lb-info.open{display:block}
+  .lb-info-toggle{display:block}
+  .lb-nav-btn{font-size:0.56rem;padding:0.35rem 0.65rem}
+}
+
+@media (max-width:480px){
+  .splash-name{font-size:clamp(1.8rem,11vw,3rem)}
+  .chapter-grid.grid-4,.chapter-grid.grid-3{grid-template-columns:1fr}
+  .proj-label-title{font-size:clamp(1.4rem,9vw,2.2rem)}
 }
 </style>
 </head>
@@ -292,6 +352,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 <!-- MAIN SITE -->
 <div id="mainsite" style="display:none">
 <nav style="display:none">
+  <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-logo"><a onclick="showPage('home')">AHMED BABA TANDIA</a></div>
   <ul class="nav-links">
     <li class="nav-dropdown-wrap">
@@ -327,6 +388,25 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
     </li>
   </ul>
 </nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-inner">
+    <div class="mobile-nav-links">
+      <a id="mnav-home" class="active" onclick="showPage('home');closeMobileNav()">Projects</a>
+      <div class="mobile-nav-sub"><a onclick="showPage('project');closeMobileNav()">Offside</a></div>
+      <a id="mnav-about" onclick="showPage('about');closeMobileNav()">About</a>
+      <a id="mnav-contact" onclick="showPage('contact');closeMobileNav()">Contact</a>
+      <a id="mnav-statement">Statements</a>
+      <div class="mobile-nav-sub"><a id="mnav-stmt-drop" onclick="showPage('statement');closeMobileNav()">OFFSIDE</a></div>
+      <a id="mnav-vision" onclick="showPage('vision');closeMobileNav()">Vision</a>
+    </div>
+    <div class="mobile-lang-row">
+      <a id="mlang-en" class="lang-active" onclick="setLang('en')">EN</a>
+      <a id="mlang-fr" onclick="setLang('fr')">FR</a>
+      <a id="mlang-es" onclick="setLang('es')">ES</a>
+    </div>
+  </div>
+</div>
 
 <!-- HOME -->
 <div id="home" class="page active">
@@ -630,6 +710,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
   </div>
   <div class="lb-body">
     <div class="lb-img" id="lbImgArea"></div>
+    <button class="lb-info-toggle" id="lb-info-toggle" onclick="toggleLbInfo()">Info ↑</button>
     <div class="lb-info">
       <div class="lb-chapter-tag" id="lbChapter"></div>
       <div class="lb-title" id="lbTitle"></div>
@@ -678,9 +759,35 @@ function showPage(id){
   document.querySelectorAll('#mainsite .page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  document.querySelectorAll('.mobile-nav-links>a').forEach(a=>a.classList.remove('active'));
   const map={home:'nav-home',about:'nav-about',contact:'nav-contact',statement:'nav-statement',vision:'nav-vision'};
+  const mmap={home:'mnav-home',about:'mnav-about',contact:'mnav-contact',statement:'mnav-statement',vision:'mnav-vision'};
   if(map[id]){const el=document.getElementById(map[id]);if(el)el.classList.add('active');}
+  if(mmap[id]){const mel=document.getElementById(mmap[id]);if(mel)mel.classList.add('active');}
   window.scrollTo(0,0);
+}
+
+function toggleMobileNav(){
+  const mn=document.getElementById('mobile-nav');
+  const hb=document.getElementById('hamburger');
+  mn.classList.toggle('open');
+  hb.classList.toggle('open');
+  document.body.style.overflow=mn.classList.contains('open')?'hidden':'';
+}
+
+function closeMobileNav(){
+  const mn=document.getElementById('mobile-nav');
+  const hb=document.getElementById('hamburger');
+  mn.classList.remove('open');
+  hb.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function toggleLbInfo(){
+  const info=document.querySelector('.lb-info');
+  const btn=document.getElementById('lb-info-toggle');
+  const isOpen=info.classList.toggle('open');
+  btn.textContent=isOpen?'Info ↓':'Info ↑';
 }
 
 function openLb(i){
@@ -711,6 +818,16 @@ document.addEventListener('keydown',e=>{
     if(e.key==='Escape')closeLb();
   }
 });
+
+let _tsX=0,_tsY=0;
+document.getElementById('lb').addEventListener('touchstart',function(e){
+  _tsX=e.touches[0].clientX;_tsY=e.touches[0].clientY;
+},{passive:true});
+document.getElementById('lb').addEventListener('touchend',function(e){
+  const dx=e.changedTouches[0].clientX-_tsX;
+  const dy=e.changedTouches[0].clientY-_tsY;
+  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){navLb(dx<0?1:-1);}
+},{passive:true});
 
 // ── TRANSLATED IMAGE DATA ──
 const _frImgs=[{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Le Ballon du Voyage","concept":"Le ballon de football devient un symbole d'espoir et d'évasion. Associé à une valise et à une carte atlas montrant les continents africain et européen, il représente comment les rêves sont portés à travers les frontières.","visual":"Ballon de football, valise, carte atlas. Nature morte large."},{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Pas Seulement un Jeu","concept":"Le contraste entre le divertissement et la responsabilité. Pour beaucoup de joueurs, le sport est lié à la survie familiale et à la nécessité économique — pas au plaisir ou au jeu.","visual":"Manettes de jeu vidéo, disques FIFA et un maillot national botswanais arrangés en contraste délibéré."},{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Identité en Pause","concept":"Le premier moment de tranquillité — le temps suspendu d'attente pour les visas, l'approbation et l'opportunité. Le temps se fige tandis que les systèmes décident du sort des gens.","visual":"Un passeport, un tissu traditionnel, des perles de prière et une horloge arrêtée. Nature morte en gros plan."},{"ch":"Chapitre I — Entre Rêves et Frontières","title":"Le Prix des Rêves","concept":"Les familles investissent leurs économies. L'éducation est abandonnée. Les blessures sont ignorées. Cette image demande qui bénéficie vraiment de ces rêves — et qui paie les coûts cachés.","visual":"Bottes usées, argent en différentes devises, une photographie d'un membre de la famille, Long Walk to Freedom de Nelson Mandela et une trousse de premiers secours."},{"ch":"Chapitre II — À l'Arrivée","title":"«OOH OOH» — Chants Raciaux","concept":"Visualiser le poids psychologique des chants raciaux à travers des objets symboliques. Inspiré des expériences documentées de Vinícius Júnior.","visual":"Assis sur le sol dans une posture fermée et vulnérable. Un singe en peluche placé à côté. Deux bananes sur le sol. Texte sur le mur: «OOH OOH», «not human» et des insultes racistes en espagnol."},{"ch":"Chapitre II — À l'Arrivée","title":"«Pourquoi Toujours Moi?»","concept":"Comment les médias construisent et renforcent une identité singulière et souvent négative autour des joueurs noirs. Inspiré de Mario Balotelli.","visual":"Chemise blanche imprimée «Why always me?». Debout, regard direct. Fond rempli de gros titres. Une caméra sur le sol à côté de la télévision. Un pied posé sur la télévision."},{"ch":"Chapitre II — À l'Arrivée","title":"Pression de Performance","concept":"Le moment après l'échec — où l'individu s'effondre sous l'attente collective et le regard public. Inspiré de Rashford, Saka et Sancho.","visual":"Maillot d'Angleterre. Pris depuis une échelle directement au-dessus de l'herbe. Visage couvert d'une main. Vue à vol d'oiseau."},{"ch":"Chapitre II — À l'Arrivée","title":"Moquerie Médiatique","concept":"La réduction des athlètes à leur valeur marchande — particulièrement dans les moments de ridicule public. Inspiré de Victor Osimhen.","visual":"Maillot nigérian. Une étiquette de prix visible tenue dans la main. Regard direct ou légèrement détaché."},{"ch":"Chapitre III — Impact","title":"La Chaise Vide","concept":"Le tribut psychologique des abus raciaux est rarement traité. Cette image visualise cette absence de soins — la personne qui devrait recevoir de l'aide est absente.","visual":"Une chaise simple face à un mur nu. Sur le mur: une illustration d'un cerveau percé par une aiguille contenant des icônes de réseaux sociaux. La chaise est vide."},{"ch":"Chapitre III — Impact","title":"La Foi comme Ancre","concept":"Pour beaucoup de joueurs africains, la foi est le cadre principal à travers lequel la souffrance, le déplacement et la persévérance sont traités.","visual":"Un Coran, une Bible et des perles de prière arrangés en composition de nature morte."},{"ch":"Chapitre III — Impact","title":"Scellé","concept":"L'attente que les joueurs noirs fassent preuve de sang-froid — absorbant les abus sans réaction visible — est elle-même une forme de violence imposée de l'extérieur.","visual":"Un portrait en gros plan sur le visage. Expression entre colère et chagrin. Du ruban adhésif sur la bouche. Les yeux portent tout."},{"ch":"Chapitre III — Impact","title":"L'Instrument","concept":"Dans la machinerie du football professionnel, le corps du joueur noir est évalué, acheté, vendu et mis au rebut comme un outil. Pas de personne. Seulement des pièces.","visual":"Un squelette anatomique — moitié machine, moitié humain — arrangé en nature morte sur une surface plate."},{"ch":"Chapitre III — Impact","title":"Le Corps","concept":"Cette image répond. Une personne, sous un projecteur, pleinement présente. C'est ce que le corps est réellement.","visual":"Un portrait debout, le sujet centré dans le cadre. Un projecteur isolant la figure. L'environnement s'efface dans l'obscurité."},{"ch":"Chapitre III — Impact","title":"Heure Bleue","concept":"Après avoir documenté ce que ce voyage fait à une personne, cette image offre quelque chose de plus calme: la possibilité d'une résolution. L'espoir comme direction, pas comme destination.","visual":"Un moment de l'heure bleue après le coucher du soleil. Un chemin qui courbe et disparaît hors cadre."},{"ch":"Chapitre IV — Résistance & Changement","title":"Lisez la Pièce","concept":"Le vrai pouvoir dans ce combat vient de la compréhension de l'histoire, des systèmes et des structures qui ont produit ces conditions. La connaissance est le fondement.","visual":"Une pile de livres incluant Why I'm No Longer Talking to White People About Race, How Europe Underdeveloped Africa, Long Walk to Freedom, Defining Vision et d'autres — avec des bottes de football usées dessus. Un mini ballon de football à côté."},{"ch":"Chapitre IV — Résistance & Changement","title":"La Protestation","concept":"L'acte de se mettre à genoux est récupéré comme ce qu'il a toujours été: un acte de pouvoir, pas de soumission.","visual":"Une figure en studio, cadrée à partir de la taille vers le haut. Posture forte et délibérée. Regard direct et pacifique. Geste du poing levé Black Lives Matter."},{"ch":"Chapitre IV — Résistance & Changement","title":"Ne Pas Entendre le Mal, Ne Pas Voir le Mal, Ne Pas Dire le Mal","concept":"Le geste familier recadré comme résistance mentale collective — un refus d'absorber ce que le monde continue d'envoyer.","visual":"Trois figures dans différents maillots de football. De gauche à droite: la première couvre ses oreilles; la deuxième couvre sa bouche avec un geste chut; la troisième couvre son visage des deux mains."},{"ch":"Chapitre IV — Résistance & Changement","title":"Pourquoi Toujours Nous?","concept":"La question de Mario Balotelli était personnelle. Cette image l'étend à quelque chose de systémique — d'une plainte individuelle à une critique collective.","visual":"Trois figures regardant directement la caméra avec un regard sérieux, portant des t-shirts blancs unis. De gauche à droite: «Why always me?» / «Why always us?» / «Why never them?»"},{"ch":"Chapitre IV — Résistance & Changement","title":"La Conférence de Presse","concept":"Les institutions répondent au racisme avec un langage soigneusement formulé, infiniment répété et finalement vide. Cette image tient ce langage responsable.","visual":"Une table de conférence de presse: microphone, bouteille d'eau, boissons sponsorisées et un mini ballon de la Ligue des Champions. Le panneau lit «THE CLUB / UEFA / FIFA». La chaise est vide."},{"ch":"Chapitre IV — Résistance & Changement","title":"Nous Sommes Tous les Mêmes","concept":"Le racisme n'est pas naturel — il est construit. Sous chaque différence visible, la substance est identique. La vérité finale et la plus simple du projet.","visual":"Deux œufs aux coquilles de couleurs différentes, cassés dans la même poêle. Contenus impossibles à distinguer. Une main noire et une main blanche de chaque côté. Prise de vue directement de dessus."}];
@@ -827,6 +944,15 @@ function setLang(lang){
   const nv=document.getElementById('nav-vision');if(nv)nv.textContent=t.nav_vision;
   const sd=document.getElementById('stmt-drop-link');if(sd)sd.textContent=t.stmt_drop;
   const pd=document.querySelector('.nav-dropdown a');if(pd)pd.textContent=t.proj_label;
+  // Mobile nav
+  const mnh=document.getElementById('mnav-home');if(mnh)mnh.textContent=t.nav_projects;
+  const mna=document.getElementById('mnav-about');if(mna)mna.textContent=t.nav_about;
+  const mnc=document.getElementById('mnav-contact');if(mnc)mnc.textContent=t.nav_contact;
+  const mns=document.getElementById('mnav-statement');if(mns)mns.textContent=t.nav_statement;
+  const mnv=document.getElementById('mnav-vision');if(mnv)mnv.textContent=t.nav_vision;
+  const mnsd=document.getElementById('mnav-stmt-drop');if(mnsd)mnsd.textContent=t.stmt_drop;
+  document.querySelectorAll('.mobile-lang-row a').forEach(a=>a.classList.remove('lang-active'));
+  const mla=document.getElementById('mlang-'+lang);if(mla)mla.classList.add('lang-active');
 
   // Splash
   const se=document.querySelector('.splash-enter');if(se)se.textContent=t.splash_enter;
