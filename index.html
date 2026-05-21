@@ -321,9 +321,12 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
   .vision-project{grid-template-columns:50px 1fr;gap:1rem}
   .vision-num{font-size:2rem}
 
-  /* Image overlay — always visible on mobile (title only, no concept) */
-  .img-overlay{opacity:1;background:linear-gradient(transparent 55%,rgba(0,0,0,0.82))}
+  /* Image overlay — always visible on mobile */
+  .img-overlay{opacity:1;background:linear-gradient(transparent 65%,rgba(0,0,0,0.9))}
+  .img-overlay-title{font-weight:500}
   .img-overlay-concept{display:none}
+  .img-overlay::after{content:'· tap for info';font-family:var(--sans);font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(200,169,110,0.72);margin-top:0.28rem;display:block}
+  .img-caption{display:none}
 
   /* Lightbox — stacked layout */
   .lb-top{padding:0.65rem 1rem}
