@@ -28,8 +28,8 @@ body{background:var(--bg);color:var(--white);font-family:var(--sans);font-weight
 .splash-content{position:relative;z-index:2;text-align:center;padding:2rem}
 .splash-name{font-family:var(--serif);font-size:clamp(3rem,9vw,8rem);font-weight:400;line-height:0.95;letter-spacing:0.03em;color:var(--white);text-transform:uppercase;margin-bottom:2rem}
 .splash-name em{display:block;font-style:italic;color:var(--gold);font-size:0.72em}
-.splash-enter{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:rgba(240,237,232,0.6);border:1px solid rgba(240,237,232,0.25);padding:0.75rem 2.2rem;display:inline-block;animation:pulse 2.5s ease-in-out infinite;transition:border-color 0.3s,color 0.3s}
-#splash:hover .splash-enter{color:rgba(240,237,232,0.9);border-color:rgba(200,169,110,0.5)}
+.splash-enter{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--white);background:rgba(200,169,110,0.18);border:1px solid rgba(200,169,110,0.75);padding:0.8rem 2.2rem;display:inline-block;animation:pulse 2.5s ease-in-out infinite;transition:border-color 0.3s,color 0.3s,background 0.3s;text-shadow:0 1px 8px rgba(0,0,0,0.8)}
+#splash:hover .splash-enter{color:var(--white);border-color:var(--gold);background:rgba(200,169,110,0.32)}
 @keyframes pulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
 
 /* NAV */
@@ -126,7 +126,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .about-portrait{width:100%;max-width:420px;aspect-ratio:4/3;background:#0d0d0d;overflow:hidden;margin:0 auto 2.2rem;border:1px solid rgba(240,237,232,0.06)}
 .about-portrait img{width:100%;height:100%;object-fit:cover;display:block}
 .about-portrait-placeholder{font-family:var(--serif);font-style:italic;font-size:0.8rem;color:rgba(200,169,110,0.16);text-align:center;padding:2rem;line-height:1.8}
-.about-video-role{text-align:center;font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin:0.5rem 0 2.8rem}
+.about-video-role{text-align:center;font-family:var(--serif);font-size:0.9rem;font-style:italic;letter-spacing:0.08em;color:var(--gold);margin:0.15rem 0 2.5rem}
 .about-bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.2rem;align-items:start}
 .about-bio-col h3{font-family:var(--serif);font-size:0.98rem;font-weight:400;color:var(--white);margin-bottom:0.2rem}
 .about-bio-col .lang-label{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:block}
