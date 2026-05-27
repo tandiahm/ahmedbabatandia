@@ -60,6 +60,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 
 /* HOME */
 .home-title{text-align:center;padding:2.5rem 2rem 3rem;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--mid)}
+.recognition-section{max-width:980px;margin-left:auto;margin-right:auto;padding:0 2rem}
 .proj-card{position:relative;overflow:hidden;cursor:pointer;background:#0d0d0d;margin:0 3px 3px}
 .proj-thumb{width:100%;height:78vh;min-height:480px;position:relative;overflow:hidden}
 .proj-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.7s ease}
@@ -67,8 +68,8 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .proj-label-always{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
 .proj-label-title{font-family:var(--serif);font-size:clamp(2rem,5vw,4.5rem);font-weight:400;color:var(--white);text-shadow:0 2px 20px rgba(0,0,0,0.7);line-height:1.1;letter-spacing:0.02em}
 .proj-label-year{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(200,169,110,0.75);text-shadow:0 1px 8px rgba(0,0,0,0.8);margin-top:0.5rem;display:block}
-.proj-enter{font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,237,232,0.7);border:1px solid rgba(240,237,232,0.3);padding:0.65rem 1.8rem;display:inline-block;margin-top:1.4rem;transition:border-color 0.3s,color 0.3s;text-shadow:0 1px 8px rgba(0,0,0,0.8)}
-.proj-card:hover .proj-enter{color:rgba(240,237,232,0.95);border-color:rgba(200,169,110,0.5)}
+.proj-enter{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--white);background:rgba(200,169,110,0.18);border:1px solid rgba(200,169,110,0.75);padding:0.8rem 2.2rem;display:inline-block;margin-top:1.4rem;transition:border-color 0.3s,color 0.3s,background 0.3s;text-shadow:0 1px 8px rgba(0,0,0,0.8)}
+.proj-card:hover .proj-enter{color:var(--white);border-color:var(--gold);background:rgba(200,169,110,0.32)}
 
 /* PROJECT PAGE */
 .project-header{max-width:720px;margin:0 auto;padding:2.5rem 2rem 3rem;text-align:center}
@@ -280,6 +281,8 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 /* ── LIGHTBOX INFO TOGGLE (mobile only) ── */
 .lb-info-toggle{display:none;font-family:var(--sans);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);background:rgba(200,169,110,0.07);border:none;border-top:1px solid rgba(200,169,110,0.28);cursor:pointer;padding:0.75rem 1rem;width:100%;text-align:center;flex-shrink:0;transition:background 0.2s,color 0.2s}
 .lb-info-toggle:hover{background:rgba(200,169,110,0.13)}
+@keyframes lb-toggle-hint{0%,100%{transform:translateY(0)}35%{transform:translateY(-7px)}65%{transform:translateY(-3px)}}
+.lb-info-toggle.hint{animation:lb-toggle-hint 0.65s ease 0.7s 2}
 
 /* ── MOBILE ── */
 @media (max-width:768px){
@@ -310,9 +313,13 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 
   /* About */
   .about-wrap{padding:1.5rem 1.2rem 3rem}
+  .about-name{display:none}
   .about-bio-grid{grid-template-columns:1fr;gap:2rem}
   .about-bio-col p{font-size:0.88rem;line-height:1.7}
   .about-portrait{max-width:100%;aspect-ratio:4/3}
+  .about-bio-grid[data-lang="en"] .about-bio-col:last-child{display:none}
+  .about-bio-grid[data-lang="fr"] .about-bio-col:first-child{display:none}
+  .about-bio-grid[data-lang="es"] .about-bio-col:first-child{display:none}
 
   /* Contact */
   .contact-wrap{padding:1.5rem 1.2rem 3rem}
@@ -561,7 +568,6 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 <div id="about" class="page">
   <div class="site-wrap">
     <div class="about-wrap">
-      <div class="about-portrait"><img src="images/portrait.jpg" alt="Ahmed Baba Tandia" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"></div>
       <div class="about-name-block">
         <div class="about-name">Ahmed Baba Tandia</div>
         <div class="about-role">Visual Artist & Photographer</div>
@@ -571,7 +577,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
           <iframe id="vimeo-player" src="https://player.vimeo.com/video/1195561751?color=c8a96e&title=0&byline=0&portrait=0&texttrack=en" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
-      <div class="about-bio-grid">
+      <div class="about-bio-grid" data-lang="en">
         <div class="about-bio-col">
           <h3>Ahmed Baba Tandia</h3>
           <span class="lang-label">Biography — English</span>
@@ -818,6 +824,8 @@ function openLb(i){
   lbIdx=i;updateLb();
   document.getElementById('lb').classList.add('open');
   document.body.style.overflow='hidden';
+  const toggle=document.getElementById('lb-info-toggle');
+  if(toggle){toggle.classList.remove('hint');void toggle.offsetWidth;toggle.classList.add('hint');}
 }
 function closeLb(){
   document.getElementById('lb').classList.remove('open');
@@ -1029,6 +1037,7 @@ function setLang(lang){
   const fl=document.querySelector('.about-bio-col:last-child .lang-label');if(fl)fl.textContent=t.about_lang_fr;
   document.querySelectorAll('.bio-fr').forEach(function(p){p.style.display=lang==='es'?'none':'';});
   document.querySelectorAll('.bio-es').forEach(function(p){p.style.display=lang==='es'?'':'none';});
+  const bioGrid=document.querySelector('.about-bio-grid');if(bioGrid)bioGrid.setAttribute('data-lang',lang);
   if(vimeoPlayer) vimeoPlayer.enableTextTrack(lang).catch(function(){});
 
   // Recognition
