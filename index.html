@@ -132,6 +132,9 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
 .about-bio-col h3{font-family:var(--serif);font-size:0.98rem;font-weight:400;color:var(--white);margin-bottom:0.2rem}
 .about-bio-col .lang-label{font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:block}
 .about-bio-col p{font-family:var(--serif);font-size:0.94rem;line-height:1.9;color:rgba(240,237,232,0.6);margin-bottom:1rem}
+.about-video{margin:0 auto 3rem;max-width:700px;width:100%}
+.about-video-wrap{position:relative;padding-top:56.25%;background:#000;border:1px solid rgba(240,237,232,0.06)}
+.about-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 
 /* CONTACT */
 .contact-wrap{max-width:620px;margin:0 auto;padding:2.5rem 2rem 5rem}
@@ -563,6 +566,11 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
         <div class="about-name">Ahmed Baba Tandia</div>
         <div class="about-role">Visual Artist & Photographer</div>
       </div>
+      <div class="about-video">
+        <div class="about-video-wrap">
+          <iframe id="vimeo-player" src="https://player.vimeo.com/video/1195561751?color=c8a96e&title=0&byline=0&portrait=0&texttrack=en" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
       <div class="about-bio-grid">
         <div class="about-bio-col">
           <h3>Ahmed Baba Tandia</h3>
@@ -729,6 +737,7 @@ footer{border-top:1px solid rgba(240,237,232,0.08);padding:1.3rem 3rem;display:f
   </div>
 </div>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 const imgs=[
   {ch:'Chapter I — Between Dreams and Borders',title:'The Journey Ball',src:'images/01-journey-ball.jpg',concept:'The soccer ball becomes a symbol of hope and escape. Paired with a suitcase and an atlas map showing the African and European continents, it represents how dreams are carried across borders. Football here is not pastime — it is pathway.',visual:'Soccer ball, suitcase, atlas map. Wide still life. The ball positioned as the central object, everything else in relation to it.'},
@@ -761,6 +770,14 @@ function enterSite(){
   document.querySelector('nav').style.display='block';
 }
 
+let vimeoPlayer=null;
+function initVimeoPlayer(){
+  if(vimeoPlayer||typeof Vimeo==='undefined') return;
+  const iframe=document.getElementById('vimeo-player');
+  if(!iframe) return;
+  vimeoPlayer=new Vimeo.Player(iframe);
+}
+
 function showPage(id){
   document.querySelectorAll('#mainsite .page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -770,6 +787,7 @@ function showPage(id){
   const mmap={home:'mnav-home',about:'mnav-about',contact:'mnav-contact',statement:'mnav-statement',vision:'mnav-vision'};
   if(map[id]){const el=document.getElementById(map[id]);if(el)el.classList.add('active');}
   if(mmap[id]){const mel=document.getElementById(mmap[id]);if(mel)mel.classList.add('active');}
+  if(id==='about') initVimeoPlayer();
   window.scrollTo(0,0);
 }
 
@@ -1011,6 +1029,7 @@ function setLang(lang){
   const fl=document.querySelector('.about-bio-col:last-child .lang-label');if(fl)fl.textContent=t.about_lang_fr;
   document.querySelectorAll('.bio-fr').forEach(function(p){p.style.display=lang==='es'?'none':'';});
   document.querySelectorAll('.bio-es').forEach(function(p){p.style.display=lang==='es'?'':'none';});
+  if(vimeoPlayer) vimeoPlayer.enableTextTrack(lang).catch(function(){});
 
   // Recognition
   const rl=document.querySelector('.recog-label');if(rl)rl.textContent=t.recog_label;
